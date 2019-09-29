@@ -76,7 +76,7 @@ def test_reject_negative():
 @check50.check(test_reject_negative)
 def test_reject_negative_twice():
     """rejects a negative input like -1 or -3 twice"""
-    result = uva.check50.py.run("cash.py", stdin=["-1", "-3", "2"])
+    result = uva.check50.py.run("greedy.py", stdin=["-1", "-3", "2"])
     if result.stdin:
         raise check50.Failure("expected stdin to be empty!")
 
