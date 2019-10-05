@@ -153,9 +153,7 @@ def win_games():
 
 @check50.check(empty_game)
 def lose_games():
-    """
-    Play five losing games.
-    """
+    """Play five losing games."""
     for _ in range(5):
         play_game(win=False)
 
