@@ -72,7 +72,7 @@ def load_hangman():
 
 @check50.check(load_hangman)
 def empty_game():
-    """new game is initialized with good starting values"""
+    """finished, won and lost respond correctly for a brand new game"""
     sys.path.append(os.getcwd())
     import hangman
     Hangman = hangman.Hangman
@@ -82,8 +82,8 @@ def empty_game():
         won = game.won()
         lost = game.lost()
     except Exception as e:
-        raise check50.Failure("unable to call pattern, guessed_string, " \
-                "won, lost, or finished on Hangman object",
+        raise check50.Failure("unable to call " \
+                "won, lost or finished on Hangman object",
                 help=f"Got the exception {e}")
 
     for expected, actual in [(False, finished), (False, won), (False, lost)]:
