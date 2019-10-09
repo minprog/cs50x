@@ -15,9 +15,7 @@ def exists():
 
 @check50.check(exists, timeout=3)
 def can_import():
-    """
-    You can import hangman.py without it hanging, or producing output.
-    """
+    """You can import hangman.py without it hanging, or producing output."""
     res = check50.run('python3 -c "import hangman"').stdout(timeout=2)
     if res != "":
         raise check50.Failure("Code produced output when imported.", 
@@ -26,9 +24,7 @@ def can_import():
 
 @check50.check(can_import)
 def load_lexicon():
-    """
-    You can create a Lexicon object.
-    """
+    """You can create a Lexicon object."""
     sys.path.append(os.getcwd())
     import hangman
     try:
@@ -41,9 +37,7 @@ def load_lexicon():
 
 @check50.check(load_lexicon)
 def test_lexicon():
-    """
-    Lexicon object returns the 4-letter words from dictionary.txt.
-    """
+    """Lexicon object returns the 4-letter words from dictionary.txt."""
     sys.path.append(os.getcwd())
     import hangman
     Lexicon = hangman.Lexicon
@@ -61,9 +55,7 @@ def test_lexicon():
 
 @check50.check(can_import)
 def load_hangman():
-    """
-    You can create a Hangman object (with the right parameters).
-    """
+    """You can create a Hangman object (with the right parameters)."""
     sys.path.append(os.getcwd())
     import hangman
     try:
@@ -80,10 +72,8 @@ def load_hangman():
 
 @check50.check(load_hangman)
 def wrong_hangman():
-    """
-    Trying to create a Hangman object with incorrect parameters causes an
-    exception to be raised.
-    """
+    """Trying to create a Hangman object with incorrect parameters causes an
+    exception to be raised."""
     params = [(-2, 3), (27, 5), (5, 0), (5, -1)]
     messages = ["-2 letter word, which does not exist.",
                 "27 letter word, which does not exist.",
@@ -102,9 +92,7 @@ def wrong_hangman():
 
 @check50.check(wrong_hangman)
 def wrong_guesses():
-    """
-    Wrong input into game.guess() gives an exception.
-    """
+    """Wrong input into game.guess() gives an exception."""
     sys.path.append(os.getcwd())
     import hangman
     Hangman = hangman.Hangman
@@ -136,9 +124,7 @@ def wrong_guesses():
         
 @check50.check(load_hangman)
 def empty_game():
-    """
-    A new game starts unfinished and without any guessed letters.
-    """
+    """A new game starts unfinished and without any guessed letters."""
     sys.path.append(os.getcwd())
     import hangman
     Hangman = hangman.Hangman
@@ -161,25 +147,19 @@ def empty_game():
 
 @check50.check(empty_game)
 def win_games():
-    """
-    Succesfully play five winning games.
-    """
+    """Succesfully play five winning games."""
     for _ in range(5):
         play_game(win=True)
 
 @check50.check(empty_game)
 def lose_games():
-    """
-    Play five losing games, each time returning "False".
-    """
+    """Play five losing games, each time returning "False"."""
     for _ in range(5):
         play_game(win=False)
 
 
 def play_game(win):
-    """
-    Win a game (given enough guesses).
-    """
+    """Win a game (given enough guesses)."""
     sys.path.append(os.getcwd())
     import hangman
     Hangman = hangman.Hangman
