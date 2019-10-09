@@ -24,7 +24,7 @@ def can_import():
 
 @check50.check(can_import)
 def load_lexicon():
-    """a lexicon object can be created"""
+    """lexicon object can be created"""
     sys.path.append(os.getcwd())
     import hangman
     try:
@@ -69,6 +69,39 @@ def load_hangman():
         raise check50.Failure("failed to create a Hangman object for a " \
                 "length 4 word and 5 guesses",
                 help=f"got exception {e}.")
+
+@check50.check(load_hangman)
+def empty_game():
+    """new game is initialized with good starting values"""
+    sys.path.append(os.getcwd())
+    import hangman
+    Hangman = hangman.Hangman
+    game = Hangman(4, 5)
+    try:
+        finished = game.finished()
+        won = game.won()
+        lost = game.lost()
+    except Exception as e:
+        raise check50.Failure("unable to call pattern, guessed_string, " \
+                "won, lost, or finished on Hangman object",
+                help=f"Got the exception {e}")
+
+    for expected, actual in [(False, finished), (False, won), (False, lost)]:
+        if expected != actual:
+            # TODO add problematic method name to this error
+            raise check50.Mismatch(str(expected), str(actual))
+
+@check50.check(empty_game)
+def win_games():
+    """it is possible to win a game given enough guesses (26)"""
+    for _ in range(5):
+        play_game(win=True)
+
+@check50.check(empty_game)
+def lose_games():
+    """it is possible to lose a game (returns False) given only 5 guesses"""
+    for _ in range(5):
+        play_game(win=False)
 
 @check50.check(load_hangman)
 def wrong_hangman():
@@ -120,39 +153,6 @@ def wrong_guesses():
     if accepted:
         raise check50.Failure("Guessing an already guessed letter should give " \
                 "an exception.")
-
-@check50.check(load_hangman)
-def empty_game():
-    """new game is initialized with good starting values"""
-    sys.path.append(os.getcwd())
-    import hangman
-    Hangman = hangman.Hangman
-    game = Hangman(4, 5)
-    try:
-        finished = game.finished()
-        won = game.won()
-        lost = game.lost()
-    except Exception as e:
-        raise check50.Failure("unable to call pattern, guessed_string, " \
-                "won, lost, or finished on Hangman object",
-                help=f"Got the exception {e}")
-
-    for expected, actual in [(False, finished), (False, won), (False, lost)]:
-        if expected != actual:
-            # TODO add problematic method name to this error
-            raise check50.Mismatch(str(expected), str(actual))
-
-@check50.check(empty_game)
-def win_games():
-    """it is possible to win a game given enough guesses (26)"""
-    for _ in range(5):
-        play_game(win=True)
-
-@check50.check(empty_game)
-def lose_games():
-    """it is possible to lose a game (returns False) given only 5 guesses"""
-    for _ in range(5):
-        play_game(win=False)
 
 
 def play_game(win):
