@@ -129,7 +129,7 @@ def empty_game():
     Hangman = hangman.Hangman
     game = Hangman(4, 5)
     try:
-        pattern = game.pattern()
+        finished = game.finished()
         won = game.won()
         lost = game.lost()
     except Exception as e:
