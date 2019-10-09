@@ -106,7 +106,7 @@ def wrong_guesses():
             accepted = False
 
         if accepted:
-            raise check50.Failure("guess of {str(wrong_input)} was accepted, " \
+            raise check50.Failure(f"guess of {str(wrong_input)} was accepted, " \
                     "but any input other than a single letter should give an " \
                     "exception")
 
