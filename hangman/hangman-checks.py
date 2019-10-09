@@ -143,7 +143,7 @@ def empty_game():
     for expected, actual in [("____", pattern), ("", guessed_string), 
             (False, finished), (False, won), (False, lost)]:
         if expected != actual:
-            raise check50.Mismatch(expected, actual)
+            raise check50.Mismatch(str(expected), str(actual))
 
 @check50.check(empty_game)
 def win_games():
@@ -153,7 +153,7 @@ def win_games():
 
 @check50.check(empty_game)
 def lose_games():
-    """Play five losing games."""
+    """Play five losing games, each time returning "False"."""
     for _ in range(5):
         play_game(win=False)
 
@@ -168,7 +168,7 @@ def play_game(win):
     else:
         game = Hangman(12, 5)
     
-    alphabet = list(string.ascii_uppercase)
+    alphabet = list(string.ascii_lowercase)
     random.shuffle(alphabet)
     guesses = []
     num_wrong_guesses = 0
