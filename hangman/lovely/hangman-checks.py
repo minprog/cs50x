@@ -195,12 +195,6 @@ def play_game(win):
                    f"{''.join(guesses)}."
             raise check50.Failure(error, help=help)
         
-        word = game.consistent_word()
-        if not all(a == b or b == "_" for a, b in zip(word, game.pattern())):
-            error = "Consistent word is not consistent with pattern."
-            help = f'Consistent word is {word} and pattern is {game.pattern()}'
-            raise check50.Failure(error, help=help)
-
         if game.finished():
             break
         
@@ -233,12 +227,6 @@ def play_game(win):
             help = f"Expected a full word, but the pattern is {game.pattern()}."
             raise check50.Failure(error, help=help)
 
-        word = game.consistent_word()
-        if word != game.pattern():
-            error = "After victorious game, only consistent word should be pattern."
-            help = f'Got consistent word {word} ' \
-                   f'but pattern {game.pattern()}.'
-            raise check50.Failure(error, help=help)
     else:
         if game.won() != False:
             error = "Won the game with 5 random guesses for a " \
