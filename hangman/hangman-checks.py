@@ -9,13 +9,13 @@ def raise_timeout():
 
 @check50.check()
 def exists():
-    """hangman.py and dictionary.txt both exist."""
+    """hangman.py exists"""
     check50.exists("hangman.py")
     check50.include("dictionary.txt")
 
 @check50.check(exists, timeout=3)
 def can_import():
-    """You can import hangman.py without it hanging, or producing output."""
+    """hangman.py loads without printing anything"""
     res = check50.run('python3 -c "import hangman"').stdout(timeout=2)
     if res != "":
         raise check50.Failure("Code produced output when imported.", 
@@ -24,20 +24,20 @@ def can_import():
 
 @check50.check(can_import)
 def load_lexicon():
-    """You can create a Lexicon object."""
+    """a lexicon object can be created"""
     sys.path.append(os.getcwd())
     import hangman
     try:
         Lexicon = hangman.Lexicon
         lex = Lexicon()
     except Exception as e:
-        error='Was unable to create a lexicon object with "Lexicon()"'
-        help=f"Got exception {str(e)}."
+        error='unable to create a lexicon object using "Lexicon()"'
+        help=f"got exception {str(e)}."
         raise check50.Failure(error, help=help)
 
 @check50.check(load_lexicon)
 def test_lexicon():
-    """Lexicon object returns the 4-letter words from dictionary.txt."""
+    """lexicon object correctly extracts 4-letter words from dictionary.txt"""
     sys.path.append(os.getcwd())
     import hangman
     Lexicon = hangman.Lexicon
@@ -46,39 +46,38 @@ def test_lexicon():
     try:
         words = lex.get_words(4)
     except Exception as e:
-        raise check50.Failure('Was unable to get words of length 4 from lexicon '\
-            'object with "lex.get_words(4)".')
+        raise check50.Failure('unable to get words of length 4 from lexicon '\
+            'object with "lex.get_words(4)"')
 
     if len(words) != 4128:
-        raise check50.Failure("Did not succesfully load all 4-letter words.",
-                help=f"Expected 4128 words, got {len(words)}.")
+        raise check50.Failure("did not succesfully load all 4-letter words",
+                help=f"expected 4128 words, got {len(words)}")
 
 @check50.check(can_import)
 def load_hangman():
-    """You can create a Hangman object (with the right parameters)."""
+    """creating a hangman game with parameters length=4, guesses=5 succeeds"""
     sys.path.append(os.getcwd())
     import hangman
     try:
         Hangman = hangman.Hangman
     except Exception as e:
-        raise check50.Failure("Cannot find the class Hangman.")
+        raise check50.Failure("cannot find the Hangman class")
 
     try:
         game = Hangman(4, 5)
     except Exception as e:
-        raise check50.Failure("Failed to create a Hangman object for a " \
-                "length 4 word and 5 guesses.",
-                help=f"Got the exception {e}.")
+        raise check50.Failure("failed to create a Hangman object for a " \
+                "length 4 word and 5 guesses",
+                help=f"got exception {e}.")
 
 @check50.check(load_hangman)
 def wrong_hangman():
-    """Trying to create a Hangman object with incorrect parameters causes an
-    exception to be raised."""
+    """creating a hangman game with incorrect parameters raises an exception"""
     params = [(-2, 3), (27, 5), (5, 0), (5, -1)]
-    messages = ["-2 letter word, which does not exist.",
-                "27 letter word, which does not exist.",
-                "game with 0 guesses, which is too few.",
-                "game with -1 guesses, which is too few."]
+    messages = ["-2 letter word, which does not exist",
+                "27 letter word, which does not exist",
+                "game with 0 guesses, which is too few",
+                "game with -1 guesses, which is too few"]
 
     for par_pair, message in zip(params, messages):
         game = None
@@ -88,11 +87,11 @@ def wrong_hangman():
             pass
 
         if game is not None:
-            raise check50.Failure("Created a Hangman object for a " + message)
+            raise check50.Failure("created a Hangman object for a " + message)
 
 @check50.check(wrong_hangman)
 def wrong_guesses():
-    """Wrong input into game.guess() gives an exception."""
+    """calling hangman.guess() with an incorrect parameter raises an exception"""
     sys.path.append(os.getcwd())
     import hangman
     Hangman = hangman.Hangman
@@ -107,9 +106,9 @@ def wrong_guesses():
             accepted = False
 
         if accepted:
-            raise check50.Failure("A guess of {str(wrong_input)} was accepted, " \
+            raise check50.Failure("guess of {str(wrong_input)} was accepted, " \
                     "but any input other than a single letter should give an " \
-                    "exception.")
+                    "exception")
 
     game.guess('A')
     accepted = True
@@ -121,10 +120,10 @@ def wrong_guesses():
     if accepted:
         raise check50.Failure("Guessing an already guessed letter should give " \
                 "an exception.")
-        
+
 @check50.check(load_hangman)
 def empty_game():
-    """A new game starts unfinished and without any guessed letters."""
+    """new game starts with finished=False and guessed_string=''"""
     sys.path.append(os.getcwd())
     import hangman
     Hangman = hangman.Hangman
@@ -147,13 +146,13 @@ def empty_game():
 
 @check50.check(empty_game)
 def win_games():
-    """Succesfully play five winning games."""
+    """it is possible to win a game given enough guesses (26)"""
     for _ in range(5):
         play_game(win=True)
 
 @check50.check(empty_game)
 def lose_games():
-    """Play five losing games, each time returning "False"."""
+    """it is possible to lose a game (returns False) given only 5 guesses"""
     for _ in range(5):
         play_game(win=False)
 
