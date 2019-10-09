@@ -130,8 +130,6 @@ def empty_game():
     game = Hangman(4, 5)
     try:
         pattern = game.pattern()
-        guessed_string = game.guessed_string()
-        finished = game.finished()
         won = game.won()
         lost = game.lost()
     except Exception as e:
@@ -139,8 +137,7 @@ def empty_game():
                 "won, lost, or finished on Hangman object",
                 help=f"Got the exception {e}")
 
-    for expected, actual in [("____", pattern), ("", guessed_string), 
-            (False, finished), (False, won), (False, lost)]:
+    for expected, actual in [(False, finished), (False, won), (False, lost)]:
         if expected != actual:
             # TODO add problematic method name to this error
             raise check50.Mismatch(str(expected), str(actual))

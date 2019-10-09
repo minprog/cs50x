@@ -1,0 +1,4 @@
+check50:
+    files:
+        - !require hangman.py
+    checks: hangman-checks.py
