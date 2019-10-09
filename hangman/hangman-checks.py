@@ -97,7 +97,7 @@ def wrong_guesses():
     Hangman = hangman.Hangman
     game = Hangman(4, 5)
 
-    inputs = ["word", " ", "6", 25, True, False, None]
+    inputs = ["blaat", " ", "6", 25, True, False, None]
     for wrong_input in inputs:
         accepted = True
         try:
@@ -106,7 +106,7 @@ def wrong_guesses():
             accepted = False
 
         if accepted:
-            raise check50.Failure(f"guess of {str(wrong_input)} was accepted, " \
+            raise check50.Failure(f"guess of \"{str(wrong_input)}\" was accepted, " \
                     "but any input other than a single letter should give an " \
                     "exception")
 
