@@ -5,14 +5,14 @@ import re
 
 def is_hardcoded(text):
     """check if a string is hardcoded"""
-    regex = r"(.*|\n)"
+    regex = r"(.*)"
 
     for word in text.split():
         regex += word + "(.*|\n)"
 
     with open("bleep.py") as file:
         file_content = file.read()
-        match = re.search(regex, file_content, re.IGNORECASE)
+        match = re.search(regex, file_content, re.IGNORECASE | re.DOTALL)
 
         if match:
             return True
