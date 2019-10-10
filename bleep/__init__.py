@@ -1,5 +1,23 @@
 import check50
 import check50.flask
+import re
+
+
+def is_hardcoded(text):
+    """check if a string is hardcoded"""
+    regex = r"(.*|\n)"
+
+    for word in text.split():
+        regex += word + "(.*|\n)"
+
+    with open("bleep.py") as file:
+        file_content = file.read()
+        match = re.search(regex, file_content, re.IGNORECASE)
+
+        if match:
+            return True
+        
+    return False
 
 
 @check50.check()
@@ -39,13 +57,40 @@ def handles_capitalized():
     check50.run("python3 bleep.py banned.txt").stdin("THIS DARN WORLD").stdout("THIS \*\*\*\* WORLD\s*\n", "THIS **** WORLD\n").exit(0)
 
 
+@check50.check(test_darn)
+def darn_not_hardcoded():
+    """input of 'This darn world' and 'THIS DARN WORLD' is not hardcoded"""
+    hardcoded = is_hardcoded('This darn world')
+
+    if hardcoded:
+        raise check50.Failure("Don't hardcode for check50!")
+
+
 @check50.check(exists)
 def substrings():
     """doesn't censor substrings"""
     check50.run("python3 bleep.py banned.txt").stdin("Darning my socks").stdout("Darning my socks\s*\n", "Darning my socks\n").exit(0)
 
 
+@check50.check(substrings)
+def substrings_not_hardcoded():
+    """input of 'Darning my socks' is not hardcoded"""
+    hardcoded = is_hardcoded('Darning my socks')
+
+    if hardcoded:
+        raise check50.Failure("Don't hardcode for check50!")
+
+
 @check50.check(exists)
 def handles_other_wordlists():
     """handles banned words lists with arbitrary words in them"""
     check50.run("python3 bleep.py banned2.txt").stdin("My cat and dog are great").stdout("My \*\*\* and \*\*\* are great\s*\n", "My *** and *** are great\n").exit(0)
+
+
+@check50.check(handles_other_wordlists)
+def other_wordlists_not_hardcoded():
+    """input of 'My cat and dog are great' is not hardcoded"""
+    hardcoded = is_hardcoded('My cat and dog are great')
+
+    if hardcoded:
+        raise check50.Failure("Don't hardcode for check50!")
