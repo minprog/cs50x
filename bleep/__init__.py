@@ -8,7 +8,7 @@ def is_hardcoded(text):
     regex = r"(.*)"
 
     for word in text.split():
-        regex += word + "(.*|\n)"
+        regex += word + "(.*)"
 
     with open("bleep.py") as file:
         file_content = file.read()
