@@ -59,7 +59,7 @@ def handles_capitalized():
 
 @check50.check(test_darn)
 def darn_not_hardcoded():
-    """input of 'This darn world' and 'THIS DARN WORLD' is not hardcoded"""
+    """input of 'This darn world' and 'THIS DARN WORLD' are not hardcoded"""
     hardcoded = is_hardcoded('This darn world')
 
     if hardcoded:
