@@ -4,7 +4,7 @@ import pkg_resources
 if int(pkg_resources.get_distribution("check50").version[0]) < 3:
     raise ImportError("This check requires check50 version 3.0.0 or above.")
 
-less = check50.import_checks("../small")
+less = check50.import_checks("../less")
 from less import *
 
 RUN_CROWTHER = f"{sys.executable} adventure.py Crowther"
