@@ -5,10 +5,10 @@ import re
 
 def is_hardcoded(text):
     """check if a string is hardcoded"""
-    regex = r"(.*)"
+    regex = r"(.*|\n)"
 
     for word in text.split():
-        regex += word + "(.*)"
+        regex += word + "(.*|\n)"
 
     with open("bleep.py") as file:
         file_content = file.read()
