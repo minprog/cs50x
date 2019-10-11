@@ -185,13 +185,13 @@ def play_game(win):
                    f'{game.guessed_string()}.'
             raise check50.Failure(error, help=help)
 
-        if correct != (letter in game.pattern()):
+        if correct != (letter in game.pattern().lower()):
             error = "The return value of game.guess(letter) should be True if " \
                     "the guess was correct, and False otherwise."
             help = f'Got the return value {correct}.'
             raise check50.Failure(error, help=help)
 
-        if not all(x in guesses for x in game.pattern() if x != "_"):
+        if not all(x in guesses for x in game.pattern().lower() if x != "_"):
             error = "The game pattern contains characters other than guessed " \
                     "letters and underscores."
             help = f"I found pattern {game.pattern()} with guesses " \
@@ -199,7 +199,7 @@ def play_game(win):
             raise check50.Failure(error, help=help)
         
         word = game.consistent_word()
-        if not all(a == b or b == "_" for a, b in zip(word, game.pattern())):
+        if not all(a == b or b == "_" for a, b in zip(word, game.pattern().lower())):
             error = "Consistent word is not consistent with pattern."
             help = f'Consistent word is {word} and pattern is {game.pattern()}'
             raise check50.Failure(error, help=help)
@@ -237,7 +237,7 @@ def play_game(win):
             raise check50.Failure(error, help=help)
 
         word = game.consistent_word()
-        if word != game.pattern():
+        if word != game.pattern().lower():
             error = "After victorious game, only consistent word should be pattern."
             help = f'Got consistent word {word} ' \
                    f'but pattern {game.pattern()}.'
