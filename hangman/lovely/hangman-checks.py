@@ -182,13 +182,13 @@ def play_game(win):
                    f'{game.guessed_string()}.'
             raise check50.Failure(error, help=help)
 
-        if correct != (letter in game.pattern()):
+        if correct != (letter in game.pattern().lower()):
             error = "The return value of game.guess(letter) should be True if " \
                     "the guess was correct, and False otherwise."
             help = f'Got the return value {correct}.'
             raise check50.Failure(error, help=help)
 
-        if not all(x in guesses for x in game.pattern() if x != "_"):
+        if not all(x in guesses for x in game.pattern().lower() if x != "_"):
             error = "The game pattern contains characters other than guessed " \
                     "letters and underscores."
             help = f"I found pattern {game.pattern()} with guesses " \
