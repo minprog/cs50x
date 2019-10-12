@@ -734,7 +734,6 @@ anthropology
 anti
 antiaircraft
 antiblackism
-antic
 anticatalyst
 anticipating
 anticipation
@@ -780,7 +779,6 @@ ants
 anuradhapura
 anus
 anvil
-anzac
 anzio
 anzus
 aorta
@@ -985,7 +983,6 @@ arterialized
 arterializes
 arteriograms
 arthrosporic
-artic
 articulately
 articulating
 articulation
@@ -1014,7 +1011,6 @@ ascii
 asclepiadean
 ascot
 ascus
-asdic
 ashe
 ashen
 asher
@@ -1037,7 +1033,6 @@ asoka
 aspen
 asper
 asphyxiation
-aspic
 assad
 assai
 assam
@@ -1088,7 +1083,6 @@ asymmetrical
 asymptomatic
 asymptotical
 asymptoticly
-async
 asynchronise
 asynchronism
 asynchronize
@@ -1118,7 +1112,6 @@ atopy
 atrip
 attar
 attenborough
-attic
 attis
 attitudinise
 attitudinize
@@ -1144,7 +1137,6 @@ augmentation
 augmentative
 augur
 auld
-aulic
 aulis
 aunt
 aunts
@@ -1152,7 +1144,6 @@ aura
 aural
 aurar
 auras
-auric
 aurum
 auscultating
 auscultation
@@ -1253,12 +1244,10 @@ azathioprine
 azide
 azido
 azine
-azoic
 azole
 azote
 azoth
 azov
-aztec
 azure
 azusa
 baal
@@ -1407,7 +1396,6 @@ bares
 barge
 bari
 bariatrician
-baric
 bark
 barks
 barky
@@ -1436,7 +1424,6 @@ basementless
 baser
 bases
 bash
-basic
 basidiospore
 basie
 basification
@@ -1831,7 +1818,6 @@ blain
 blair
 blake
 blame
-blanc
 bland
 blandishment
 blank
@@ -2048,7 +2034,6 @@ boree
 borer
 bores
 borg
-boric
 boris
 born
 borne
@@ -2228,7 +2213,6 @@ broil
 broke
 brome
 bromo
-bronc
 bronchoscope
 broncobuster
 brontosaurus
@@ -2753,7 +2737,6 @@ cerebrosides
 ceremonially
 ceres
 ceria
-ceric
 cern
 cero
 ceroplastics
@@ -3058,7 +3041,6 @@ cites
 citriculture
 city
 civet
-civic
 civie
 civil
 civilianised
@@ -3286,7 +3268,6 @@ coles
 colet
 coley
 coli
-colic
 coll
 collaborated
 collaborates
@@ -3350,7 +3331,6 @@ comes
 comet
 comfortingly
 comfy
-comic
 comma
 commandeered
 commandingly
@@ -3546,7 +3526,6 @@ congratulate
 congregating
 congregation
 congruential
-conic
 conidiophore
 conjecturing
 conjugations
@@ -3806,7 +3785,6 @@ corruptively
 corse
 coruscations
 cosa
-cosec
 coset
 cosh
 cosmeticians
@@ -4034,7 +4012,6 @@ cubeb
 cubed
 cuber
 cubes
-cubic
 cubit
 cubs
 cuckooflower
@@ -4043,7 +4020,6 @@ cued
 cues
 cuff
 cuffs
-cufic
 cuing
 cuke
 culch
@@ -4100,7 +4076,6 @@ curvaceously
 curve
 curvy
 cusco
-cusec
 cush
 cushy
 cusk
@@ -4144,7 +4119,6 @@ cyma
 cymar
 cyme
 cymru
-cynic
 cyril
 cyrus
 cyst
@@ -4223,7 +4197,6 @@ daredeviltry
 darer
 dares
 darg
-daric
 dario
 dark
 darks
@@ -4866,7 +4839,6 @@ dipod
 dippy
 dipropellant
 dips
-dirac
 dire
 directorship
 direr
@@ -5185,7 +5157,6 @@ doppelganger
 dopy
 dora
 doria
-doric
 doris
 dorm
 dormy
@@ -5408,7 +5379,6 @@ durabilities
 durer
 durex
 duro
-duroc
 duros
 durra
 durst
@@ -5876,7 +5846,6 @@ envoy
 envy
 enzed
 enzymologist
-eolic
 eons
 eosin
 epact
@@ -6008,7 +5977,6 @@ etherealizes
 etherealness
 etherisation
 etherization
-ethic
 ethicisation
 ethicization
 ethnobiology
@@ -6775,7 +6743,6 @@ fold
 folds
 foley
 folia
-folic
 folie
 folio
 folk
@@ -6903,7 +6870,6 @@ frags
 frail
 frame
 fran
-franc
 francescatti
 frangibility
 frank
@@ -7124,7 +7090,6 @@ games
 gamesmanship
 gamesomeness
 gamey
-gamic
 gamin
 gamma
 gamopetalous
@@ -7249,7 +7214,6 @@ generousness
 genes
 genet
 genf
-genic
 geniculately
 genie
 genii
@@ -7985,7 +7949,6 @@ havel
 haven
 haver
 haves
-havoc
 havre
 hawes
 hawk
@@ -8505,7 +8468,6 @@ humanisation
 humanitarian
 humanization
 hume
-humic
 humid
 humification
 humiliations
@@ -8742,12 +8704,10 @@ ikan
 ikeja
 ikon
 ilea
-ileac
 ileum
 ileus
 ilex
 ilia
-iliac
 iliad
 ilial
 ilion
@@ -9009,7 +8969,6 @@ independents
 index
 india
 indianapolis
-indic
 indicational
 indicatively
 indifference
@@ -9341,7 +9300,6 @@ intromittent
 introversion
 introversive
 intsv
-intuc
 intuitionism
 intuitionist
 intumescence
@@ -9375,12 +9333,10 @@ invulnerable
 invulnerably
 invultuation
 ioctl
-iodic
 iodin
 iona
 ione
 ionia
-ionic
 ionicisation
 ionicization
 ions
@@ -9454,7 +9410,6 @@ irritatingly
 irrotational
 irvin
 irwin
-isaac
 isar
 isbn
 isis
@@ -10060,7 +10015,6 @@ korea
 korma
 kota
 koto
-kovic
 kovno
 kraal
 kraft
@@ -10091,7 +10045,6 @@ kudos
 kudu
 kudzu
 kueh
-kufic
 kuhn
 kukri
 kuku
@@ -10484,7 +10437,6 @@ liken
 liker
 likes
 lila
-lilac
 liliuokalani
 lille
 lilly
@@ -10512,7 +10464,6 @@ limos
 limp
 limps
 limy
-linac
 lincolnshire
 lind
 linda
@@ -10648,7 +10599,6 @@ loganiaceous
 loge
 loggy
 logia
-logic
 login
 logistically
 lognormality
@@ -10723,7 +10673,6 @@ lossy
 lost
 lota
 loth
-lotic
 lotos
 lots
 lotte
@@ -10886,7 +10835,6 @@ lyon
 lyra
 lyre
 lyres
-lyric
 lyse
 lyses
 lysin
@@ -10895,7 +10843,6 @@ lysogenicity
 lysol
 lysolecithin
 lyssa
-lytic
 lytta
 maag
 maar
@@ -10938,7 +10885,6 @@ mafia
 mage
 magen
 magi
-magic
 magistrature
 magma
 magna
@@ -10997,7 +10943,6 @@ malevolently
 malformation
 malfunctions
 mali
-malic
 malignancies
 malimprinted
 mall
@@ -11044,7 +10989,6 @@ manhattanise
 manhattanize
 mani
 mania
-manic
 manifestness
 manifestoing
 manifoldness
@@ -11103,7 +11047,6 @@ marketplaces
 marks
 marksmanship
 marl
-maroc
 maros
 marriageable
 marry
@@ -11254,7 +11197,6 @@ mediaevalism
 mediaevalist
 mediatorship
 mediatresses
-medic
 medicamented
 medievalises
 medievalisms
@@ -11285,7 +11227,6 @@ melba
 meld
 melds
 melee
-melic
 meliorations
 mell
 melodisation
@@ -11362,7 +11303,6 @@ mesa
 mesenteritis
 mesh
 meshy
-mesic
 mesmerically
 mesmerisable
 mesmerizable
@@ -11429,7 +11369,6 @@ metho
 methodically
 methotrexate
 meths
-metic
 meticulosity
 meticulously
 metis
@@ -11560,7 +11499,6 @@ mimeographed
 mimeographes
 mimer
 mimi
-mimic
 mimir
 mina
 minas
@@ -11832,7 +11770,6 @@ mongo
 mongolianism
 mongrelising
 mongrelizing
-monic
 monitorially
 monk
 monkeyflower
@@ -12099,7 +12036,6 @@ muser
 muses
 mush
 mushy
-music
 musicianship
 musicologist
 musil
@@ -12500,7 +12436,6 @@ nomadization
 nome
 nomen
 nomenclature
-nomic
 nominalising
 nominalistic
 nominalizing
@@ -12823,7 +12758,6 @@ ogpu
 ogre
 ogun
 ohio
-ohmic
 ohms
 oiled
 oiler
@@ -12846,7 +12780,6 @@ oldie
 oldy
 oleaginously
 oleg
-oleic
 olein
 oleum
 olfactometer
@@ -12940,7 +12873,6 @@ oppositional
 oppressively
 opted
 opthalmology
-optic
 optimisation
 optimistical
 optimization
@@ -13050,9 +12982,7 @@ osha
 osier
 oslo
 osman
-osmic
 osram
-osric
 ossa
 osset
 ossie
@@ -13348,7 +13278,6 @@ pang
 panga
 pangs
 panhellenism
-panic
 panne
 pans
 pansy
@@ -14839,7 +14768,6 @@ pteridophyte
 pteridosperm
 pterodactyls
 pubes
-pubic
 pubis
 publications
 pubs
@@ -14882,7 +14810,6 @@ punch
 punctualness
 pune
 pung
-punic
 punitiveness
 punk
 punka
@@ -14945,7 +14872,6 @@ pyotr
 pyran
 pyre
 pyrex
-pyric
 pyridoxamine
 pyritisation
 pyritization
@@ -15076,7 +15002,6 @@ rabbi
 rabbinically
 rabi
 rabia
-rabic
 rabid
 rabin
 race
@@ -15093,7 +15018,6 @@ racon
 racy
 rada
 radar
-radic
 radicalising
 radicalizing
 radii
@@ -15304,7 +15228,6 @@ reast
 reauthorises
 reauthorizes
 reave
-rebec
 rebel
 rebelliously
 rebid
@@ -15554,7 +15477,6 @@ relax
 relay
 relentlessly
 reliableness
-relic
 religionises
 religionists
 religionizes
@@ -16126,7 +16048,6 @@ runes
 rung
 runge
 rungs
-runic
 runny
 runs
 runt
@@ -16230,7 +16151,6 @@ salep
 sales
 salesmanship
 salet
-salic
 salinisation
 salinization
 salinometers
@@ -16693,7 +16613,6 @@ sequaciously
 sequentially
 sequestering
 sera
-serac
 serai
 seral
 seram
@@ -16741,7 +16660,6 @@ setz
 setzb
 setzm
 sevan
-sevec
 seven
 sever
 severability
@@ -17365,7 +17283,6 @@ socks
 socle
 soda
 soddy
-sodic
 sodom
 sods
 sofa
@@ -17437,7 +17354,6 @@ sonde
 sone
 song
 songs
-sonic
 sonly
 sonny
 sonorousness
@@ -17879,7 +17795,6 @@ stockbreeder
 stockbroking
 stockholders
 stogy
-stoic
 stoke
 stol
 stole
@@ -18039,7 +17954,6 @@ suberisation
 suberization
 subglacially
 subi
-subic
 subinfeudate
 subinstances
 subintervals
@@ -18158,7 +18072,6 @@ sully
 sulphonamide
 sulphuretted
 sulu
-sumac
 sumba
 sumer
 summa
@@ -18423,7 +18336,6 @@ systemisable
 systemizable
 szell
 taata
-tabac
 tabby
 tabernacling
 tabernacular
@@ -18653,7 +18565,6 @@ teleprompter
 teleutospore
 telex
 telia
-telic
 tell
 telli
 tells
@@ -18701,7 +18612,6 @@ tenzi
 tepa
 tepal
 tepee
-tepic
 tepid
 terai
 teratologies
@@ -19094,7 +19004,6 @@ tong
 tonga
 tongs
 toni
-tonic
 tonio
 tonk
 tonka
@@ -19123,7 +19032,6 @@ toper
 topes
 tophi
 topi
-topic
 toploftiness
 topographies
 topoi
@@ -19136,7 +19044,6 @@ torc
 torch
 tore
 tori
-toric
 torii
 torn
 torr
@@ -19183,7 +19090,6 @@ town
 towns
 towny
 tows
-toxic
 toxicologist
 toxigenicity
 toxin
@@ -19336,7 +19242,6 @@ tret
 trews
 trey
 treys
-triac
 triad
 trial
 trialisation
@@ -19511,7 +19416,6 @@ tuned
 tuner
 tunes
 tung
-tunic
 tunis
 tunny
 tupi
@@ -19593,7 +19497,6 @@ typefounding
 typer
 types
 typey
-typic
 typification
 typo
 typos
@@ -19623,7 +19526,6 @@ ugali
 ugli
 uglification
 ugly
-ugric
 uhlan
 uhuru
 uigur
@@ -19651,7 +19553,6 @@ umbra
 umbrageously
 umiak
 umpy
-umrcc
 unacceptable
 unacceptably
 unaccessible
@@ -20327,7 +20228,6 @@ vaporization
 vaporousness
 vapourisable
 vara
-varec
 varga
 varia
 variableness
@@ -20352,7 +20252,6 @@ vasoactivity
 vasodilation
 vast
 vasty
-vatic
 vaticination
 vats
 vaud
@@ -20368,7 +20267,6 @@ vectorisered
 vectorizable
 veda
 vedda
-vedic
 veep
 veer
 veers
@@ -20518,7 +20416,6 @@ vindictively
 vine
 vinedressers
 vines
-vinic
 vinification
 vino
 viny
@@ -21102,7 +20999,6 @@ would
 wound
 wove
 woven
-wraac
 wrack
 wran
 wrap
@@ -21148,7 +21044,6 @@ xenia
 xenix
 xenon
 xeres
-xeric
 xerox
 xhosa
 xiii
@@ -21246,7 +21141,6 @@ yodle
 yoga
 yogh
 yogi
-yogic
 yogin
 yoke
 yokel
@@ -21307,7 +21201,6 @@ zayin
 zazen
 zeal
 zeami
-zebec
 zebra
 zebu
 zein
