@@ -47,12 +47,12 @@ You are in a 25-foot depression floored with bare dirt. Set into the dirt is a s
 -----
 NORTH      5
 UP         5
-DOWN       8/KEYS
-DOWN       7
+DOWN       8
+WEST       7
 
 7
-Above locked grate
-The grate is locked and you don't have any keys.
+Edge of the stream
+You find yourself at the edge of a impassible stream. You are forced to return where you came from.
 -----
 FORCED     6
 
@@ -70,7 +70,6 @@ Cobble crawl
 You are crawling over cobbles in a low east/west passage. There is a dim light to the east.
 -----
 EAST       8
-WEST      12/LAMP
 WEST      10
 
 10
@@ -81,7 +80,7 @@ EAST       9
 OUT       11
 NORTH     11
 SOUTH     11
-WEST      11
+WEST      12
 UP        11
 DOWN      11
 
