@@ -109,11 +109,18 @@ def helper_commands():
     try:
         check50.run(RUN_TINY).stdin("LOOK").stdout(room_1_description,
                                                       regex=False)
-        check50.run(RUN_TINY).stdin("look").stdout(room_1_description,
-                                                      regex=False)
     except check50.Failure as error:
-        raise check50.Failure(f"LOOK/look did not print the expected room"
+        raise check50.Failure(f"LOOK did not print the expected room"
                               f"description.\n    {error}")
+
+    try:
+        check50.run(RUN_TINY).stdin("look").stdout(room_1_description,
+                                                   regex=False)
+    except check50.Failure as error:
+        raise check50.Failure(f"look (lowercase) did not print the expected room"
+                              f"description.\n    {error}")
+
+
 
     # Test QUIT
     try:
@@ -126,10 +133,14 @@ def helper_commands():
 
 @check50.check(helper_commands)
 def commands():
-    """Test if program handles invalid commands."""
+    """Test if program handles nonexistent commands."""
     # Check invalid command
-    check = check50.run(RUN_TINY).stdin("cs50")
-    check.stdout("Invalid command", regex=False)
+    try:
+        check = check50.run(RUN_TINY).stdin("cs50")
+        check.stdout("Invalid command", regex=False)
+    except check50.Failure as error:
+        raise check50.Failure(f"did not print 'Invalid command' when using 'cs50' as command.\n"
+                              f"    {error}")
 
 
 @check50.check(commands)
