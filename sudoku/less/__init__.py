@@ -13,7 +13,7 @@ check50.internal.register.after_every(lambda : sys.path.pop())
 @check50.check()
 def exists():
     """sudoku.ipynb exists."""
-    check50.include("easy", "hard", *[f"puzzle{i}.sudoku" for i in range(1, 7)])
+    check50.include("../data/easy", "../data/hard", *[f"../data/puzzle{i}.sudoku" for i in range(1, 7)])
     check50.exists("sudoku.ipynb")
 
 
@@ -40,7 +40,7 @@ def correct_show():
 
     with uva.check50.py.capture_stdout() as out:
         module.show(sudoku)
-        actual = [line.strip() for line in output.split("\n")]
+        actual = [line.strip() for line in out.getvalue().split("\n")]
 
     expected = ["7 9 _  [ ]*_ _ _  [ ]*3 _ 1",
                 "_ _ _  [ ]*_ _ 6  [ ]*9 _ _",
