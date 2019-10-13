@@ -40,6 +40,7 @@ def correct_show():
 
     with uva.check50.py.capture_stdout() as out:
         module.show(sudoku)
+        actual = [line.strip() for line in output.split("\n")]
 
     expected = ["7 9 _  [ ]*_ _ _  [ ]*3 _ 1",
                 "_ _ _  [ ]*_ _ 6  [ ]*9 _ _",
@@ -52,8 +53,6 @@ def correct_show():
                 "6 1 _  [ ]*_ 9 _  [ ]*_ _ 8",
                 "_ _ 2  [ ]*3 _ _  [ ]*_ _ _",
                 "_ _ 9  [ ]*_ _ _  [ ]*_ 5 4"]
-
-    actual = [line.strip() for line in out.getvalue().split("\n")]
 
     for actual_line, expected_line in zip(actual, expected):
         if not re.match(expected_line, actual_line):
