@@ -6,6 +6,7 @@ import sys
 import re
 import itertools
 import copy
+import shutil
 
 check50.internal.register.before_every(lambda : sys.path.append(os.getcwd()))
 check50.internal.register.after_every(lambda : sys.path.pop())
@@ -13,7 +14,15 @@ check50.internal.register.after_every(lambda : sys.path.pop())
 @check50.check()
 def exists():
     """sudoku.ipynb exists."""
-    check50.include("../data/easy", "../data/hard", *[f"../data/puzzle{i}.sudoku" for i in range(1, 7)])
+    for dir in ("../data/easy", "../data/hard"):
+        check50.include(dir)
+
+        # Also copy all data files to check dir
+        # Just in case the student's solution happens to rely on this
+        local_dir = os.path.basename(dir)
+        for local_file in os.listdir(local_dir):
+            shutil.copyfile(os.path.join(local_dir, local_file), os.path.basename(local_file))
+
     check50.exists("sudoku.ipynb")
 
 
