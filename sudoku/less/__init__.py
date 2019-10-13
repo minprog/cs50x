@@ -14,12 +14,12 @@ check50.internal.register.after_every(lambda : sys.path.pop())
 @check50.check()
 def exists():
     """sudoku.ipynb exists."""
-    for dir in ("../data/easy", "../data/hard"):
-        check50.include(dir)
+    for directory in ("../data/easy", "../data/hard"):
+        check50.include(directory)
 
         # Also copy all data files to check dir
         # Just in case the student's solution happens to rely on this
-        local_dir = os.path.basename(dir)
+        local_dir = os.path.basename(directory)
         for local_file in os.listdir(local_dir):
             shutil.copyfile(os.path.join(local_dir, local_file), os.path.basename(local_file))
 
