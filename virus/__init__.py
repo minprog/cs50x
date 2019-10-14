@@ -194,7 +194,7 @@ def simulate_fluctuations():
             raise check50.Failure(f"expected 100 viruses, but found {pop_size}")
 
 
-@check50.check(simulate_fluctuations, timeout=40)
+@check50.check(simulate_fluctuations, timeout=50)
 def simulate_avg():
     """simulate(viruses, 0.25, 0.1, 0.5, 100) is correct"""
     virus = uva.check50.py.run("virus.py").module
@@ -268,7 +268,7 @@ def simulate_medicine_fluctuations():
             raise check50.Failure(f"expected 100 viruses, but found {pop_size}")
 
 
-@check50.check(simulate_medicine_fluctuations, timeout=40)
+@check50.check(simulate_medicine_fluctuations, timeout=50)
 def simulate_medicine_avg():
     """simulateMedicine(viruses, 0.1, 0.1, 0.5, 100) is correct"""
     virus = uva.check50.py.run("virus.py").module
