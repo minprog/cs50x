@@ -43,7 +43,7 @@ room_15_description = ("You are in a splendid chamber thirty feet high.  "
                        "look at the black rod and quickly flies out of sight.")
 
 help_statement = ["EAST/WEST/IN/OUT", "QUIT quits", "HELP prints",
-                  "INVENTORY lists", "LOOK lists", "TAKE <item>", "DROP <item>"]
+                  "LOOK lists"]
 no_item = "No such item"
 
 
