@@ -9,13 +9,13 @@ check50.internal.register.after_every(lambda : sys.path.pop())
 
 def class_exists(module, cls):
     if not hasattr(module, cls):
-        raise check50.Failure(f"expected class {{cls}} to exist")
+        raise check50.Failure(f"expected class {cls} to exist")
 
 
 def properties_present(cls, attributes):
     for attribute in attributes:
         if not hasattr(cls, attribute):
-            raise check50.Failure(f"expected class {{cls.__name__}} to have property {{attribute}}")
+            raise check50.Failure(f"expected class {cls.__name__} to have property {attribute}")
 
 
 @check50.check()
