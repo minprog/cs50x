@@ -29,6 +29,10 @@ def initializer_arguments(cls, required_args):
     # get arguments for __init__
     args = inspect.getfullargspec(cls).args
 
+    # check if the correct amount of arguments are present
+    if len(required_args) != len(args):
+        raise check50.Failure(f"initializer for class '{cls.__name__}' accepts {len(args)} arguments. expected {len(required_args)}")
+
     # check if every required argument is present
     for arg in required_args:
         if not arg in args:
@@ -82,7 +86,7 @@ def card_initializer():
 
 @check50.check(card_initializer)
 def card_stringify():
-    """class 'Card' can be properly stringified"""
+    """class 'Card' can be stringified correctly."""
     module = uva.check50.py.run("cardgame.py").module
 
     # initialize a random card
@@ -93,4 +97,4 @@ def card_stringify():
     # stringify the card and check if the value is correct
     stringified = str(card).strip()
     if stringified != f"{random_value} of {random_suit}":
-        raise check50.Failure(f"unexpected message '{stringified}' with suit '{random_suit}' and value {random_value}. expected '{random_value} of {random_suit}'")
+        raise check50.Failure(f"unexpected message '{stringified}' with suit '{random_suit}' and value '{random_value}'. expected '{random_value} of {random_suit}'")
