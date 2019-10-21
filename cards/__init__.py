@@ -13,19 +13,23 @@ suits = ['Hearts','Diamonds','Clubs','Spades']
 values = ['A','2','3','4','5','6','7','8','9','10','J','Q','K']
 
 def class_exists(module, cls):
+    # check if the specified class exists
     if not hasattr(module, cls):
         raise check50.Failure(f"expected class '{cls}' to exist")
 
 
 def properties_present(cls, attributes):
+    # check if each required attribute is present within the class
     for attribute in attributes:
         if not hasattr(cls, attribute):
             raise check50.Failure(f"expected class '{cls.__name__}' to have property '{attribute}'")
 
 
 def initializer_arguments(cls, required_args):
+    # get arguments for __init__
     args = inspect.getfullargspec(cls).args
 
+    # check if every required argument is present
     for arg in required_args:
         if not arg in args:
             raise check50.Failure(f"expected initializer for class '{cls.__name__}' to accept argument '{arg}'")
@@ -74,3 +78,17 @@ def card_initializer():
         raise check50.Failure(f"class 'Card' was initialized with unexpected suit '{card.suit}'. expected '{random_suit}'")
     elif card.value != random_value:
         raise check50.Failure(f"class 'Card' was initialized with unexpected value '{card.value}'. expected '{random_value}'")
+
+
+@check50.check(card_initializer)
+def card_stringify():
+    """class 'Card' can be properly stringified"""
+    # initialize a random card
+    random_suit = random.choice(suits)
+    random_value = random.choice(values)
+    card = module.Card(suit=random_suit, value=random_value)
+
+    # stringify the card and check if the value is correct
+    stringified = str(card).strip()
+    if stringified != f"{random_value} of {random_suit}":
+        raise check50.Failure(f"unexpected message '{stringified}' with suit '{random_suit}' and value {random_value}. expected '{random_value} of {random_suit}'")
