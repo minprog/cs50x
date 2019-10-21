@@ -83,6 +83,8 @@ def card_initializer():
 @check50.check(card_initializer)
 def card_stringify():
     """class 'Card' can be properly stringified"""
+    module = uva.check50.py.run("cardgame.py").module
+
     # initialize a random card
     random_suit = random.choice(suits)
     random_value = random.choice(values)
