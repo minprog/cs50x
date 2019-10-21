@@ -1,6 +1,8 @@
 import check50
 import uva.check50.py
 import check50.internal
+import sys
+import os
 
 check50.internal.register.before_every(lambda : sys.path.append(os.getcwd()))
 check50.internal.register.after_every(lambda : sys.path.pop())
