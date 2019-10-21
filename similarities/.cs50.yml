@@ -1,0 +1,8 @@
+check50: 
+  files: &check50_files
+    - !exclude "*"
+    - !require helpers.py
+    - !require templates/index.html
+
+submit50:
+  files: *check50_files
