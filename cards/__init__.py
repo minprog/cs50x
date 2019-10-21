@@ -72,3 +72,5 @@ def card_initializer():
     # check if the initializer worked
     if card.suit != random_suit:
         raise check50.Failure(f"class 'Card' was initialized with unexpected suit '{card.suit}'. expected '{random_suit}'")
+    elif card.value != random_value:
+        raise check50.Failure(f"class 'Card' was initialized with unexpected value '{card.value}'. expected '{random_value}'")
