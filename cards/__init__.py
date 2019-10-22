@@ -218,5 +218,5 @@ def deal():
             raise check50.Failure(f"got unexpected card {card.value} of {card.suit} on deal() when top card was {last_card.value} of {last_card.suit}.")
 
         # check if the top card was removed
-        if deck.cards[-1] != last_card:
+        if deck.cards[-1] == last_card:
             raise check50.Failure(f"deal() removed a card other than the top card from the deck.")
