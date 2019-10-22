@@ -146,9 +146,9 @@ def instantiate_cards():
     # check each card in the deck
     for card in deck.cards:
         # check for duplicate cards
-        if card in cards:
+        if card.suit + card.value in cards:
             raise check50.Failure(f"found the {card.value} of {card.suit} in deck at least twice.")
-        cards.add(card)
+        cards.add(card.suit + card.value)
 
         # check if the card is valid
         if not card.value in values_set or not card.suit in suits_set:
