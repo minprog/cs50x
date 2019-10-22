@@ -181,3 +181,37 @@ def shuffle():
     if deck.cards == original_cards:
         raise check50.Failure("deck didn't change when shuffled.")
     deck_valid(deck)
+
+
+@check50.check(shuffle)
+def deal():
+    """deal() removes card and returns top card."""
+    module = uva.check50.py.run("cardgame.py").module
+    deck = module.Deck()
+    deck.shuffle()
+
+    # vars to check against
+    start_len = len(deck.cards)
+    last_card = deck.cards[-1]
+
+    # deal 52 cards
+    for i in range(52):
+        # update vars
+        start_len = len(deck.cards)
+        last_card = deck.cards[-1]
+
+        # also check existance and args
+        try:
+            card = deck.deal()
+        except NameError:
+            raise check50.Failure("function 'deal()' does not exist within class 'Deck'.")
+        except TypeError:
+            raise check50.Failure("function 'deal()' within class 'Deck' requires arguments. expected no arguments.")
+
+        # check if deal decrements deck size by 1
+        if len(deck.cards) != start_len - 1:
+            raise check50.Failure(f"deck() changed amount of cards from {start_len} to {len(deck.cards)}. expected {start_len - 1}.")
+
+        # check if we got the top card
+        if card != last_card:
+            raise check50.Failure(f"got unexpected card {card.value} of {card.suit} on deal() when top card was {last_card.value} of {last_card.suit}.")
