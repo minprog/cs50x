@@ -41,6 +41,26 @@ def initializer_arguments(cls, required_args):
             raise check50.Failure(f"expected initializer for class '{cls.__name__}' to accept argument '{arg}'")
 
 
+def deck_valid(deck):
+     # check if 52 different and valid cards are present
+    cards = set()
+
+    # check amount of cards
+    if len(deck.cards) != 52:
+        raise check50.Failure(f"found invalid amount of cards {len(deck.cards)} in deck.")
+
+    # check each card in the deck
+    for card in deck.cards:
+        # check for duplicate cards
+        if card.suit + card.value in cards:
+            raise check50.Failure(f"found the {card.value} of {card.suit} in deck at least twice.")
+        cards.add(card.suit + card.value)
+
+        # check if the card is valid
+        if not card.value in values_set or not card.suit in suits_set:
+            raise check50.Failure(f"found invalid card {card.value} of {card.suit} in deck.")
+
+
 @check50.check()
 def exists():
     """cardgame.py exists."""
@@ -136,20 +156,4 @@ def instantiate_cards():
     attributes_present(module.Deck, attributes)
 
     # check if 52 different and valid cards are present
-    cards = set()
-    deck = module.Deck()
-
-    # check amount of cards
-    if len(deck.cards) != 52:
-        raise check50.Failure(f"found invalid amount of cards {len(deck.cards)} in deck.")
-
-    # check each card in the deck
-    for card in deck.cards:
-        # check for duplicate cards
-        if card.suit + card.value in cards:
-            raise check50.Failure(f"found the {card.value} of {card.suit} in deck at least twice.")
-        cards.add(card.suit + card.value)
-
-        # check if the card is valid
-        if not card.value in values_set or not card.suit in suits_set:
-            raise check50.Failure(f"found invalid card {card.value} of {card.suit} in deck.")
+    deck_valid(module.Deck())
