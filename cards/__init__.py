@@ -179,7 +179,7 @@ def shuffle():
 
     # test if deck changed and is still valid
     new_cards = [card.value + card.suit for card in deck.cards]
-    if any([original_cards[i] == new_cards[i] for i in range(len(new_cards))]):
+    if not any([original_cards[i] != new_cards[i] for i in range(len(new_cards))]):
         raise check50.Failure("deck didn't change when shuffled.")
     deck_valid(deck)
 
