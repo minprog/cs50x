@@ -138,6 +138,11 @@ def instantiate_cards():
     # check if 52 different and valid cards are present
     cards = set()
     deck = module.Deck()
+
+    # check amount of cards
+    if len(deck.cards) != 52:
+        raise check50.Failure(f"found invalid amount of cards {len(deck.cards)} in deck.")
+
     # check each card in the deck
     for card in deck.cards:
         # check for duplicate cards
