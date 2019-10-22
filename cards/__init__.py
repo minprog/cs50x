@@ -128,7 +128,7 @@ def deck_initializer():
 
 @check50.check(deck_initializer)
 def instantiate_cards():
-    """cards are instantiated in deck"""
+    """cards are instantiated in deck."""
     module = uva.check50.py.run("cardgame.py").module
 
     # check if the class now has an attribute for storing cards
@@ -147,4 +147,4 @@ def instantiate_cards():
 
         # check if the card is valid
         if not card.value in values_set or not card.suit in suits_set:
-            raise check50.Failute(f"found invalid card {card.value} of {card.suit} in deck.")
+            raise check50.Failure(f"found invalid card {card.value} of {card.suit} in deck.")
