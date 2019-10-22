@@ -5,6 +5,7 @@ import sys
 import os
 import inspect
 import random
+from copy import deepcopy
 
 check50.internal.register.before_every(lambda : sys.path.append(os.getcwd()))
 check50.internal.register.after_every(lambda : sys.path.pop())
@@ -157,3 +158,26 @@ def instantiate_cards():
 
     # check if 52 different and valid cards are present
     deck_valid(module.Deck())
+
+
+@check50.check(deck_initializer)
+def shuffle():
+    """deck changes and remains valid on shuffle."""
+    module = uva.check50.py.run("cardgame.py").module
+    deck = module.Deck()
+
+    # store original list of cards
+    original_cards = deepcopy(deck.cards)
+
+    # shuffle deck once, test for existance and arguments of function
+    try:
+        deck.shuffle()
+    except NameError:
+        raise check50.Failure("function 'shuffle()' does not exist within class 'Deck'.")
+    except TypeError:
+        raise check50.Failure("function 'shuffle()' within class 'Deck' requires arguments. expected no arguments.")
+
+    # test if deck changed and is still valid
+    if deck.cards == original_cards:
+        raise check50.Failure("deck didn't change when shuffled.")
+    deck_valid(deck)
