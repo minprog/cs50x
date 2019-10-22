@@ -178,7 +178,7 @@ def shuffle():
         raise check50.Failure("function 'shuffle()' within class 'Deck' requires arguments. expected no arguments.")
 
     # test if deck changed and is still valid
-    if deck.cards == original_cards:
+    if set(deck.cards) == set(original_cards):
         raise check50.Failure("deck didn't change when shuffled.")
     deck_valid(deck)
 
