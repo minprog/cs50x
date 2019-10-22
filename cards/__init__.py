@@ -55,6 +55,7 @@ def compiles():
 @check50.check(compiles)
 def card_class_basic():
     """class 'Card' exists and has basic attributes."""
+    # check if the class exists
     module = uva.check50.py.run("cardgame.py").module
     class_exists(module, "Card")
 
@@ -98,3 +99,26 @@ def card_stringify():
     stringified = str(card).strip()
     if stringified != f"{random_value} of {random_suit}":
         raise check50.Failure(f"unexpected message '{stringified}' with suit '{random_suit}' and value '{random_value}'. expected '{random_value} of {random_suit}'")
+
+
+@check50.check(card_stringify)
+def deck_initializer():
+    """class 'Deck' exists, has basic properties and can be initialized correctly."""
+    # check if the class exists
+    module = uva.check50.py.run("cardgame.py").module
+    class_exists(module, "Deck")
+
+    # check if the class has the required properties
+    properties = ["suits", "values"]
+    properties_present(module.Deck, properties)
+
+    # check if __init__ accepts the correct args
+    required_args = ["self"]
+    initializer_arguments(module.Deck, required_args)
+
+    # initialize a deck and check if it worked
+    deck = module.Deck()
+    if deck.suits != suits:
+        raise check50.Failure("expected 'deck.suits' to contain the all possible suits after initialization.")
+    elif deck.values != values:
+        raise check50.Failure("expected 'deck.values' to contain the all possible values after initialization.")
