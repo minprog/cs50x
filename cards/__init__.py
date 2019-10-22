@@ -167,7 +167,7 @@ def shuffle():
     deck = module.Deck()
 
     # store original list of cards
-    original_cards = deepcopy(deck.cards)
+    original_cards = [card.value + card.suit for card in deck.cards]
 
     # shuffle deck once, test for existance and arguments of function
     try:
@@ -178,7 +178,8 @@ def shuffle():
         raise check50.Failure("function 'shuffle()' within class 'Deck' requires arguments. expected no arguments.")
 
     # test if deck changed and is still valid
-    if set(deck.cards) == set(original_cards):
+    new_cards = [card.value + card.suit for card in deck.cards]
+    if any([original_cards[i] == new_cards[i] for i in range(len(new_cards))]):
         raise check50.Failure("deck didn't change when shuffled.")
     deck_valid(deck)
 
