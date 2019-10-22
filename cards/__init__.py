@@ -5,7 +5,6 @@ import sys
 import os
 import inspect
 import random
-from copy import deepcopy
 
 check50.internal.register.before_every(lambda : sys.path.append(os.getcwd()))
 check50.internal.register.after_every(lambda : sys.path.pop())
