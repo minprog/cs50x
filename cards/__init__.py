@@ -11,6 +11,8 @@ check50.internal.register.after_every(lambda : sys.path.pop())
 
 suits = ['Hearts','Diamonds','Clubs','Spades']
 values = ['A','2','3','4','5','6','7','8','9','10','J','Q','K']
+suits_set = set(suits)
+values_set = set(values)
 
 def class_exists(module, cls):
     # check if the specified class exists
@@ -18,11 +20,11 @@ def class_exists(module, cls):
         raise check50.Failure(f"expected class '{cls}' to exist")
 
 
-def properties_present(cls, attributes):
+def attributes_present(cls, attributes):
     # check if each required attribute is present within the class
     for attribute in attributes:
         if not hasattr(cls, attribute):
-            raise check50.Failure(f"expected class '{cls.__name__}' to have property '{attribute}'")
+            raise check50.Failure(f"expected class '{cls.__name__}' to have attribute '{attribute}'")
 
 
 def initializer_arguments(cls, required_args):
@@ -59,9 +61,9 @@ def card_class_basic():
     module = uva.check50.py.run("cardgame.py").module
     class_exists(module, "Card")
 
-    # check if the class has the required properties
-    properties = ["suit", "value"]
-    properties_present(module.Card, properties)
+    # check if the class has the required attributes
+    attributes = ["suit", "value"]
+    attributes_present(module.Card, attributes)
 
 
 @check50.check(card_class_basic)
@@ -103,14 +105,14 @@ def card_stringify():
 
 @check50.check(card_stringify)
 def deck_initializer():
-    """class 'Deck' exists, has basic properties and can be initialized correctly."""
+    """class 'Deck' exists, has basic attributes and can be initialized correctly."""
     # check if the class exists
     module = uva.check50.py.run("cardgame.py").module
     class_exists(module, "Deck")
 
-    # check if the class has the required properties
-    properties = ["suits", "values"]
-    properties_present(module.Deck, properties)
+    # check if the class has the required attributes
+    attributes = ["suits", "values"]
+    attributes_present(module.Deck, attributes)
 
     # check if __init__ accepts the correct args
     required_args = ["self"]
@@ -119,6 +121,30 @@ def deck_initializer():
     # initialize a deck and check if it worked
     deck = module.Deck()
     if deck.suits != suits:
-        raise check50.Failure("expected 'deck.suits' to contain the all possible suits after initialization.")
+        raise check50.Failure("expected 'deck.suits' to contain all possible suits after initialization.")
     elif deck.values != values:
-        raise check50.Failure("expected 'deck.values' to contain the all possible values after initialization.")
+        raise check50.Failure("expected 'deck.values' to contain all possible values after initialization.")
+
+
+@check50.check(deck_initializer)
+def instantiate_cards():
+    """cards are instantiated in deck"""
+    module = uva.check50.py.run("cardgame.py").module
+
+    # check if the class now has an attribute for storing cards
+    attributes = ["cards"]
+    attributes_present(module.Deck, attributes)
+
+    # check if 52 different and valid cards are present
+    cards = set()
+    deck = module.Deck()
+    # check each card in the deck
+    for card in deck.cards:
+        # check for duplicate cards
+        if card in cards:
+            raise check50.Failure(f"found the {card.value} of {card.suit} in deck at least twice.")
+        cards.add(card)
+
+        # check if the card is valid
+        if not card.value in values_set or not card.suit in suits_set:
+            raise check50.Failute(f"found invalid card {card.value} of {card.suit} in deck.")
