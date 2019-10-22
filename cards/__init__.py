@@ -162,7 +162,7 @@ def instantiate_cards():
 
 @check50.check(deck_initializer)
 def shuffle():
-    """deck changes and remains valid on shuffle."""
+    """deck changes and remains valid on shuffle()."""
     module = uva.check50.py.run("cardgame.py").module
     deck = module.Deck()
 
@@ -211,8 +211,12 @@ def deal():
 
         # check if deal decrements deck size by 1
         if len(deck.cards) != start_len - 1:
-            raise check50.Failure(f"deck() changed amount of cards from {start_len} to {len(deck.cards)}. expected {start_len - 1}.")
+            raise check50.Failure(f"deal() changed amount of cards from {start_len} to {len(deck.cards)}. expected {start_len - 1}.")
 
         # check if we got the top card
         if card != last_card:
             raise check50.Failure(f"got unexpected card {card.value} of {card.suit} on deal() when top card was {last_card.value} of {last_card.suit}.")
+
+        # check if the top card was removed
+        if deck.cards[-1] != last_card:
+            raise check50.Failure(f"deal() removed a card other than the top card from the deck.")
