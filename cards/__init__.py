@@ -47,9 +47,6 @@ def method_arguments(cls, method, required_args):
             raise check50.Failure(f"expected method '{method}()' in class '{cls.__name__}' to accept argument '{arg}'")
 
 
-def initializer_arguments(cls, required_args):
-
-
 def deck_valid(deck):
      # check if 52 different and valid cards are present
     cards = set()
@@ -101,9 +98,9 @@ def card_initializer():
     module = uva.check50.py.run("cardgame.py").module
 
     # check if __init__ exists and accepts the correct args
-    class_method(module.Card, '__init__')
+    class_method(module.Card, "__init__")
     required_args = ["self", "suit", "value"]
-    method_arguments(module.Card, '__init__', required_args)
+    method_arguments(module.Card, "__init__", required_args)
 
     # initialize a random card
     random_suit = random.choice(suits)
@@ -145,9 +142,9 @@ def deck_initializer():
     attributes_present(module.Deck, attributes)
 
     # check if __init__ exists and accepts the correct args
-    class_method(module.Deck, '__init__')
+    class_method(module.Deck, "__init__")
     required_args = ["self"]
-    initializer_arguments(module.Deck, '__init__' required_args)
+    initializer_arguments(module.Deck, "__init__", required_args)
 
     # initialize a deck and check if it worked
     deck = module.Deck()
