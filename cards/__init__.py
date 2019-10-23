@@ -39,7 +39,7 @@ def method_arguments(cls, method, required_args):
 
     # check if the correct amount of arguments are present
     if len(required_args) != len(args):
-        raise check50.Failure(f"method '{method}()' in class '{cls.__name__}' accepts {len(args)} arguments. expected {len(required_args)}")
+        raise check50.Failure(f"method '{method}()' in class '{cls.__name__}' accepts {len(args)} argument(s). expected {len(required_args)}")
 
     # check if every required argument is present
     for arg in required_args:
