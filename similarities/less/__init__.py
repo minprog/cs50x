@@ -13,7 +13,6 @@ def imports():
     """can import helpers.py """
     check50.py.import_("helpers.py")
 
-
 @check50.check(imports)
 def lines_none():
     """detects no lines in common"""
