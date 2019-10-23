@@ -14,6 +14,7 @@ values = ['A','2','3','4','5','6','7','8','9','10','J','Q','K']
 suits_set = set(suits)
 values_set = set(values)
 
+
 def class_exists(module, cls):
     # check if the specified class exists
     if not hasattr(module, cls):
@@ -27,18 +28,26 @@ def attributes_present(cls, attributes):
             raise check50.Failure(f"expected class '{cls.__name__}' to have attribute '{attribute}'")
 
 
-def initializer_arguments(cls, required_args):
-    # get arguments for __init__
-    args = inspect.getfullargspec(cls).args
+def class_method(cls, method):
+    # check if method exists within class
+    if not hasattr(cls, method) or not callable(getattr(cls, method)):
+        raise check50.Failure(f"method '{method}()' does not exist within class '{cls.__name__}.")
+
+def method_arguments(cls, method, required_args):
+    # get args
+    args = inspect.getfullargspec(getattr(cls, method)).args
 
     # check if the correct amount of arguments are present
     if len(required_args) != len(args):
-        raise check50.Failure(f"initializer for class '{cls.__name__}' accepts {len(args)} arguments. expected {len(required_args)}")
+        raise check50.Failure(f"method '{method}()' in class '{cls.__name__}' accepts {len(args)} arguments. expected {len(required_args)}")
 
     # check if every required argument is present
     for arg in required_args:
         if not arg in args:
-            raise check50.Failure(f"expected initializer for class '{cls.__name__}' to accept argument '{arg}'")
+            raise check50.Failure(f"expected method '{method}()' in class '{cls.__name__}' to accept argument '{arg}'")
+
+
+def initializer_arguments(cls, required_args):
 
 
 def deck_valid(deck):
@@ -91,9 +100,10 @@ def card_initializer():
     """class 'Card' can be initialized correctly."""
     module = uva.check50.py.run("cardgame.py").module
 
-    # check if __init__ accepts the correct args
+    # check if __init__ exists and accepts the correct args
+    class_method(module.Card, '__init__')
     required_args = ["self", "suit", "value"]
-    initializer_arguments(module.Card, required_args)
+    method_arguments(module.Card, '__init__', required_args)
 
     # initialize a random card
     random_suit = random.choice(suits)
@@ -134,9 +144,10 @@ def deck_initializer():
     attributes = ["suits", "values"]
     attributes_present(module.Deck, attributes)
 
-    # check if __init__ accepts the correct args
+    # check if __init__ exists and accepts the correct args
+    class_method(module.Deck, '__init__')
     required_args = ["self"]
-    initializer_arguments(module.Deck, required_args)
+    initializer_arguments(module.Deck, '__init__' required_args)
 
     # initialize a deck and check if it worked
     deck = module.Deck()
@@ -168,13 +179,12 @@ def shuffle():
     # store original list of cards
     original_cards = [card.value + card.suit for card in deck.cards]
 
-    # shuffle deck once, test for existance and arguments of function
-    try:
-        deck.shuffle()
-    except NameError:
-        raise check50.Failure("function 'shuffle()' does not exist within class 'Deck'.")
-    except TypeError:
-        raise check50.Failure("function 'shuffle()' within class 'Deck' requires arguments. expected no arguments.")
+    # test if shuffle() exists and accept the correct arguments
+    class_method(module.Deck, "shuffle")
+    method_arguments(module.Deck, "shuffle", ["self"])
+
+    # shuffle once
+    deck.shuffle()
 
     # test if deck changed and is still valid
     new_cards = [card.value + card.suit for card in deck.cards]
@@ -190,6 +200,10 @@ def deal():
     deck = module.Deck()
     deck.shuffle()
 
+    # check if deal() exists and accepts the correct args
+    class_method(module.Deck, "deal")
+    method_arguments(module.Deck, "deal", ["self"])
+
     # vars to check against
     start_len = len(deck.cards)
     last_card = deck.cards[-1]
@@ -200,13 +214,8 @@ def deal():
         start_len = len(deck.cards)
         last_card = deck.cards[-1]
 
-        # also check existance and args
-        try:
-            card = deck.deal()
-        except NameError:
-            raise check50.Failure("function 'deal()' does not exist within class 'Deck'.")
-        except TypeError:
-            raise check50.Failure("function 'deal()' within class 'Deck' requires arguments. expected no arguments.")
+        # deal one card
+        card = deck.deal()
 
         # check if deal decrements deck size by 1
         if len(deck.cards) != start_len - 1:
