@@ -144,7 +144,7 @@ def deck_initializer():
     # check if __init__ exists and accepts the correct args
     class_method(module.Deck, "__init__")
     required_args = ["self"]
-    initializer_arguments(module.Deck, "__init__", required_args)
+    method_arguments(module.Deck, "__init__", required_args)
 
     # initialize a deck and check if it worked
     deck = module.Deck()
