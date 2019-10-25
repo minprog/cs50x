@@ -42,8 +42,9 @@ def test23():
 
 @check50.check(compiles)
 def test24():
-    """rejects a height of 24, and then accepts a height of 2"""
+    """rejects a height of 24 or -1 twice, and then accepts a height of 2"""
     (check50.run("./mario").stdin("24").reject()
+            .stdin("-1").reject()
             .stdin("2").stdout(open("2.txt")).exit(0))
 
 @check50.check(compiles)
