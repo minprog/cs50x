@@ -74,15 +74,15 @@ def test_rounding():
 @check50.check(compiles)
 def test_reject_negative():
     """rejects a negative input like -1 or -3 twice"""
-    check50.run("./greedy").stdin("-1").reject()
-            .stdin("-3").reject()
+    (check50.run("./greedy").stdin("-1").reject()
+            .stdin("-3").reject())
 
 
 @check50.check(compiles)
 def test_reject_foo():
     """rejects a non-numeric input of "foo" and "bar" twice"""
-    check50.run("./greedy").stdin("foo").reject()
-            .stdin("bar").reject()
+    (check50.run("./greedy").stdin("foo").reject()
+            .stdin("bar").reject())
 
 
 @check50.check(compiles)

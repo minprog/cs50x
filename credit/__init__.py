@@ -69,8 +69,8 @@ def test11():
 @check50.check(compiles)
 def test_reject_foo():
     """rejects a non-numeric input of "foo" and "bar" twice"""
-    check50.run("./credit").stdin("foo").reject()
-            .stdin("bar").reject()
+    (check50.run("./credit").stdin("foo").reject()
+            .stdin("bar").reject())
 
 @check50.check(compiles)
 def test_reject_empty():
