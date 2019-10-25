@@ -73,8 +73,8 @@ def test_rounding():
             
 @check50.check(compiles)
 def test_reject_negative():
-    """rejects a negative input like -1"""
-    check50.run("./greedy").stdin("-1").reject()
+    """rejects a negative input like -1 or -3 twice"""
+    check50.run("./greedy").stdin(["-1", "-3"]).reject()
 
 
 @check50.check(compiles)
