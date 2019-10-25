@@ -80,8 +80,9 @@ def test_reject_negative():
 
 @check50.check(compiles)
 def test_reject_foo():
-    """rejects a non-numeric input of "foo" """
+    """rejects a non-numeric input of "foo" and "bar" twice"""
     check50.run("./greedy").stdin("foo").reject()
+            .stdin("bar").reject()
 
 
 @check50.check(compiles)
