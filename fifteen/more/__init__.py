@@ -3,7 +3,7 @@ from less import *
 
 @check50.check(solve4)
 def god_solve4():
-    """god mode solves a 4x4 board from starting position"""
+    """god mode solves a 4x4 board from starting position."""
     board = ["1", "2", "3", "4",
              "5", "6", "7", "8",
              "9", "10", "11", "12",
@@ -19,7 +19,7 @@ def god_solve4():
 
 @check50.check(god_solve4)
 def god_solve3():
-    """god mode solves a 3x3 board after shuffling"""
+    """god mode solves a 3x3 board after shuffling."""
 
     # some random valid steps
     steps = ["1","4","7","8","5","2","4","7",
