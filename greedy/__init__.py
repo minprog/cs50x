@@ -73,22 +73,30 @@ def test_rounding():
             
 @check50.check(compiles)
 def test_reject_negative():
-    """rejects a negative input like -1 or -3 twice"""
-    (check50.run("./greedy").stdin("-1").reject()
-            .stdin("-3").reject())
+    """rejects a negative input like -1"""
+    check50.run("./greedy").stdin("-1").reject()
 
 
 @check50.check(compiles)
 def test_reject_foo():
-    """rejects a non-numeric input of "foo" and "bar" twice"""
-    (check50.run("./greedy").stdin("foo").reject()
-            .stdin("bar").reject())
+    """rejects a non-numeric input of "foo" """
+    check50.run("./greedy").stdin("foo").reject()
 
 
 @check50.check(compiles)
 def test_reject_empty():
     """rejects a non-numeric input of "" """
     check50.run("./greedy").stdin("").reject()
+
+
+@check50.check(compiles)
+def test_reject_repeated():
+    """rejects any number of invalid inputs"""
+    check = check50.run("./greedy")
+    for i in range(5):
+        check.stdin("-1").reject(timeout=1)
+        check.stdin("foo").reject(timeout=1)
+        check.stdin("").reject(timeout=1)
 
 
 def coins(num):
