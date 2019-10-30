@@ -42,21 +42,27 @@ def test23():
 
 @check50.check(compiles)
 def test24():
-    """rejects a height of 24 or -1 twice, and then accepts a height of 2"""
+    """rejects a height of 24, and then accepts a height of 2"""
     (check50.run("./mario").stdin("24").reject()
-            .stdin("-1").reject()
             .stdin("2").stdout(open("2.txt")).exit(0))
 
 @check50.check(compiles)
 def test_reject_foo():
-    """rejects a non-numeric height of "foo" or "bar" twice """
-    (check50.run("./mario").stdin("foo").reject()
-            .stdin("bar").reject())
+    """rejects a non-numeric height of "foo" """
+    check50.run("./mario").stdin("foo").reject()
 
 @check50.check(compiles)
 def test_reject_empty():
     """rejects a non-numeric height of "" """
     check50.run("./mario").stdin("").reject()
+
+@check50.check(compiles)
+def test_reject_repeated():
+    """rejects any number of invalid inputs"""
+    check = check50.run("./mario")
+    for i in range(5):
+        for value in ["24", "foo", ""]:
+            check.stdin(value).reject(timeout=1)
 
 
 def check_pyramid(output, correct):
