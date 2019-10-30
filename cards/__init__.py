@@ -105,11 +105,12 @@ def card_initializer():
     for suit in suits:
         for value in values:
             card = module.Card(suit=suit, value=value)
-                # check if the initializer worked
-                if card.suit != suit:
-                    raise check50.Failure(f"class 'Card' was initialized with unexpected suit '{card.suit}'. expected '{suit}'")
-                elif card.value != value:
-                    raise check50.Failure(f"class 'Card' was initialized with unexpected value '{card.value}'. expected '{value}'")
+            
+            # check if the initializer worked
+            if card.suit != suit:
+                raise check50.Failure(f"class 'Card' was initialized with unexpected suit '{card.suit}'. expected '{suit}'")
+            elif card.value != value:
+                raise check50.Failure(f"class 'Card' was initialized with unexpected value '{card.value}'. expected '{value}'")
 
 
 @check50.check(card_initializer)
