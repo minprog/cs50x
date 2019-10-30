@@ -76,7 +76,7 @@ def test_reject_negative():
 @check50.check(test_reject_negative)
 def test_reject_repeated():
     """greedy.py rejects an invalid input any number of times"""
-    values = list(range(-100, 0)) + ["foo", "bar", "baz", "lorum", "ipsum", "dolor", "sit", "amet", "2"]
+    values = list(range(-100, 0)) + ["foo", "bar", "baz", "lorem", "ipsum", "dolor", "sit", "amet", "2"]
     result = uva.check50.py.run("greedy.py", stdin=values)
     if result.stdin:
         raise check50.Failure("expected stdin to be empty!")
