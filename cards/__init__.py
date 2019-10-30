@@ -4,7 +4,6 @@ import check50.internal
 import sys
 import os
 import inspect
-import random
 
 check50.internal.register.before_every(lambda : sys.path.append(os.getcwd()))
 check50.internal.register.after_every(lambda : sys.path.pop())
@@ -102,16 +101,15 @@ def card_initializer():
     required_args = ["self", "suit", "value"]
     method_arguments(module.Card, "__init__", required_args)
 
-    # initialize a random card
-    random_suit = random.choice(suits)
-    random_value = random.choice(values)
-    card = module.Card(suit=random_suit, value=random_value)
-
-    # check if the initializer worked
-    if card.suit != random_suit:
-        raise check50.Failure(f"class 'Card' was initialized with unexpected suit '{card.suit}'. expected '{random_suit}'")
-    elif card.value != random_value:
-        raise check50.Failure(f"class 'Card' was initialized with unexpected value '{card.value}'. expected '{random_value}'")
+    # loop through all possible cards
+    for suit in suits:
+        for value in values:
+            card = module.Card(suit=suit, value=value)
+                # check if the initializer worked
+                if card.suit != suit:
+                    raise check50.Failure(f"class 'Card' was initialized with unexpected suit '{card.suit}'. expected '{suit}'")
+                elif card.value != value:
+                    raise check50.Failure(f"class 'Card' was initialized with unexpected value '{card.value}'. expected '{value}'")
 
 
 @check50.check(card_initializer)
@@ -119,15 +117,15 @@ def card_stringify():
     """class 'Card' can be stringified correctly."""
     module = uva.check50.py.run("cardgame.py").module
 
-    # initialize a random card
-    random_suit = random.choice(suits)
-    random_value = random.choice(values)
-    card = module.Card(suit=random_suit, value=random_value)
+    # loop through all possible cards
+    for suit in suits:
+        for value in values:
+            card = module.Card(suit=suit, value=value)
 
-    # stringify the card and check if the value is correct
-    stringified = str(card).strip()
-    if stringified != f"{random_value} of {random_suit}":
-        raise check50.Failure(f"unexpected message '{stringified}' with suit '{random_suit}' and value '{random_value}'. expected '{random_value} of {random_suit}'")
+            # stringify the card and check if the value is correct
+            stringified = str(card).strip()
+            if stringified != f"{value} of {suit}":
+                raise check50.Failure(f"unexpected message '{stringified}' with suit '{suit}' and value '{value}'. expected '{value} of {suit}'")
 
 
 @check50.check(card_stringify)
