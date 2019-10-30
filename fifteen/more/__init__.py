@@ -15,18 +15,19 @@ def god_solve4():
     # run god mode and get output
     check = check50.run("./fifteen 4")
     check.stdin("GOD", prompt=False)
-    output = str(check.stdout(timeout=30))
+    timeout = 30
+    output = str(check.stdout(timeout=timeout))
 
     # compare output with resolved board
     regex = re.compile(board)
     if not regex.search(output):
-        raise check50.Failure("didn't find resolved board in output.")
+        raise check50.Failure(f"didn't find resolved board in output after {timeout} seconds.")
 
     # check if intermediate steps are also printed
     intermediate_regex_1 = re.compile(intermediate_1)
     intermediate_regex_2 = re.compile(intermediate_2)
     if not intermediate_regex_1.search(output) and not intermediate_regex_2.search(output):
-        raise check50.Failure("intermediate steps weren't printed.")
+        raise check50.Failure("we didn't find the intermediate boards in your output.")
 
 @check50.check(god_solve4)
 def god_solve3():
@@ -38,6 +39,7 @@ def god_solve3():
              "7","6","3","2","5","3","6","4"]
 
     board = " *1 *2 *3 *\\n\\n *4 *5 *6 *\\n\\n *7 *8 *\_ *"
+    timeout = 30
 
     check = check50.run("./fifteen 3")
 
@@ -48,9 +50,9 @@ def god_solve3():
 
     # run god mode and get output
     check.stdin("GOD", prompt=False)
-    output = str(check.stdout(timeout=30))
+    output = str(check.stdout(timeout=timeout))
     
     # compare output with resolved board
     regex = re.compile(board)
     if not regex.search(output):
-        raise check50.Failure("didn't find resolved board in output.")
+        raise check50.Failure(f"didn't find resolved board in output after {timeout} seconds.")
