@@ -57,7 +57,7 @@ def test24():
 def test_reject_repeated():
     """rejects any number of invalid inputs and then accepts a height of 2"""
     values = list(range(-100, 0)) + list(range(24, 100)) + ["2"]
-    result = uva.check50.py.run("greedy.py", stdin=values)
+    result = uva.check50.py.run("mario.py", stdin=values)
     if result.stdin:
         raise check50.Failure("expected stdin to be empty!")
     check_pyramid(result.stdout, ("Height: " * 177) + open("2.txt").read())
