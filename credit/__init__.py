@@ -68,11 +68,18 @@ def test11():
 
 @check50.check(compiles)
 def test_reject_foo():
-    """rejects a non-numeric input of "foo" and "bar" twice"""
-    (check50.run("./credit").stdin("foo").reject()
-            .stdin("bar").reject())
+    """rejects a non-numeric input of "foo" """
+    check50.run("./credit").stdin("foo").reject()
 
 @check50.check(compiles)
 def test_reject_empty():
     """rejects a non-numeric input of "" """
     check50.run("./credit").stdin("").reject()
+
+@check50.check(compiles)
+def test_reject_repeated():
+    """rejects any number of invalid inputs"""
+    check = check50.run("./credit")
+    for i in range(8):
+        for value in ["foo", ""]:
+            check.stdin(value).reject(timeout=1)
