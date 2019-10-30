@@ -39,7 +39,7 @@ def god_solve3():
 
     board = " *1 *2 *3 *\\n\\n *4 *5 *6 *\\n\\n *7 *8 *\_ *"
 
-    check = check50.run("./fifteen 4")
+    check = check50.run("./fifteen 3")
 
     # apply random steps
     for step in steps:
