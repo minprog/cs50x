@@ -95,7 +95,8 @@ def test_reject_repeated():
     check = check50.run("./greedy")
     for i in range(5):
         for value in ["-1", "foo", ""]:
-            check.stdin(value).reject(timeout=1)
+            check.stdin(value)
+    check.reject()
 
 
 def coins(num):
