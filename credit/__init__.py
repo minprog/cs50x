@@ -75,3 +75,12 @@ def test_reject_foo():
 def test_reject_empty():
     """rejects a non-numeric input of "" """
     check50.run("./credit").stdin("").reject()
+
+@check50.check(compiles)
+def test_reject_repeated():
+    """rejects any number of invalid inputs"""
+    check = check50.run("./credit")
+    for i in range(8):
+        for value in ["foo", ""]:
+            check.stdin(value)
+    check.reject()

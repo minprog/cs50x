@@ -89,6 +89,16 @@ def test_reject_empty():
     check50.run("./greedy").stdin("").reject()
 
 
+@check50.check(compiles)
+def test_reject_repeated():
+    """rejects any number of invalid inputs"""
+    check = check50.run("./greedy")
+    for i in range(5):
+        for value in ["-1", "foo", ""]:
+            check.stdin(value)
+    check.reject()
+
+
 def coins(num):
     # regex that matches `num` not surrounded by any other numbers (so coins(2) won't match e.g. 123)
     return fr"(?<!\d){num}(?!\d)"
