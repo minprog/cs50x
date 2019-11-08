@@ -81,14 +81,10 @@ def compiles():
 
 @check50.check(compiles)
 def card_class_basic():
-    """class 'Card' exists and has basic attributes."""
+    """class 'Card' exists."""
     # check if the class exists
     module = uva.check50.py.run("cardgame.py").module
     class_exists(module, "Card")
-
-    # check if the class has the required attributes
-    attributes = ["suit", "value"]
-    attributes_present(module.Card, attributes)
 
 
 @check50.check(card_class_basic)
@@ -105,6 +101,10 @@ def card_initializer():
     for suit in suits:
         for value in values:
             card = module.Card(suit=suit, value=value)
+
+            # check if the object has the required attributes
+            attributes = ["suit", "value"]
+            attributes_present(card, attributes)
             
             # check if the initializer worked
             if card.suit != suit:
@@ -136,10 +136,6 @@ def deck_initializer():
     module = uva.check50.py.run("cardgame.py").module
     class_exists(module, "Deck")
 
-    # check if the class has the required attributes
-    attributes = ["suits", "values"]
-    attributes_present(module.Deck, attributes)
-
     # check if __init__ exists and accepts the correct args
     class_method(module.Deck, "__init__")
     required_args = ["self"]
@@ -147,6 +143,12 @@ def deck_initializer():
 
     # initialize a deck and check if it worked
     deck = module.Deck()
+
+    # check if the object has the required attributes
+    attributes = ["suits", "values"]
+    attributes_present(deck, attributes)
+
+    # check for correct initialization
     if deck.suits != suits:
         raise check50.Failure("expected 'deck.suits' to contain all possible suits after initialization.")
     elif deck.values != values:
