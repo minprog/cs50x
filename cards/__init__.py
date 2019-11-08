@@ -114,8 +114,8 @@ def card_initializer():
 
 
 @check50.check(card_initializer)
-def card_stringify():
-    """class 'Card' can be stringified correctly."""
+def card_description():
+    """method description() in class 'Card' returns the correct output."""
     module = uva.check50.py.run("cardgame.py").module
 
     # loop through all possible cards
@@ -123,13 +123,13 @@ def card_stringify():
         for value in values:
             card = module.Card(suit=suit, value=value)
 
-            # stringify the card and check if the value is correct
-            stringified = str(card).strip()
-            if stringified != f"{value} of {suit}":
-                raise check50.Failure(f"unexpected message '{stringified}' with suit '{suit}' and value '{value}'. expected '{value} of {suit}'")
+            # genererate description and check if the value is correct
+            description = card.description().strip()
+            if description != f"{value} of {suit}":
+                raise check50.Failure(f"unexpected message '{description}' with suit '{suit}' and value '{value}'. expected '{value} of {suit}'")
 
 
-@check50.check(card_stringify)
+@check50.check(card_description)
 def deck_initializer():
     """class 'Deck' exists, has basic attributes and can be initialized correctly."""
     # check if the class exists
