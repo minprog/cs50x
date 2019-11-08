@@ -159,13 +159,14 @@ def deck_initializer():
 def instantiate_cards():
     """cards are instantiated in deck."""
     module = uva.check50.py.run("cardgame.py").module
+    deck = module.Deck()
 
     # check if the class now has an attribute for storing cards
     attributes = ["cards"]
-    attributes_present(module.Deck, attributes)
+    attributes_present(deck, attributes)
 
     # check if 52 different and valid cards are present
-    deck_valid(module.Deck())
+    deck_valid(deck)
 
 
 @check50.check(deck_initializer)
