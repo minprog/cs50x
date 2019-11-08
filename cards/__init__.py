@@ -162,7 +162,7 @@ def instantiate_cards():
     deck = module.Deck()
 
     # check if the class now has an attribute for storing cards
-    attributes = ["cards"]
+    attributes = ["_cards"]
     attributes_present(deck, attributes)
 
     # check if 52 different and valid cards are present
