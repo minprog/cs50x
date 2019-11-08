@@ -56,6 +56,14 @@ def test_reject_empty():
     """rejects a non-numeric height of "" """
     check50.run("./mario").stdin("").reject()
 
+@check50.check(compiles)
+def test_reject_repeated():
+    """rejects any number of invalid inputs"""
+    check = check50.run("./mario")
+    for i in range(5):
+        for value in ["24", "foo", ""]:
+            check.stdin(value)
+    check.reject()
 
 def check_pyramid(output, correct):
     if output == correct:
