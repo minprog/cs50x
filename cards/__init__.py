@@ -20,11 +20,11 @@ def class_exists(module, cls):
         raise check50.Failure(f"expected class '{cls}' to exist")
 
 
-def attributes_present(cls, attributes):
-    # check if each required attribute is present within the class
+def attributes_present(obj, attributes):
+    # check if each required attribute is present within the object
     for attribute in attributes:
-        if not hasattr(cls, attribute):
-            raise check50.Failure(f"expected class '{cls.__name__}' to have attribute '{attribute}'")
+        if not hasattr(obj, attribute):
+            raise check50.Failure(f"expected class '{obj.__class__.__name__}' to have attribute '{attribute}'")
 
 
 def class_method(cls, method):
@@ -51,11 +51,11 @@ def deck_valid(deck):
     cards = set()
 
     # check amount of cards
-    if len(deck.cards) != 52:
-        raise check50.Failure(f"found invalid amount of cards {len(deck.cards)} in deck.")
+    if len(deck._cards) != 52:
+        raise check50.Failure(f"found invalid amount of cards {len(deck._cards)} in deck.")
 
     # check each card in the deck
-    for card in deck.cards:
+    for card in deck._cards:
         # check for duplicate cards
         if card.suit + card.value in cards:
             raise check50.Failure(f"found the {card.value} of {card.suit} in deck at least twice.")
@@ -176,7 +176,7 @@ def shuffle():
     deck = module.Deck()
 
     # store original list of cards
-    original_cards = [card.value + card.suit for card in deck.cards]
+    original_cards = [card.value + card.suit for card in deck._cards]
 
     # test if shuffle() exists and accept the correct arguments
     class_method(module.Deck, "shuffle")
@@ -186,7 +186,7 @@ def shuffle():
     deck.shuffle()
 
     # test if deck changed and is still valid
-    new_cards = [card.value + card.suit for card in deck.cards]
+    new_cards = [card.value + card.suit for card in deck._cards]
     if all([original_cards[i] == new_cards[i] for i in range(len(new_cards))]):
         raise check50.Failure("deck didn't change when shuffled.")
     deck_valid(deck)
@@ -204,27 +204,27 @@ def deal():
     method_arguments(module.Deck, "deal", ["self"])
 
     # vars to check against
-    start_len = len(deck.cards)
-    last_card = deck.cards[-1]
+    start_len = len(deck._cards)
+    last_card = deck._cards[-1]
 
     # deal 52 cards
     for i in range(52):
         # update vars
-        start_len = len(deck.cards)
-        last_card = deck.cards[-1]
+        start_len = len(deck._cards)
+        last_card = deck._cards[-1]
 
         # deal one card
         card = deck.deal()
 
         # check if deal decrements deck size by 1
-        if len(deck.cards) != start_len - 1:
-            raise check50.Failure(f"deal() changed amount of cards from {start_len} to {len(deck.cards)}. expected {start_len - 1}.")
+        if len(deck._cards) != start_len - 1:
+            raise check50.Failure(f"deal() changed amount of cards from {start_len} to {len(deck._cards)}. expected {start_len - 1}.")
 
         # check if we got the top card
         if card != last_card:
             raise check50.Failure(f"got unexpected card {card.value} of {card.suit} on deal() when top card was {last_card.value} of {last_card.suit}.")
 
         # check if the top card was removed, only run if there are any left
-        if len(deck.cards) > 0:
-            if deck.cards[-1] == last_card:
+        if len(deck._cards) > 0:
+            if deck._cards[-1] == last_card:
                 raise check50.Failure(f"deal() removed a card other than the top card from the deck.")
