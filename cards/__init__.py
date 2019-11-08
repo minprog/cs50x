@@ -169,7 +169,7 @@ def instantiate_cards():
     deck_valid(deck)
 
 
-@check50.check(deck_initializer)
+@check50.check(instantiate_cards)
 def shuffle():
     """deck changes and remains valid on shuffle()."""
     module = uva.check50.py.run("cardgame.py").module
