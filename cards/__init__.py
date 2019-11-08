@@ -14,6 +14,15 @@ suits_set = set(suits)
 values_set = set(values)
 
 
+def all_list_in_set(lst, st):
+    # check if all values in a list are in a set
+    for string in lst:
+        if not string in st:
+            return False
+        
+    return True
+
+
 def class_exists(module, cls):
     # check if the specified class exists
     if not hasattr(module, cls):
@@ -145,14 +154,14 @@ def deck_initializer():
     deck = module.Deck()
 
     # check if the object has the required attributes
-    attributes = ["suits", "values"]
+    attributes = ["_suits", "_values"]
     attributes_present(deck, attributes)
 
     # check for correct initialization
-    if deck.suits != suits:
-        raise check50.Failure("expected 'deck.suits' to contain all possible suits after initialization.")
-    elif deck.values != values:
-        raise check50.Failure("expected 'deck.values' to contain all possible values after initialization.")
+    if not all_list_in_set(deck._suits, suits_set):
+        raise check50.Failure("expected 'deck._suits' to contain all possible suits after initialization.")
+    elif not all_list_in_set(deck._values, values_set):
+        raise check50.Failure("expected 'deck._values' to contain all possible values after initialization.")
 
 
 @check50.check(deck_initializer)
