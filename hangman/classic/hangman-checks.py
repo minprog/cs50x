@@ -143,6 +143,8 @@ def wrong_guesses():
             game.guess(wrong_input)
         except AssertionError:
             accepted = False
+        except Exception:
+            raise check50.Failure("got error but not an assertion failure")
 
         if accepted:
             raise check50.Failure(f"guess of \"{str(wrong_input)}\" was accepted, " \
