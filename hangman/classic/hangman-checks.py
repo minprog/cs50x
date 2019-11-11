@@ -106,6 +106,10 @@ def lose_games():
 @check50.check(load_hangman)
 def wrong_hangman():
     """creating a hangman game with incorrect parameters fails an assertion"""
+    sys.path.append(os.getcwd())
+    import hangman
+    Hangman = hangman.Hangman
+
     params = [(-2, 3), (27, 5), (5, 0), (5, -1)]
     messages = ["-2 letter word, which does not exist",
                 "27 letter word, which does not exist",
