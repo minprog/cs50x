@@ -122,7 +122,7 @@ def wrong_guesses():
     accepted = True
     try:
         game.guess('A')
-    except Exception:
+    except AssertionError:
         accepted = False
 
     if accepted:
