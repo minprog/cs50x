@@ -151,7 +151,6 @@ def wrong_guesses():
                     "but any input other than a single letter should fail " \
                     "an assertion")
 
-    game.guess('A')
     accepted = True
     try:
         game.guess('A')
