@@ -72,7 +72,11 @@ def load_hangman():
 
 @check50.check(load_hangman)
 def wrong_hangman():
-    """creating a hangman game with incorrect parameters raises an exception"""
+    """creating a hangman game with incorrect parameters fails an assertion"""
+    sys.path.append(os.getcwd())
+    import hangman
+    Hangman = hangman.Hangman
+
     params = [(-2, 3), (27, 5), (5, 0), (5, -1)]
     messages = ["-2 letter word, which does not exist",
                 "27 letter word, which does not exist",
@@ -83,15 +87,17 @@ def wrong_hangman():
         game = None
         try:
             game = Hangman(*par_pair)
-        except Exception as e:
+        except AssertionError as e:
             pass
+        except Exception:
+            raise check50.Failure("got error but not an assertion failure")
 
         if game is not None:
             raise check50.Failure("created a Hangman object for a " + message)
 
 @check50.check(wrong_hangman)
 def wrong_guesses():
-    """calling hangman.guess() with an incorrect parameter raises an exception"""
+    """calling hangman.guess() with an incorrect parameter fails an assertion"""
     sys.path.append(os.getcwd())
     import hangman
     Hangman = hangman.Hangman
@@ -102,13 +108,15 @@ def wrong_guesses():
         accepted = True
         try:
             game.guess(wrong_input)
-        except Exception:
+        except AssertionError:
             accepted = False
+        except Exception:
+            raise check50.Failure("got error but not an assertion failure")
 
         if accepted:
             raise check50.Failure(f"guess of \"{str(wrong_input)}\" was accepted, " \
-                    "but any input other than a single letter should give an " \
-                    "exception")
+                    "but any input other than a single letter should fail " \
+                    "an assertion")
 
     game.guess('A')
     accepted = True
