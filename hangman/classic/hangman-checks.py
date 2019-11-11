@@ -122,6 +122,8 @@ def wrong_hangman():
             game = Hangman(*par_pair)
         except AssertionError as e:
             pass
+        except Exception:
+            raise check50.Failure("got error but not an assertion failure")
 
         if game is not None:
             raise check50.Failure("created a Hangman object for a " + message)
