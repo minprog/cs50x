@@ -118,6 +118,11 @@ def wrong_guesses():
                     "but any input other than a single letter should fail " \
                     "an assertion")
 
+    try:
+        game.guess('A')
+    except AssertionError:
+        raise check50.Failure(f"first guess of letter 'A' should not raise an AssertionError.")
+
     accepted = True
     try:
         game.guess('A')
