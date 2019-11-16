@@ -161,7 +161,7 @@ def forced_move():
         check.stdout("> ")
         check.stdin(move, prompt=False)
 
-    check.stdout("You find yourself at the edge of a impassible stream. You are forced to return where you came from.",
+    check.stdout("You find yourself at the edge of a impassible stream. You head back to the depression.",
                  regex=False)
     check.stdout("Outside grate", regex=False)
 
