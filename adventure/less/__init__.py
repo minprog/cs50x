@@ -124,8 +124,7 @@ def helper_commands():
 
     # Test QUIT
     try:
-        check50.run(RUN_TINY).stdin("QUIT").stdout("Thanks for playing!",
-                                                      regex=False).exit(0)
+        check50.run(RUN_TINY).stdin("QUIT").exit(0)
     except check50.Failure as error:
         raise check50.Failure(f"QUIT did not function as expected.\n"
                               f"    {error}")
