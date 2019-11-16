@@ -151,6 +151,7 @@ def parse_small():
     check.stdout("You are in a valley in the forest beside a stream tumbling along a rocky bed.  "
                  "The stream is flowing to the south.", regex=False)
 
+
 @check50.check(helper_commands)
 def forced_move():
     """Checking if FORCED immediately moves the player."""
