@@ -194,5 +194,3 @@ def game_over():
 
     check.stdout('You fell into a pit and broke every bone in your body!',
                  regex=False)
-    check.stdout("\n")
-    check.exit(0)
