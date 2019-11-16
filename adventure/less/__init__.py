@@ -181,8 +181,6 @@ def game_over():
     check.stdout('You\'ve found the hidden path to victory. Unfortunately, '
                  'the passage is blocked by a barrier marked "Under Construction."',
                  regex=False)
-    check.stdout("\n")
-    check.exit(0)
 
     # check lost
     check = check50.run(RUN_SMALL)
