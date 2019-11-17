@@ -173,7 +173,7 @@ def synonyms():
     check.stdin("E").stdout(room_1_name, regex=False)
 
     # check with nonsensical synonyms
-    check50.logger('Changing Synonyms.dat to contain nonsensical synonyms.')
+    check50.log('Changing Synonyms.dat to contain nonsensical synonyms.')
     os.rename(r'data/Synonyms.dat', r'data/Synonyms2.dat')
     os.rename(r'data/NonsensicalSynonyms.dat', r'data/Synonyms.dat')
     check = check50.run(RUN_SMALL)
