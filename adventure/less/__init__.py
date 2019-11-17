@@ -182,7 +182,7 @@ def synonyms():
         check.stdin("F").stdout(room_1_name, regex=False)
     except check50.Failure as error:
         raise check50.Failure(f"{error}\n"
-                              f"     Your program didn't handle a different Synonyms.dat correctly. Did you hardcode the synonyms?")
+                              f"    Your program didn't handle a different Synonyms.dat correctly. Did you hardcode the synonyms?")
 
     os.rename(r'data/Synonyms.dat', r'data/NonsensicalSynonyms.dat')
     os.rename(r'data/Synonyms2.dat', r'data/Synonyms.dat')
