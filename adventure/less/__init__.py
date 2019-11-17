@@ -1,5 +1,6 @@
 import check50
 import sys
+import os
 
 RUN_TINY = f"{sys.executable} adventure.py Tiny"
 RUN_SMALL = f"{sys.executable} adventure.py Small"
@@ -120,8 +121,6 @@ def helper_commands():
         raise check50.Failure(f"look (lowercase) did not print the expected room"
                               f"description.\n    {error}")
 
-
-
     # Test QUIT
     try:
         check50.run(RUN_TINY).stdin("QUIT").exit(0)
@@ -167,6 +166,28 @@ def forced_move():
 
 
 @check50.check(forced_move)
+def synonyms():
+    """Checking if command synonyms are handled correctly"""
+    check = check50.run(RUN_SMALL)
+    check.stdin("W").stdout(room_2_description, regex=False)
+    check.stdin("E").stdout(room_1_name, regex=False)
+
+    # check with nonsensical synonyms
+    os.rename(r'data/Synonyms.dat', r'data/Synonyms2.dat')
+    os.rename(r'data/NonsensicalSynonyms.dat', r'data/Synonyms.dat')
+    check = check50.run(RUN_SMALL)
+
+    try:
+        check.stdin("G").stdout(room_2_description, regex=False)
+        check.stdin("F").stdout(room_1_name, regex=False)
+    except check50.Failure as error:
+        raise check50.Failure(f"{error}\n"
+                              f"Your program didn't handle a different Synonyms.dat correctly. Did you hardcode the synonyms?")
+
+    os.rename(r'data/Synonyms.dat', r'data/NonsensicalSynonyms.dat')
+    os.rename(r'data/Synonyms2.dat', r'data/Synonyms.dat')
+
+@check50.check(synonyms)
 def game_over():
     """Checking if the program correctly handles winning/losing."""
 
