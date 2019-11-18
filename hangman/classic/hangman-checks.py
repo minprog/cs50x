@@ -164,7 +164,7 @@ def wrong_guesses():
 
     if accepted:
         raise check50.Failure("Guessing an already guessed letter should give " \
-                "an exception.")
+                "an AssertionError.")
 
 
 def play_game(win):
