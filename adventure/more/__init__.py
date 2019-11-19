@@ -199,7 +199,7 @@ def special_move():
                      "likely fall into a pit.", regex=False)
     except check50.Failure as error:
         raise check50.Failure("Could not perform XYZZY. Check "
-                              "CrowtherRooms.txt for all the different"
+                              "CrowtherAdv.dat for all the different"
                               "connections.")
 
 
