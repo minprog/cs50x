@@ -56,7 +56,6 @@ def find_items():
 @check50.check(find_items)
 def handle_items():
     """Take and drop items."""
-    check50.exists("inventory.py")
     # Take keys check
     check = check50.run(RUN_CROWTHER)
     moves = ["IN", "TAKE keys"]
