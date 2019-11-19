@@ -141,15 +141,6 @@ def commands():
                               f"    {error}")
 
 
-@check50.check(commands)
-def parse_small():
-    """Test if the program correctly parses the 'Small' datafile."""
-
-    check = check50.run(RUN_SMALL).stdin("DOWN")
-    check.stdout("You are in a valley in the forest beside a stream tumbling along a rocky bed.  "
-                 "The stream is flowing to the south.", regex=False)
-
-
 @check50.check(helper_commands)
 def forced_move():
     """Checking if FORCED immediately moves the player."""
