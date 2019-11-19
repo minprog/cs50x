@@ -8,7 +8,6 @@ from less import *
 RUN_CROWTHER = f"{sys.executable} adventure.py CrowtherAdv"
 
 
-room_3_name = "Inside building"
 room_3_description = ("You are inside a building, a well house for a large "
                       "spring. The exit door is to the south.  There is "
                       "another room to the north, but the door is barred by "
