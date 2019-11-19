@@ -16,15 +16,14 @@ room_3_items = ["KEYS", "a set of keys", "\n", "WATER", "a bottle of water"]
 
 
 @check50.check()
-def inventory_exists():
-    """inventory.py exists."""
-    check50.exists("inventory.py")
+def item_exists():
+    """item.py exists."""
+    check50.exists("item.py")
 
 
 @check50.check(game_over)
 def find_items():
     """Finds items in rooms."""
-    check50.exists("item.py")
     # Check initial description
     try:
         check = check50.run(RUN_CROWTHER).stdin("in")
