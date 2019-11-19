@@ -17,11 +17,9 @@ room_3_items = ["KEYS", "a set of keys", "\n", "WATER", "a bottle of water"]
 
 
 @check50.check()
-def exists():
-    """Checking if all files exist."""
-    check50.include("../data")
-    check50.exists("adventure.py")
-    check50.exists("room.py")
+def inventory_exists():
+    """inventory.py exists."""
+    check50.exists("inventory.py")
 
 
 @check50.check(game_over)
