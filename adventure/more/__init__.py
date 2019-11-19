@@ -234,5 +234,3 @@ def won():
     check.stdout("You have collected all the treasures and are admitted to "
                  "the Adventurer's Hall of Fame.  Congratulations!",
                  regex=False)
-    check.stdout("\n")
-    check.exit(0)
