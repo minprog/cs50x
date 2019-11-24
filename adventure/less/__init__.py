@@ -1,5 +1,6 @@
 import check50
 import sys
+import os
 
 RUN_TINY = f"{sys.executable} adventure.py Tiny"
 RUN_SMALL = f"{sys.executable} adventure.py Small"
@@ -120,12 +121,9 @@ def helper_commands():
         raise check50.Failure(f"look (lowercase) did not print the expected room"
                               f"description.\n    {error}")
 
-
-
     # Test QUIT
     try:
-        check50.run(RUN_TINY).stdin("QUIT").stdout("Thanks for playing!",
-                                                      regex=False).exit(0)
+        check50.run(RUN_TINY).stdin("QUIT").exit(0)
     except check50.Failure as error:
         raise check50.Failure(f"QUIT did not function as expected.\n"
                               f"    {error}")
@@ -143,14 +141,6 @@ def commands():
                               f"    {error}")
 
 
-@check50.check(commands)
-def parse_small():
-    """Test if the program correctly parses the 'Small' datafile."""
-
-    check = check50.run(RUN_SMALL).stdin("DOWN")
-    check.stdout("You are in a valley in the forest beside a stream tumbling along a rocky bed.  "
-                 "The stream is flowing to the south.", regex=False)
-
 @check50.check(helper_commands)
 def forced_move():
     """Checking if FORCED immediately moves the player."""
@@ -161,12 +151,35 @@ def forced_move():
         check.stdout("> ")
         check.stdin(move, prompt=False)
 
-    check.stdout("You find yourself at the edge of a impassible stream. You are forced to return where you came from.",
+    check.stdout("You find yourself at the edge of a impassible stream. You head back to the depression.",
                  regex=False)
     check.stdout("Outside grate", regex=False)
 
 
 @check50.check(forced_move)
+def synonyms():
+    """Checking if command synonyms are handled correctly"""
+    check = check50.run(RUN_SMALL)
+    check.stdin("W").stdout(room_2_description, regex=False)
+    check.stdin("E").stdout(room_1_name, regex=False)
+
+    # check with nonsensical synonyms
+    check50.log('changing Synonyms.dat to contain nonsensical synonyms...')
+    os.rename(r'data/Synonyms.dat', r'data/Synonyms2.dat')
+    os.rename(r'data/NonsensicalSynonyms.dat', r'data/Synonyms.dat')
+    check = check50.run(RUN_SMALL)
+
+    try:
+        check.stdin("G").stdout(room_2_description, regex=False)
+        check.stdin("F").stdout(room_1_name, regex=False)
+    except check50.Failure as error:
+        raise check50.Failure(f"{error}\n"
+                              f"    Your program didn't handle a different Synonyms.dat correctly. Did you hardcode the synonyms?")
+
+    os.rename(r'data/Synonyms.dat', r'data/NonsensicalSynonyms.dat')
+    os.rename(r'data/Synonyms2.dat', r'data/Synonyms.dat')
+
+@check50.check(synonyms)
 def game_over():
     """Checking if the program correctly handles winning/losing."""
 
@@ -181,8 +194,6 @@ def game_over():
     check.stdout('You\'ve found the hidden path to victory. Unfortunately, '
                  'the passage is blocked by a barrier marked "Under Construction."',
                  regex=False)
-    check.stdout("\n")
-    check.exit(0)
 
     # check lost
     check = check50.run(RUN_SMALL)
@@ -194,5 +205,3 @@ def game_over():
 
     check.stdout('You fell into a pit and broke every bone in your body!',
                  regex=False)
-    check.stdout("\n")
-    check.exit(0)

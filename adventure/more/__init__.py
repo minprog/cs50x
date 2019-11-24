@@ -8,7 +8,6 @@ from less import *
 RUN_CROWTHER = f"{sys.executable} adventure.py Crowther"
 
 
-room_3_name = "Inside building"
 room_3_description = ("You are inside a building, a well house for a large "
                       "spring. The exit door is to the south.  There is "
                       "another room to the north, but the door is barred by "
@@ -17,17 +16,14 @@ room_3_items = ["KEYS", "a set of keys", "\n", "WATER", "a bottle of water"]
 
 
 @check50.check()
-def exists():
-    """Checking if all files exist."""
-    check50.include("../data")
-    check50.exists("adventure.py")
-    check50.exists("room.py")
+def item_exists():
+    """item.py exists."""
+    check50.exists("item.py")
 
 
 @check50.check(game_over)
 def find_items():
     """Finds items in rooms."""
-    check50.exists("item.py")
     # Check initial description
     try:
         check = check50.run(RUN_CROWTHER).stdin("in")
@@ -60,7 +56,6 @@ def find_items():
 @check50.check(find_items)
 def handle_items():
     """Take and drop items."""
-    check50.exists("inventory.py")
     # Take keys check
     check = check50.run(RUN_CROWTHER)
     moves = ["IN", "TAKE keys"]
@@ -201,7 +196,7 @@ def special_move():
                      "likely fall into a pit.", regex=False)
     except check50.Failure as error:
         raise check50.Failure("Could not perform XYZZY. Check "
-                              "CrowtherRooms.txt for all the different"
+                              "CrowtherAdv.dat for all the different"
                               "connections.")
 
 
@@ -236,5 +231,3 @@ def won():
     check.stdout("You have collected all the treasures and are admitted to "
                  "the Adventurer's Hall of Fame.  Congratulations!",
                  regex=False)
-    check.stdout("\n")
-    check.exit(0)
