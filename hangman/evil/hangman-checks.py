@@ -77,9 +77,9 @@ def wrong_hangman():
     import hangman
     Hangman = hangman.Hangman
 
-    params = [(-2, 3), (27, 5), (5, 0), (5, -1)]
+    params = [(-2, 3), (29, 5), (5, 0), (5, -1)]
     messages = ["-2 letter word, which does not exist",
-                "27 letter word, which does not exist",
+                "29 letter word, which does not exist",
                 "game with 0 guesses, which is too few",
                 "game with -1 guesses, which is too few"]
 
