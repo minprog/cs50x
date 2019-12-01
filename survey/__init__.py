@@ -14,10 +14,11 @@ def startup(self):
     """application starts up"""
     check50.flask.app().get("/").status(200)
 
+
 @check50.check(startup)
 def validate(self):
     """html is valid"""
-    html = check50.flask.app().get("/").content()
+    html = check50.flask.app().get("/form").content()
     uva.check50.py.validate_html(html)
 
 
