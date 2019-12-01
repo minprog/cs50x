@@ -1,6 +1,6 @@
 import check50
 import check50.flask
-import uva.check50.py
+import uva.check50.html
 
 
 @check50.check()
@@ -19,7 +19,7 @@ def startup(self):
 def validate(self):
     """html is valid"""
     html = check50.flask.app().get("/form").content()
-    uva.check50.py.validate_html(html)
+    uva.check50.html.validate_html(html)
 
 
 @check50.check(validate)
