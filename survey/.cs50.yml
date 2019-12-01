@@ -8,7 +8,7 @@ check50:
     - !require templates/error.html
     - !require static/styles.css
   dependencies:
-    - "git+https://github.com/bjorn-out/uva_check50.git#egg=uva.check50>=0.0.4"
+    - "git+https://github.com/jelleas/uva_check50.git#egg=uva.check50>=0.0.4"
 
 submit50:
   files: *check50_files
