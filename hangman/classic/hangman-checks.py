@@ -147,7 +147,7 @@ def wrong_guesses():
             raise check50.Failure(f"got error but not an assertion failure for guess of {repr(wrong_input)}")
 
         if accepted:
-            raise check50.Failure(f"guess of \"{str(wrong_input)}\" was accepted, " \
+            raise check50.Failure(f"guess of {repr(wrong_input)} was accepted, " \
                     "but any input other than a single letter should fail " \
                     "an assertion")
 
