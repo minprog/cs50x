@@ -4,7 +4,7 @@ check50:
     - !require virus.ipynb
   dependencies:
     - "jupyter"
-    - "git+https://github.com/jelleas/uva_check50.git#egg=uva.check50>=0.0.3"
+    - "git+https://github.com/apltools/uva_check50.git#egg=uva.check50>=0.0.3"
 
 submit50:
   files: *check50_files
