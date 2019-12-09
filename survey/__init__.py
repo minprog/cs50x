@@ -1,5 +1,6 @@
 import check50
 import check50.flask
+import uva.check50.html
 
 
 @check50.check()
@@ -15,9 +16,15 @@ def startup(self):
 
 
 @check50.check(startup)
+def validate(self):
+    """html is valid"""
+    html = check50.flask.app().get("/form").content()
+    uva.check50.html.validate_html(html)
+
+
+@check50.check(validate)
 def has_form(self):
     """has form"""
-
     if len(form_elements("/")) < 1:
         raise check50.Failure("expected form element")
 
