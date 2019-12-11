@@ -32,6 +32,28 @@ def init3():
 @check50.check(compiles)
 def init4():
     """initializes a 4x4 board correctly."""
+
+    # check for board without swapped tiles
+    invalid_board = ["15", "14", "13", "12",
+                     "11", "10", "9", "8",
+                     "7", "6", "5", "4",
+                     "3", "2", "1", "[_0]"]
+
+    check = check50.run("./fifteen 4")
+
+    try:
+        for tile in invalid_board:
+            check.stdout(tile)
+        check.stdout("\n")
+    except:
+        # this test is supposed to raise an exception
+        pass
+    else:
+        # raise exception if the incorrect board is found
+        raise check50.Failure("board initialized incorrectly", help="did you remember to swap the last two tiles?")
+
+
+    # check for fully correct board
     board = ["15", "14", "13", "12",
              "11", "10", "9", "8",
              "7", "6", "5", "4",
