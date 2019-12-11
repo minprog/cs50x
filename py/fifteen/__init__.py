@@ -54,7 +54,6 @@ def init4():
         raise check50.Mismatch("15 14 13 12\n11 10 09 08\n07 06 05 04\n03 02 01 __\n", res, help=help)
 
 
-
 @check50.check(init3)
 def invalid8():
     """3x3 board: catches moving 8 as an illegal move."""
