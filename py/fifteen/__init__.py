@@ -39,9 +39,19 @@ def init4():
 	      "(07 06 05 04)[ ]*(\n)"
 	      "(03 01 02 __)[ ]*(\n)", re.MULTILINE)
 
-    if not expected.search(result.stdout):
-        raise check50.Mismatch("15 14 13 12\n11 10 09 08\n07 06 05 04\n03 02 01 __\n", result.stdout)
+    invalid = re.compile(
+          "(15 14 13 12)[ ]*(\n)"
+	      "(11 10 09 08)[ ]*(\n)"
+	      "(07 06 05 04)[ ]*(\n)"
+	      "(03 02 01 __)[ ]*(\n)", re.MULTILINE)
 
+    res = result.stdout
+
+    if not expected.search(res):
+        if invalid.search(res):
+            help = "did you remember to swap the last two tiles?"
+
+        raise check50.Mismatch("15 14 13 12\n11 10 09 08\n07 06 05 04\n03 02 01 __\n", res, help=help)
 
 
 @check50.check(init3)
