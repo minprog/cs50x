@@ -174,7 +174,7 @@ def win_games():
 
 @check50.check(empty_game)
 def lose_games():
-    """it is possible to lose a game (returns False) given only 5 guesses"""
+    """it is possible to lose a game given only 5 guesses"""
     for _ in range(5):
         play_game(win=False)
 
