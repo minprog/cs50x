@@ -188,6 +188,11 @@ def play_game(win):
         if not correct:
             num_wrong_guesses += 1
 
+        gs_type = type(game.guessed_string()).__name__
+        if gs_type != "str":
+            error = f"Hangman.guessed_string() returned type {gs_type}, expected a string (str)."
+            raise check50.Failure(error)
+
         if not letter in game.guessed_string():
             error = "A guessed letter does not appear in the game's guessed_string."
             help = f'I guessed "{letter}" but afterwards the guessed string is ' \
