@@ -47,11 +47,20 @@ def test_lexicon():
         words = lex.get_words(4)
     except Exception as e:
         raise check50.Failure('unable to get words of length 4 from lexicon '\
-            'object with "lex.get_words(4)"')
+            'object with "lex.get_words(4)"', help=f'Got the exception {e}')
+
+    words_type = type(words)
+    if words_type != list:
+        raise check50.Failure("Method Lexicon.get_words(4) returned type {words_type.__name__}. Expected a list.")
 
     if len(words) != 4128:
+        help = f"expected 4128 words, got {len(words)}"
+
+        if len(words) == 0:
+            help += ". did you get all words of length 4?"
+        
         raise check50.Failure("did not succesfully load all 4-letter words",
-                help=f"expected 4128 words, got {len(words)}")
+                help=help)
 
 @check50.check(can_import)
 def load_hangman():
@@ -184,12 +193,15 @@ def play_game(win):
     random.shuffle(alphabet)
     guesses = []
     num_wrong_guesses = 0
+    correct_guesses = []
 
     for letter in alphabet:
         guesses.append(letter)
         correct = game.guess(letter)
         if not correct:
             num_wrong_guesses += 1
+        else:
+            correct_guesses.append(letter)
 
         if not letter in game.guessed_string():
             error = "A guessed letter does not appear in the game's guessed_string."
@@ -198,7 +210,7 @@ def play_game(win):
             raise check50.Failure(error, help=help)
 
         if correct != (letter in game.pattern().lower()):
-            error = "The return value of game.guess(letter) should be True if " \
+            error = "The return value of Hangman.guess(letter) should be True if " \
                     "the guess was correct, and False otherwise."
             help = f'Got the return value {correct}.'
             raise check50.Failure(error, help=help)
@@ -208,6 +220,12 @@ def play_game(win):
                     "letters and underscores."
             help = f"I found pattern {game.pattern()} with guesses " \
                    f"{''.join(guesses)}."
+            raise check50.Failure(error, help=help)
+
+        if not all(letter.lower() in game.pattern().lower() for letter in correct_guesses):
+            error = "Correctly guessed letters disappeared from the pattern."
+            help = f"I found pattern {game.pattern()} with correct guesses " \
+                   f"{''.join(correct_guesses)}."
             raise check50.Failure(error, help=help)
         
         word = game.consistent_word()
@@ -228,19 +246,19 @@ def play_game(win):
     else:
         error = "The game is not finished, but I guessed every letter in the " \
                 "alphabet."
-        help = "Did you implement game.finished() correctly?"
+        help = "Did you implement Hangman.finished() correctly?"
         raise check50.Failure(error, help=help)
     
     if win: 
         if game.won() != True:
-            error = "I did not win the game, even while guessing all 26 letters " \
+            error = "I did not win the game (Hangman.won() did not return True), even after guessing all 26 letters " \
                     "in the alphabet."
-            help = "Did you implement game.won() correctly?"
+            help = "Did you implement Hangman.won() correctly?"
             raise check50.Failure(error, help=help)
 
         if game.lost() != False:
-            error = "I lost the game, even while guessing all 26 letters."
-            help = "Did you implement game.lost() correctly?"
+            error = "I lost the game (Hangman.lost() did not return False), even after guessing all 26 letters."
+            help = "Did you implement Hangman.lost() correctly?"
             raise check50.Failure(error, help=help)
 
         if "_" in game.pattern():
@@ -256,15 +274,15 @@ def play_game(win):
             raise check50.Failure(error, help=help)
     else:
         if game.won() != False:
-            error = "Won the game with 5 random guesses for a " \
+            error = "Won the game (Hangman.won() did not return False) with 5 random guesses for a " \
                     "12-letter word."
-            help = "Did you implement game.won() correctly?"
+            help = "Did you implement Hangman.won() correctly?"
             raise check50.Failure(error, help=help)
 
         if game.lost() != True:
-            error = "Did not lose the game with 5 random guesses for a " \
+            error = "Did not lose the game (Hangman.lost() did not return True) with 5 random guesses for a " \
                     "12-letter word."
-            help = "Did you implement game.lost() correctly?"
+            help = "Did you implement Hangman.lost() correctly?"
             raise check50.Failure(error, help=help)
 
         if not "_" in game.pattern():
