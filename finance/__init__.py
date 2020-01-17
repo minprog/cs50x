@@ -105,7 +105,7 @@ def quote_handles_valid():
     (Finance().login("cs50", "ohHai28!")
               .quote("AAAA")
               .status(200)
-              .content(r"28\.00", "28.00", name="body"))
+              .content(r"28\.00", "28.00"))
 
 
 @check50.check(can_login)
