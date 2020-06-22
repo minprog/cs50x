@@ -1,5 +1,0 @@
-check50:
-    files:
-        - !exclude "*"
-        - !require hangman.py
-    checks: hangman-checks.py
