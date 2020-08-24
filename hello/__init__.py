@@ -1,25 +1,22 @@
-import re
+import check50
+import check50.c
 
-from check50 import *
+@check50.check()
+def exists():
+    """hello.c exists."""
+    check50.exists("hello.c")
 
-class Hello(Checks):
+@check50.check(exists)
+def compiles():
+    """hello.c compiles."""
+    check50.c.compile("hello.c", lcs50=True)
 
-    @check()
-    def exists(self):
-        """hello.c exists."""
-        self.require("hello.c")
+@check50.check(compiles)
+def veronica():
+    """responds to name Zamyla."""
+    check50.run("./hello").stdin("Zamyla").stdout("Zamyla").exit()
 
-    @check("exists")
-    def compiles(self):
-        """hello.c compiles."""
-        self.spawn("clang -std=c11 -o hello hello.c -lcs50 -lm").exit(0)
-
-    @check("compiles")
-    def david(self):
-        """responds to name Doug."""
-        self.spawn("./hello").stdin("Veronica").stdout("Veronica", "Veronica")
-
-    @check("compiles")
-    def brian(self):
-        """responds to name Brian."""
-        self.spawn("./hello").stdin("Brian").stdout("Brian", "Brian")
+@check50.check(compiles)
+def brian():
+    """responds to name Doug."""
+    check50.run("./hello").stdin("Doug").stdout("Doug").exit()
