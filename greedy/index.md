@@ -186,4 +186,6 @@ check50 -l minprog/cs50x/2020/greedy
 
 4. In the form below the problem, add the file that you downloaded.
 
-5. Press "Submit for grading". Presto!
+5. Then, create a PDF with the notes from your analysis (see Phase 1 above), and add that to the form.
+
+6. Press "Submit for grading". Presto!
