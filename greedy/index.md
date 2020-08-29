@@ -41,7 +41,7 @@ Clearly, some kind of calculation is happening between steps 2 and 3. From the d
 
 > <svg class="bi" width="24" height="24" fill="currentColor" size="24x24" style="svertical-align:-0.255em; float:left; margin-right:0.75rem;"><use xlink:href="/icons/bootstrap-icons.svg#info-circle"></use></svg>
 >
-> From now on, you will be using the [Problem Solving Steps](/steps) to analyze problems and propose solutions. We suggest that you read about the steps now and then continue below.
+> From now on, you will be using the [Problem Solving Steps](/steps) to analyze problems and propose solutions. We have now identified the core algorithm for this problem, so you should be able to apply the steps to find that algorithm. We suggest that you read about the steps now and then continue below.
 {:.bg-light}
 
 
