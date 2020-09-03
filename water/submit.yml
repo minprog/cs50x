@@ -5,4 +5,3 @@ files:
 check:
     tool: check50
     slug: minprog/cs50x/2020/water
-auto_publish: true
