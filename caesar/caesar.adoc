@@ -192,4 +192,4 @@ And, with regard to wrapping around from `Z` to `A` (or `z` to `a`), don't forge
 
 == Analysis
  
-Finally, create a PDF with the notes from your analysis from Phase 1 of the stpes, and add that to the form below.
+Finally, create a PDF with the notes from your analysis from Phase 1 of the steps, and add that to the form below.
