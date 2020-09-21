@@ -161,6 +161,8 @@ You should not modify any of the function signatures, nor should you modify any 
 
 == Walkthrough
 
+> The blur filter mentioned in the walkthrough is not part of this assignment. You can skip this part.
+
 video::K0v9byp9jd0[youtube]
 
 == Usage
