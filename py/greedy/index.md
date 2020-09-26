@@ -6,14 +6,14 @@ In deze opdracht ga je de greedy opdracht van CS50 maken in Python.
 
 ## Gebruik
 
-	python greedy.py
-	O hai! How much change is owed? 0.41
-	4
+  	python greedy.py
+  	O hai! How much change is owed? 0.41
+  	4
 
-	python greedy.py
-	O hai! How much change is owed? -0.10
-	O hai! How much change is owed? 0.01
-	1
+  	python greedy.py
+  	O hai! How much change is owed? -0.10
+  	O hai! How much change is owed? 0.01
+  	1
 
 ## Specificatie
 
