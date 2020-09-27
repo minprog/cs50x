@@ -23,7 +23,7 @@ In deze opdracht ga je Greedy schrijven in Python.
 
 * Als de gebruiker een negatief getal invult, dan moet je de gebruiker opnieuw vragen om invoer.
 
-* Je mag aannemen dat de gebruiker enkel floats invult.
+* Je mag aannemen dat de gebruiker het getal als een float invult.
 
 ## Tips
 
