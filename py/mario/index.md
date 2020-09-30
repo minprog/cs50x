@@ -33,3 +33,5 @@ In het videocollege worden diverse tips gegeven over het printen van tekens op h
 ## Testen
 
     check50 -l minprog/cs50x/2020/py/mario
+
+## Submit
