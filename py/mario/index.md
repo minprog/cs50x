@@ -1,6 +1,6 @@
 # Mario
 
-![](/mario/less/pyramid.png)
+![](../../mario/less/pyramid.png)
 
 In deze opdracht ga je Mario schrijven in Python. Gebruik de analyse die je eerder van Mario gemaakt hebt om snel te kunnen starten!
 
