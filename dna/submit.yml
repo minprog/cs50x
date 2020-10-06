@@ -1,6 +1,7 @@
 name: dna
 files:
     required:
+        - analysis.pdf
         - dna.py
 check:
     tool: check50
