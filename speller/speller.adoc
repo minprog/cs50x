@@ -188,7 +188,7 @@ Alright, ready to go?
 
 == Walkthrough
 
-[role=embed-responsive-21by9]
+[role="embed-responsive,embed-responsive-21by9"]
 video::u9-1U1Rgo1o[youtube,list=PLhQjrBD2T382vvokQIExRCKZq-q8PzSVz]
 
 == Hints
