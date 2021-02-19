@@ -5,7 +5,7 @@ check50:
     - !include "generate.c"
     - !include "helpers.h"
     - !include "Makefile"
-    - !include "wrong_find.c"
+    - !include "wrong.c"
     - !require "helpers.c"
 
 submit50:

@@ -13,7 +13,7 @@ def compiles():
     check50.include("helpers.h", "find.c", "sort.c")
     check50.c.compile("sort.c", "helpers.c", exe_name="sort", lcs50=True)
     check50.c.compile("find.c", "helpers.c", exe_name="find", lcs50=True)
-    check50.c.compile("wrong_find.c", "helpers.c", exe_name="wrong", lcs50=True)
+    check50.c.compile("wrong.c", "helpers.c", exe_name="wrong", lcs50=True)
 
 
 @check50.check(compiles)
