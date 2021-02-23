@@ -32,15 +32,12 @@ TIME IN TOTAL:
 
 ### Downloading
 
-[source,subs="macros"]
-----
-$ wget https://github.com/minprog/cs50x/raw/2020/speller/speller.zip
-$ unzip speller.zip
-$ rm speller.zip
-$ cd speller
-$ ls
-dictionaries/  dictionary.c  dictionary.h  keys/  Makefile  answers.md  speller.c  texts/
-----
+    $ wget https://github.com/minprog/cs50x/raw/2020/speller/speller.zip
+    $ unzip speller.zip
+    $ rm speller.zip
+    $ cd speller
+    $ ls
+    dictionaries/  dictionary.c  dictionary.h  keys/  Makefile  answers.md  speller.c  texts/
 
 ### Understanding
 
