@@ -1,4 +1,4 @@
-# Speller: Analysis
+## Analysis
 
 > De analyse van deze opdracht kun je alleen doen, maar het is ook prima om te overleggen met een andere student.
 
