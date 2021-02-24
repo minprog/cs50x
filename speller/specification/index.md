@@ -16,9 +16,3 @@ Alright, the challenge now before you is to implement `load`, `check`, `size`, a
 * You may search for (good) hash functions online, so long as you cite the origin of any hash function you integrate into your own code.
 
 Alright, ready to go?
-
-1. Implement `load`.
-1. Implement `check`.
-1. Implement `hash`.
-1. Implement `size`.
-1. Implement `unload`.
