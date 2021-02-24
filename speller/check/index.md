@@ -1,6 +1,10 @@
 # Speller: Check
 
+<div markdown="1" class="extend">
+[![](walkthrough.jpg)](https://www.youtube.com/watch?v=qPz_Mr69yE0)
+</div>
 
+[Open video on Youtube](https://www.youtube.com/watch?v=qPz_Mr69yE0)
 
 ## Testing
 
