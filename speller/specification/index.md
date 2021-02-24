@@ -87,7 +87,7 @@ that means your program (whose output is on the left) does not think that `Thelo
 
 To test your code less manually (though still not exhaustively), you may also execute the below.
 
-    check50 -l minprog/cs50x/2020/speller
+    check50 -l minprog/cs50x/2020/speller/check
 
 Note that `check50` will also check for memory leaks, so be sure you've run `valgrind` as well.
 
