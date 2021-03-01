@@ -1,4 +1,4 @@
-name: a-mispellings
+name: speller-spec
 files:
     required:
         - analyse.pdf
