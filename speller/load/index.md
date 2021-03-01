@@ -9,3 +9,5 @@ After you have implemented `load`, the remaining functions will be a little bit 
 </div>
 
 [Open video on Youtube](https://www.youtube.com/watch?v=-BX4wLZRwbc)
+
+When you're done, submit your `dictionary.c` below, including your solution to the `load` function.
