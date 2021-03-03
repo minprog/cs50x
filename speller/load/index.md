@@ -29,7 +29,7 @@ Now you have a variable called `table` that you'll be working with in `load`, `c
 
     const unsigned int BUCKETS = 1;
 
-Use that constant to declare the array that's the base of your hash table. Later, when you're going to create a better hash function, you can increase this number.
+Later, when you're going to create a better hash function, you can increase this number.
 
 
 ## Walkthrough
