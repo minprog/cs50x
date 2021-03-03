@@ -16,7 +16,16 @@ For `load()` to work correctly, you will need a hash function that maps a given 
 
 This function ensures that **each and every word** ends up in bucket 0, which is ridiculous, but it should work anyway! You will just end up loading all words into a very long linked list.
 
-To indicate the number of buckets, you should probably add a constant to `dictionary.h`:
+You can copy-paste this into `dictionary.c`. Don't forget to also add the function prototype to `dictionary.h`.
+
+
+## Starting a hash table
+
+To actually have an entry point for your hash table, here's how you should do that in `dictionary.c`:
+
+    node *table[BUCKETS];
+
+Now you have a variable called `table` that you'll be working with in `load`, `check`, `size` and `unload`. Finally, to indicate the number of buckets, you should probably add a constant to `dictionary.c` as well:
 
     #define BUCKETS 1
 
