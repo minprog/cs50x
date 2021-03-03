@@ -4,6 +4,27 @@ Implementing `load` is quite a challenge! That's because when implementing load,
 
 After you have implemented `load`, the remaining functions will be a little bit easier because they can be based on the hash table that's already loaded. But more on that in the next few days!
 
+
+## Hashing
+
+For `load()` to work correctly, you will need a hash function that maps a given word to a "bucket" in the hash table. Let's start with this (very bad) hash function:
+
+    unsigned int hash(const char *word); 
+    {
+        return 0;
+    }
+
+This function ensures that **each and every word** ends up in bucket 0, which is ridiculous, but it should work anyway! You will just end up loading all words into a very long linked list.
+
+To indicate the number of buckets, you should probably add a constant to `dictionary.h`:
+
+    #define BUCKETS 1
+
+Use that constant to declare the array that's the base of your hash table. Later, when you're going to create a better hash function, you can increase this number.
+
+
+## Walkthrough
+
 <div markdown="1" class="extend">
 [![](walkthrough.jpg)](https://www.youtube.com/watch?v=-BX4wLZRwbc)
 </div>

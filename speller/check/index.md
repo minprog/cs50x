@@ -1,14 +1,22 @@
 # Speller: Check
 
+Now that your program can load all words from a lexicon into your hash table, let's implement "check"!
+
+> If you do not have a working hash function at this point, head back to the instructions for "load" and copy the hash function that's mentioned there.
+
+
+## Walkthrough
+
 <div markdown="1" class="extend">
 [![](walkthrough.jpg)](https://www.youtube.com/watch?v=qPz_Mr69yE0)
 </div>
 
 [Open video on Youtube](https://www.youtube.com/watch?v=qPz_Mr69yE0)
 
+
 ## Testing
 
-How to check whether your program is outting the right misspelled words? Well, you're welcome to consult the "answer keys" that are inside of the `keys` directory that's inside of your `speller` directory. For instance, inside of `keys/lalaland.txt` are all of the words that your program _should_ think are misspelled.
+How to check whether your program is outputting the expected misspelled words? Well, you're welcome to consult the "answer keys" that are inside of the `keys` directory that's inside of your `speller` directory. For instance, inside of `keys/lalaland.txt` are all of the words that your program _should_ think are misspelled.
 
 You could therefore run your program on some text in one window, as with the below.
 
@@ -45,4 +53,3 @@ L                                                               L
 ~~~
 
 that means your program (whose output is on the left) does not think that `Thelonious` or `MIA` is misspelled, even though the staff's output (on the right) does, as is implied by the absence of, say, `Thelonious` in the lefthand column and the presence of `Thelonious` in the righthand column.
-
