@@ -27,7 +27,7 @@ To actually have an entry point for your hash table, here's how you should do th
 
 Now you have a variable called `table` that you'll be working with in `load`, `check`, `size` and `unload`. Finally, to indicate the number of buckets, you should probably add a constant to `dictionary.c` as well:
 
-    #define BUCKETS 1
+    const unsigned int BUCKETS = 1;
 
 Use that constant to declare the array that's the base of your hash table. Later, when you're going to create a better hash function, you can increase this number.
 
