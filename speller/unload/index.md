@@ -1,5 +1,9 @@
 # Speller: Unload
 
+And this is the final step for speller. This is where you get your program to cleanup after itself, like any program is supposed to.
+
+## Walkthrough
+
 <div markdown="1" class="extend">
 [![](walkthrough.jpg)](https://www.youtube.com/watch?v=qkC4l0pUvCk)
 </div>
@@ -17,4 +21,3 @@ If you run `valgrind` without specifying a `text` for `speller`, your implementa
 If unsure how to interpret the output of `valgrind`, do just ask `help50` for help:
 
     help50 valgrind ./speller texts/ralph.txt
-
