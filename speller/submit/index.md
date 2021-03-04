@@ -10,7 +10,7 @@ Note that `check50` will also check for memory leaks, so be sure you've run `val
 
 ## Big Board
 
-If you'd like to put your code to the test against classmates' code (just for fun), upload your solution to our https://bigboard.quinner.nl/[Big Board] website before or after you submit!
+If you'd like to put your code to the test against classmates' code (just for fun), upload your solution to our [Big Board](https://bigboard.quinner.nl/) website before or after you submit!
 
 ## Submit
 
