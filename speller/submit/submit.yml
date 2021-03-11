@@ -9,4 +9,4 @@ files:
         - some_other_file.h
 check:
     tool: check50
-    slug: minprog/cs50x/2020/speller
+    slug: minprog/cs50x/2020/speller/all
