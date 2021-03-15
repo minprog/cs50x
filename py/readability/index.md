@@ -1,5 +1,7 @@
 # Readability
 
+> Deze opdracht is niet bedoeld voor samenwerken, maar je hoeft 'm ook niet helemaal alleen te doen. Het doel is ervaring opdoen met technieken en daarom moet je alles zelf oefenen. Maar schroom niet hulp te vragen, en als het nodig is kan iemand het even voordoen. Als je naderhand maar zelf alle stappen doorlopen hebt.
+
 Implement a program that computes the approximate grade level needed to comprehend some text, per the below.
 
     $ python readability.py
