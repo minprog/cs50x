@@ -1,5 +1,7 @@
 # Mario
 
+> Deze opdracht is niet bedoeld voor samenwerken, maar je hoeft 'm ook niet helemaal alleen te doen. Het doel is ervaring opdoen met technieken en daarom moet je alles zelf oefenen. Maar schroom niet hulp te vragen, en als het nodig is kan iemand het even voordoen. Als je naderhand maar zelf alle stappen doorlopen hebt.
+
 ![](../../mario/less/pyramid.png)
 
 In deze opdracht ga je Mario schrijven in Python. Gebruik de analyse die je eerder van Mario gemaakt hebt om snel te kunnen starten!

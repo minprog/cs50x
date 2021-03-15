@@ -1,5 +1,7 @@
 # DNA
 
+> Samenwerken bij deze opdracht is niet toegestaan; het is prima om medestudenten en anderen om hulp te vragen, als het er maar niet op neerkomt dat iemand anders een deel van het werk voor je doet. Voorbeelden van "redelijke" en "onredelijke" manieren van samenwerken vind je in de studiewijzer.
+
 Implement a program that identifies a person based on their DNA, per the below.
 
     $ python dna.py databases/large.csv sequences/5.txt
