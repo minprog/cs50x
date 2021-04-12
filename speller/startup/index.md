@@ -80,9 +80,7 @@ And `const`, meanwhile, just says that those strings, when passed in as argument
 
 #### `dictionary.c`
 
-Now open up `dictionary.c`. Notice how, atop the file, we've defined a `struct` called `node` that represents a node in a hash table. And we've declared a global pointer array, `table`, which will (soon) represent the hash table you will use to keep track of words in the dictionary. The array contains `N` node pointers, and we've set `N` equal to `1` for now, meaning this hash table has just 1 bucket right now. You'll likely want to increase the number of buckets, as by changing `N`, to something larger!
-
-Next, notice that we've implemented `load`, `hash`, `check`, `size`, and `unload`, but only barely, just enough for the code to compile. Your job, ultimately, is to re-implement those functions as cleverly as possible so that this spell checker works as advertised. And fast!
+Now open up `dictionary.c`. Notice that we've implemented `load`, `hash`, `check`, `size`, and `unload`, but only barely, just enough for the code to compile. Your job, ultimately, is to re-implement those functions as cleverly as possible so that this spell checker works as advertised.
 
 
 #### `speller.c`
