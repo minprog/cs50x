@@ -63,6 +63,12 @@ def test_reject_negative():
     check50.run("./cash").stdin("-1").reject()
 
 
+@check50.check(test_reject_negative)
+def test_041_after_negative():
+    """erroneous input of -1 and then input of 0.41 yields output of 4"""
+    check50.run("./cash").stdin("-1").stdin("0.41").stdout(coins(4), "4\n").exit(0)
+
+
 @check50.check(compiles)
 def test_reject_foo():
     """rejects a non-numeric input of "foo" """
