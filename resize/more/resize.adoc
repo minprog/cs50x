@@ -90,6 +90,8 @@ video::iv9cw-PTSnA[youtube]
 
 == Hints
 
+Be sure to consult the "CS50 manual pages":https://man.cs50.io/ if using functions like `fseek`!
+
 With a program like this, we could have created `large.bmp` out of `small.bmp` by resizing the latter by a factor of 4 (i.e., by multiplying both its width and its height by 4), per the below.
 
 [source]
