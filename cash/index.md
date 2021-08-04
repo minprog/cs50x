@@ -40,6 +40,21 @@ Implement, in a file called `cash.c` in a `~/problems/cash` directory, a program
 
     will safely convert `0.20` (or even `0.200000002980232238769531250`) to `20`.
 
+> Note that rounding here is a "hack" because floating-point numbers aren't a good way to represent money in computers.
+> As discussed before, floating-point calculations can introduce tiny imprecisions.
+> Say we have an amount of `0.42`. This will likely be represented as the number
+>
+>     0.419999999999999984456877655
+>
+> in your computer. If we were to multiply by 100, we'd get the float
+>
+>     41.9999999999999984456877655
+>
+> and if we then convert it to an integer without rounding, we end up with `41`!
+> Hence the need to round the input and to do the calculation using cents.
+> Now usually, to prevent either costly rounding calculations or accumulated errors,
+> floats aren't used to represent money at all in software.
+> (Although sometimes they [are](https://duckduckgo.com/?q=office+space).)
 
 ## Examples
 
