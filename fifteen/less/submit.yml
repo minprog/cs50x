@@ -4,7 +4,6 @@ files:
         - analysis.pdf
         - questions.txt
         - fifteen.c
-        - Makefile
 check:
     tool: check50
-    slug: minprog/cs50x/2020/fifteen/less
+    slug: minprog/cs50x/2021/fifteen/less
