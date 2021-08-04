@@ -44,7 +44,7 @@ Using this trick is a good way to get started. However, this configuration is de
 
 ### Understanding
 
-> *How to get started* This problem is neatly divided into four separate functions that you have to implement. For each of those functions, you do a problem analysis. Keep in mind (after reading all of the explanations below) that there is one very important thing connecting those functions: the *data structure* that is called +board+. So first thing you do is deeply understand what the board is and how it stores almost everything that is important for implementing this game. Then, for each function, consider how the function's purpose relates to the board.
+> *How to get started* This problem is neatly divided into four separate functions that you have to implement. For each of those functions, you do a problem analysis. Keep in mind (after reading all of the explanations below) that there is one very important thing connecting those functions: the **data structure** that is called `board`. So first thing you do is deeply understand what the board is and how it stores almost everything that is important for implementing this game. Then, for each function, consider how the function's purpose relates to the board.
 
 Take a look at `fifteen.c`. Within this file is an entire framework for the Game of Fifteen. The challenge up next is to complete this game's implementation.
 
