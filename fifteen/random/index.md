@@ -40,7 +40,7 @@ Using this trick is a good way to get started. However, this configuration is de
     $ rm fifteen.zip
     $ cd fifteen
     $ ls
-    Makefile    fifteen.c   questions.txt
+    3x3.txt     4x4.txt     Makefile    fifteen.c   questions.txt
 
 ### Understanding
 

@@ -9,7 +9,7 @@ Toward the end of World 1-1 in Nintendo's Super Mario Brothers, Mario must ascen
 
 ![screenshot of Mario jumping up a right-aligned pyramid](pyramid.png)
 
-Let's recreate that pyramid in C, albeit in text, using hashes (`#`) for bricks, a la the below. Each hash is a bit taller than it is wide, so the pyramid itself is also be taller than it is wide.
+Let's recreate that pyramid in C, albeit in text, using hashes (`#`) for bricks, a la the below. Each hash is a bit taller than it is wide, so the pyramid itself also becomes taller than it is wide.
 
            #
           ##
@@ -81,7 +81,7 @@ How to begin? Let's approach this problem one step at a time.
 
 ## Pseudocode
 
-First, create a new directory (i.e., folder) called `mario` inside of your `pset1` directory, by executing
+First, create a new directory (i.e., folder) called `mario` inside of your `problems` directory, by executing
 
     ~/ $ mkdir ~/problems/mario
 

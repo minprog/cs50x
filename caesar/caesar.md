@@ -98,6 +98,8 @@ How to begin? Let's approach this problem one step at a time.
 
 ### Pseudocode
 
+To start, you'll create a file called `pseudocode.txt` to help you analyze the problem. You will submit this analysis together with the final implementation in C.
+
 First, write some pseudocode that implements this program, even if not (yet!) sure how to write it in code. There's no one right way to write pseudocode, but short English sentences suffice. Recall how we wrote pseudocode for finding Mike Smith. Odds are your pseudocode will use (or imply using!) one or more functions, conditions, Boolean expressions, loops, and/or variables.
 
 <details markdown="1"><summary markdown="span">Spoiler</summary>

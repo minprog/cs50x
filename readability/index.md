@@ -37,11 +37,12 @@ Let's try another one:
 
 This text has 214 letters, 4 sentences, and 56 words. That comes out to about 382.14 letters per 100 words, and 7.14 sentences per 100 words. Plugged into the Coleman-Liau formula, we get a fifth grade reading level.
 
-As the average number of letters and words per sentence increases, the Coleman-Liau index gives the text a higher reading level. If you were to take this paragraph, for instance, which has longer words and sentences than either of the prior two examples, the formula would give the text an eleventh grade reading level.
+As the average number of letters per word and the average number words per sentence increase, the Coleman-Liau index assigns the text a higher reading level. If you were to take this paragraph, for instance, which has longer words and sentences than either of the prior two examples, the formula would give the text an eleventh grade reading level.
 
     $ ./readability
-    Text: As the average number of letters and words per sentence increases, the Coleman-Liau index gives the text a higher reading level. If you were to take this paragraph, for instance, which has longer words and sentences than either of the prior two examples, the formula would give the text an eleventh grade reading level.
+    Text: As the average number of letters per word and the average number words per sentence increase, the Coleman-Liau index assigns the text a higher reading level. If you were to take this paragraph, for instance, which has longer words and sentences than either of the prior two examples, the formula would give the text an eleventh grade reading level.
     Grade 11
+
 
 ### Try It
 
@@ -62,6 +63,7 @@ Design and implement a program, `readability`, that computes the Coleman-Liau in
 *   Your program should print as output `"Grade X"` where `X` is the grade level computed by the Coleman-Liau formula, rounded to the nearest integer.
 *   If the resulting index number is 16 or higher (equivalent to or greater than a senior undergraduate reading level), your program should output `"Grade 16+"` instead of giving the exact index number. If the index number is less than 1, your program should output `"Before Grade 1"`.
 
+Before you get started, read the remainder of this specification and follow the instructions under the Getting Started heading.
 
 ### Getting User Input
 
@@ -91,7 +93,7 @@ You can reference [https://man.cs50.io/](https://man.cs50.io/) for standard libr
 
 The Coleman-Liau index cares not only about the number of letters, but also the number of words in a sentence. For the purpose of this problem, we'll consider any sequence of characters separated by a space to be a word (so a hyphenated word like `"sister-in-law"` should be considered one word, not three).
 
-Modify `readability.c` so that, in addition to printing out the number of letters in the text, also prints out the number of words in the text.
+Modify `readability.c` so that, in addition to printing out the number of letters in the text, it also prints out the number of words in the text.
 
 You may assume that a sentence will not start or end with a space, and you may assume that a sentence will not have multiple spaces in a row, **notwithstanding Brian's walkthrough video, which was recorded before this specification was modified**.
 
@@ -134,16 +136,18 @@ Modify `readability.c` so that instead of outputting the number of letters, word
 If the resulting index number is 16 or higher (equivalent to or greater than a senior undergraduate reading level), your program should output `"Grade 16+"` instead of giving the exact index number. If the index number is less than 1, your program should output `"Before Grade 1"`.
 
 
-### Pseudocode
+## Getting Started with Pseudocode
 
-First, write some pseudocode that implements this program, even if not (yet!) sure how to write it in code. There's no one right way to write pseudocode, but short English sentences suffice. Recall how we wrote pseudocode for finding Mike Smith. Odds are your pseudocode will use (or imply using!) one or more functions, conditions, Boolean expressions, loops, and/or variables.
+To start, you'll create a file called `pseudocode.txt` to help you analyze the problem. You will submit this analysis together with the final implementation in C.
+
+There's no one right way to write pseudocode, but short English sentences suffice. Recall how we wrote pseudocode for finding Mike Smith in lecture. Odds are your pseudocode will use (or imply using!) one or more functions, conditions, Boolean expressions, loops, and/or variables.
 
 
 ## Hints
 
 *   Recall that `math.h` declares a function called `round` that might be useful here.
 
-*   Recall that, when dividing values of type `int` in C, the result will also be an `int`, with any remainder (i.e., digits after the decimal point) discarded. Put another way, the result will be "truncated." You might want to cast your one or more values to `float` before performing division when calculating `L` and `S`!
+*   Recall that, when dividing values of type `int` in C, the result will also be an `int`, with any remainder (i.e., digits after the decimal point) discarded. Put another way, the result will be "truncated." You might want to cast one or more values to `float` before performing division when calculating `L` and `S`!
 
 
 ## Walkthrough
@@ -198,7 +202,7 @@ As soon as you're done, submit your `readability.c` implementation, below!
 
 2. Make sure you are signed in to **this** website!
 
-3. In the form below, choose the file that you just downloaded.
+3. In the form below, choose the files that you just downloaded.
 
 4. Press "Submit for grading". Presto!
 

@@ -56,6 +56,9 @@ Implement, in a file called `cash.c` in a `~/problems/cash` directory, a program
 > floats aren't used to represent money at all in software.
 > (Although sometimes they [are](https://duckduckgo.com/?q=office+space).)
 
+To get started, read through the examples below, then watch the Walkthrough and finally follow the instructions under the Getting Started header.
+
+
 ## Examples
 
 Ultimately, your program should behave per the examples below.
@@ -80,13 +83,13 @@ Ultimately, your program should behave per the examples below.
 [Open video on Youtube](https://www.youtube.com/watch?v=Y3nWGvqt_Cg)
 
 
-## Pseudocode
+## Getting Started
 
 First, create a new directory (i.e., folder) called `cash` inside of your `problems` directory, by executing
 
     ~/ $ mkdir ~/problems/cash
 
-Add a new file called `pseudocode.txt` inside of your `cash` directory.
+To start, you'll create a file called `pseudocode.txt` to help you analyze the problem. You will submit this analysis together with the final implementation in C.
 
 Write in `pseudocode.txt` some pseudocode that implements this program, even if not (yet!) sure how to write it in code. There's no one right way to write pseudocode, but short English sentences suffice. Recall how we wrote pseudocode for finding Mike Smith! Odds are your pseudocode will use (or imply using!) one or more functions, conditions, Boolean expressions, loops, and/or variables.
 

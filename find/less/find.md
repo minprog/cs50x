@@ -166,7 +166,7 @@ Complete the implementation of `find` by completing the implementation of `searc
 ### `sort`
 
 *   Your implemenation must sort, from smallest to largest, the array of numbers that it's passed.
-*   The running time of your implementation must be in _O_(_n_^2^), where _n_ is the array's size.
+*   The running time of your implementation must be in _O_(_n_<sup>2</sup>), where _n_ is the array's size.
 *   You may not alter the function's declaration. Its prototype must remain:
 
         void sort(int values[], int n);
@@ -195,7 +195,7 @@ Complete the implementation of `find` by completing the implementation of `searc
 
 ## Usage
 
-Your program should behave per the examples below. Assumed that the underlined text is what some user has typed. (`^d` represents the ctrl-d character described above)
+Your program should behave per the examples below. (`^d` represents the ctrl-d character described above)
 
     $ ./find 42
     50
@@ -252,7 +252,7 @@ Before you implement `search` in _O_(log _n_) time, you might want to implement 
 
 Ultimately, you are welcome to implement `search` iteratively (with a loop) or recursively (wherein a function calls itself). If you pursue the latter, though, know that you may not change our declaration of `search`, but you may write a new, recursive function (that perhaps takes different parameters) that `search` itself calls.
 
-For `sort`, odds are you'll want to implement bubble sort, selection sort, or insertion sort! Just realize that there's no one "right" way to implement any of those algorithms; variations abound. In fact, you're welcome to improve upon them as you see fit, so long as your implementation remains in _O_(_n_^2^). Although you may not alter our declaration of `sort`, you're welcome to define your own function(s) in `helpers.c` that `sort` itself may then call.
+For `sort`, odds are you'll want to implement bubble sort, selection sort, or insertion sort! Just realize that there's no one "right" way to implement any of those algorithms; variations abound. In fact, you're welcome to improve upon them as you see fit, so long as your implementation remains in _O_(_n_<sup>2</sup>). Although you may not alter our declaration of `sort`, you're welcome to define your own function(s) in `helpers.c` that `sort` itself may then call.
 
 We leave it to you to determine how best to test your implementation of `search` and `sort`. But don't forget that `printf` is your friend while debugging! And don't forget that you can generate the same sequence of pseudorandom numbers again and again by explicitly specifying ``generate``'s seed.
 

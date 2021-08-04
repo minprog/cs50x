@@ -11,7 +11,7 @@ It's time to choose your own adventure! Your assignment, quite simply, is to imp
 * Your project must have at least three scripts total (i.e., not necessarily three per sprite).
 * Your project must use at least one condition, one loop, and one variable.
 * Your project must use at least one sound.
-* Your project should be more complex than most of those demonstrated in lecture (many of which, though instructive, were quite short) but it can be less complex than *Ivy's Hardest Game*. As such, your project should probably use a few dozen puzzle pieces overall.
+* Your project should be more complex than most of those demonstrated in lecture (many of which, though instructive, were quite short) but it can be less complex than [Ivy's Hardest Game](https://scratch.mit.edu/projects/326129587/). As such, your project should probably use a few dozen puzzle pieces overall.
 
 Head to [the Scratch website](https://scratch.mit.edu/) and sign up for an account on MIT's website by clicking **Join Scratch** atop the page. Any username (that's available) is fine, but take care to remember it and your choice of password.  After registering and confirming your email address, click the orange "**Start Creating**" button to begin.
 
@@ -24,7 +24,7 @@ To get started, try to think of an idea on your own, and then set out to impleme
 - [Ivy's Hardest Game](https://scratch.mit.edu/projects/326129587/), a game, Harvard edition
 - [Soccer](https://scratch.mit.edu/projects/37413/), a game
 - [Cookie Love Story](https://scratch.mit.edu/projects/26329196/), an animation
-- [Gingerbread tales](https://scratch.mit.edu/projects/26329196/), an interactive story
+- [Gingerbread tales](https://scratch.mit.edu/projects/277536784/), an interactive story
 - [Intersection](https://scratch.mit.edu/projects/75390754/), a game
 - [Oscartime](https://scratch.mit.edu/projects/277537196/), a game
 
@@ -50,7 +50,7 @@ Once finished with your project:
 
 - Below, you should find a form where you can attach your `.sb3` file and paste your project's URL. If there is no form, you might have forgotten to logon to this website and register your name!
 
-- If your file is too large because you included many sounds and large pictures, you can create a copy (**File > Save as a copy**), and in that copy delete some of those elements.
+- There is a file size limit of about 9MB for submitting. If your file is too large because you included many sounds and large pictures, you can create a copy (**File > Save as a copy**), and in that copy delete some of those elements.
 
 
 If you have any questions or issues with the above steps, reach out to the TAs!
