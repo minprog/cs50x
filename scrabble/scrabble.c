@@ -16,10 +16,10 @@ int main(void)
     int score1 = compute_score(word1);
     int score2 = compute_score(word2);
 
-    // TODO: Print the winner
+    // TODO: print the winner
 }
 
 int compute_score(string word)
 {
-    // TODO: Compute and return score for string
+    // TODO: compute and return score for string
 }

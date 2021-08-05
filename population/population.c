@@ -3,11 +3,11 @@
 
 int main(void)
 {
-    // TODO: Prompt for start size
+    // TODO: prompt for start size
 
-    // TODO: Prompt for end size
+    // TODO: prompt for end size
 
-    // TODO: Calculate number of years until we reach threshold
+    // TODO: calculate number of years until we reach threshold
 
-    // TODO: Print number of years
+    // TODO: print number of years
 }

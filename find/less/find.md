@@ -10,7 +10,7 @@ Implement a program that finds a number among numbers, per the below.
 
 ## Distribution
 
-    $ wget https://github.com/minprog/cs50x/raw/2020/find/less/find.zip
+    $ wget https://github.com/minprog/cs50x/raw/2021/find/dist/find.zip
     $ unzip find.zip
     $ rm find.zip
     $ cd find

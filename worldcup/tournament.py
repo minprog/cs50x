@@ -13,10 +13,10 @@ def main():
         sys.exit("Usage: python tournament.py FILENAME")
 
     bracket = []
-    # TODO: Read bracket into memory from file
+    # TODO: read bracket into memory from file
 
     counts = {}
-    # TODO: Simulate N tournaments and keep track of win counts
+    # TODO: simulate N tournaments and keep track of win counts
 
     # Print each team's chances of winning, according to simulation
     for team in sorted(counts, key=lambda team: counts[team], reverse=True):
