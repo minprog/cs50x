@@ -18,9 +18,9 @@ Recall from lecture that we saw a few algorithms for sorting a sequence of numbe
 
 1.  Log into [ide.cs50.io](https://ide.cs50.io/) using your GitHub account.
 2.  In your terminal window, run `cd ~/problems` to switch to your `problems` directory.
-2.  In your terminal window, run `wget https://github.com/minprog/cs50x/raw/2020/sort/sort.zip` to download a Zip file of the lab distribution code.
+2.  In your terminal window, run `wget https://github.com/minprog/cs50x/raw/2021/sort/dist/sort.zip` to download a Zip file of the lab distribution code.
 3.  In your terminal window, run `unzip sort.zip` to unzip (i.e., decompress) that Zip file.
-4.  In your terminal window, run `cd lab3` to change directories into your `lab3` directory.
+4.  In your terminal window, run `cd sort` to change directories into your `sort` directory.
 
 
 ## Instructions
