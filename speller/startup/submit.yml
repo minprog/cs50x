@@ -1,4 +1,4 @@
-name: speller-started
+name: speller_started
 files:
     required:
         - answers.md

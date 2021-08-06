@@ -1,4 +1,4 @@
-name: speller-load
+name: speller_load
 files:
     required:
         - dictionary.c

@@ -1,4 +1,4 @@
-name: speller-hash
+name: speller_hash
 files:
     required:
         - dictionary.c

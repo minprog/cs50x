@@ -1,4 +1,4 @@
-name: speller-check
+name: speller_check
 files:
     required:
         - dictionary.c

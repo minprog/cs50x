@@ -1,4 +1,4 @@
-name: speller-spec
+name: speller_spec
 files:
     required:
         - analyse.pdf

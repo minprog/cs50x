@@ -1,4 +1,4 @@
-name: speller-size
+name: speller_size
 files:
     required:
         - dictionary.c

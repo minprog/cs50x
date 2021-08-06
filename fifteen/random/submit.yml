@@ -1,4 +1,4 @@
-name: fifteen_less
+name: fifteen_random
 files:
     required:
         - questions.txt
