@@ -1,6 +1,8 @@
 # Credit
 
-> Samenwerken bij deze opdracht is niet toegestaan; het is prima om medestudenten en anderen om hulp te vragen, als het er maar niet op neerkomt dat iemand anders een deel van het werk voor je doet. Voorbeelden van "redelijke" en "onredelijke" manieren van samenwerken vind je in de studiewijzer.
+> Dit is een extra opdracht. De opdracht is een stuk pittiger dan andere onderdelen van de cursus, omdat je zelf meer uitzoekwerk moet doen. Los je de opdracht mooi op, dan krijg je een extra punt bovenop de beoordelingen van je normale inzendingen.
+>
+> Samenwerken bij de extra opdracht is niet toegestaan, maar gezamenlijk een probleemanalyse doen aan de hand van voorbeelden is helemaal prima. Je kunt voor deze opdracht géén hulp krijgen bij de assistenten.
 
 A credit (or debit) card, of course, is a plastic card with which you can pay for goods and services. Printed on that card is a number that's also stored in a database somewhere, so that when your card is used to buy something, the creditor knows whom to bill. There are a lot of people with credit cards in this world, so those numbers are pretty long: American Express uses 15-digit numbers, MasterCard uses 16-digit numbers, and Visa uses 13- and 16-digit numbers. And those are decimal numbers (0 through 9), not binary, which means, for instance, that American Express could print as many as 10^15 = 1,000,000,000,000,000 unique cards! (That's, um, a quadrillion.)
 

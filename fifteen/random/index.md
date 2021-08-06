@@ -1,6 +1,8 @@
 # Game of Fifteen
 
-> Samenwerken bij deze opdracht is niet toegestaan; het is prima om medestudenten en anderen om hulp te vragen, als het er maar niet op neerkomt dat iemand anders een deel van het werk voor je doet. Voorbeelden van "redelijke" en "onredelijke" manieren van samenwerken vind je in de studiewijzer.
+> Dit is een extra opdracht. De opdracht is een stuk pittiger dan andere onderdelen van de cursus, omdat je zelf meer uitzoekwerk moet doen. Los je de opdracht mooi op, dan krijg je een extra punt bovenop de beoordelingen van je normale inzendingen.
+>
+> Samenwerken bij de extra opdracht is niet toegestaan, maar gezamenlijk een probleemanalyse doen aan de hand van voorbeelden is helemaal prima. Je kunt voor deze opdracht géén hulp krijgen bij de assistenten.
 
 Implement the Game of Fifteen, per the below.
 
@@ -29,7 +31,7 @@ One way to get started is to position the board's tiles in reverse order, from l
 
 ![Game of Fifteen](adapted.png){:.w-25}
 
-Using this trick is a good way to get started. However, this configuration is decidedly not random, so eventually you will have to figure out how to create a reasonably random configuration.
+Using this trick is a good way to get started. However, this configuration is decidedly *not random*, so eventually you will have to figure out how to create a reasonably random configuration.
 
 ## Distribution
 
@@ -52,7 +54,12 @@ But first go ahead and compile the framework. (Can you figure out how?) And, eve
 
 Anyhow, it appears that the game is at least partly functional. Granted, it's not much of a game yet. But that's where you come in!
 
-### Checking for Understanding
+## Specification
+
+1. Implement the Game of Fifteen, per the comments in `fifteen.c` and the information from this specification.
+1. Adapt `init` to generate a random configuration each time the game is started. Consult the [CS50 manual pages](https://manual.cs50.io) to find information on using the `random` and `srandom` functions.
+
+## Questions
 
 Read over the code and comments in `fifteen.c` and then answer the questions below in `questions.txt`, which is a (nearly empty) text file that we included for you inside of the distribution's `fifteen` directory. No worries if you're not quite sure how `fprintf` or `fflush` work; we're simply using those to automate some testing.
 
@@ -61,11 +68,6 @@ Read over the code and comments in `fifteen.c` and then answer the questions bel
 1. What function is called to greet the player at game's start?
 1. What functions do you apparently need to implement?
 {: start="0"}
-
-## Specification
-
-1. Implement the Game of Fifteen, per the comments in `fifteen.c` and the information from this specification.
-1. Adapt `init` to generate a random configuration each time the game is started. Consult the [CS50 manual pages](https://manual.cs50.io) to find information on using the `random` and `srandom` functions.
 
 ## Walkthrough
 

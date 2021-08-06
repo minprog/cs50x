@@ -3,7 +3,9 @@
 
 = Crack
 
-> Samenwerken bij deze opdracht is niet toegestaan; het is prima om medestudenten en anderen om hulp te vragen, als het er maar niet op neerkomt dat iemand anders een deel van het werk voor je doet. Voorbeelden van "redelijke" en "onredelijke" manieren van samenwerken vind je in de studiewijzer.
+> Dit is een extra opdracht. De opdracht is een stuk pittiger dan andere onderdelen van de cursus, omdat je zelf meer uitzoekwerk moet doen. Los je de opdracht mooi op, dan krijg je een extra punt bovenop de beoordelingen van je normale inzendingen.
+>
+> Samenwerken bij de extra opdracht is niet toegestaan, maar gezamenlijk een probleemanalyse doen aan de hand van voorbeelden is helemaal prima. Je kunt voor deze opdracht géén hulp krijgen bij de assistenten.
 
 Implement a program that cracks passwords, per the below.
 
