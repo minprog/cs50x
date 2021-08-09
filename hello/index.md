@@ -191,8 +191,6 @@ As soon as you're done, submit your `hello.c` implementation, below!
 
 2. Make sure you are signed in to **this** website!
 
-3. Enter how much time you spent on this assignment top-to-bottom: <input name="form[time]" type="text" required>
-
 4. In the form below, choose the file that you just downloaded.
 
 4. Press "Submit for grading". Presto!
