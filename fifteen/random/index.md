@@ -58,8 +58,9 @@ Anyhow, it appears that the game is at least partly functional. Granted, it's no
 
 1. Implement the Game of Fifteen, per the comments in `fifteen.c` and the information from this specification.
 1. Allow the game to generate **random** configurations. Your program needs to accept an optional command-line argument `-r` to do this.
-        - Add a function `init_randomized` to generate a random configuration.
-        - Adapt `main` to accept the `-r` command-line argument and call `init_randomized` instead of `init` when this command-line argument is provided.
+
+    - Add a function `init_randomized` to generate a random configuration (see below for hints).
+    - Adapt `main` to accept the `-r` command-line argument and call `init_randomized` instead of `init` when this command-line argument is provided.
 
 ## Questions
 
