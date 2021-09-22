@@ -57,7 +57,9 @@ Anyhow, it appears that the game is at least partly functional. Granted, it's no
 ## Specification
 
 1. Implement the Game of Fifteen, per the comments in `fifteen.c` and the information from this specification.
-1. Adapt `init` to generate a random configuration each time the game is started. Consult the [CS50 manual pages](https://manual.cs50.io) to find information on using the `random` and `srandom` functions.
+1. Allow the game to generate **random** configurations. Your program needs to accept an optional command-line argument `-r` to do this.
+        - Add a function `init_randomized` to generate a random configuration.
+        - Adapt `main` to accept the `-r` command-line argument and call `init_randomized` instead of `init` when this command-line argument is provided.
 
 ## Questions
 
@@ -100,6 +102,13 @@ While a 3 × 3 board might look like the below:
 Feel free to tweak the appropriate argument to `usleep` to speed up animation. In fact, you're welcome to alter the aesthetics of the game. For fun with "ANSI escape sequences," including color, take a look at our implementation of `clear` and check out <http://isthe.com/chongo/tech/comp/ansi_escapes.html> for more tricks.
 
 You're welcome to write your own functions and even change the prototypes of functions we wrote. But you may not alter the flow of logic in `main` itself so that we can automate some tests of your program once submitted. In particular, `main` must only return `0` if and when the user has actually won the game; non-zero values should be returned in any cases of error, as implied by our distribution code.
+
+## Hints for randomizing
+
+- You may start `init_randomized` by calling `init` to generate a guaranteed solvable configuration and then shuffle that randomly for some number of times.
+- Or you may place numbers randomly, check the solvability of the generated configuration and if it's not solvable, generate another random configuration.
+- Consult the [CS50 manual pages](https://manual.cs50.io) to find information on using the `random` and `srandom` functions.
+
 
 ## Testing
 
