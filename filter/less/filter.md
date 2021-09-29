@@ -217,8 +217,9 @@ Finally, the `blur` function should take an image and turn it into a box-blurred
 
 1. Implement a separate `blur_pixel` function, like you did for `grayscale_pixel` and `sepia_pixel`.
 
-2. Use this function in your `blur` function to make the blurred version of a full image.
+1. Use this function in your `blur` function to make the blurred version of a full image.
 
+1. Hint: To blur a pixel, you should always use the surrounding values from the original image. So for blurring, make sure that you have a copy of the original image pixels available.
 
 ## Usage
 
