@@ -170,7 +170,7 @@ The function `grayscale` should take an image and turn it into a black-and-white
        RGBTRIPLE grayscale_pixel(int height, int width, RGBTRIPLE image[height][width], int x, int y)
        {
            // calculate the average pixel value
-           BYTE average = 0; // <--- TODO
+           int average = 0; // <--- TODO
            
            // set each color value to the average value
            RGBTRIPLE triple;
