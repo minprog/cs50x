@@ -161,7 +161,7 @@ Watch the introductory walkthrough for more information on how to get started:
 
 The function `grayscale` should take an image and turn it into a black-and-white version of the same image.
 
-1. Watch the walkthrough:
+1. Watch the walkthrough about grayscaling:
 
     [![](walkthrough.jpg){: width="150px"}](https://youtu.be/A8LA2osnAwM?list=PLhQjrBD2T3837jmUt0ep7Tpmnxdv9NVut)
 
@@ -188,7 +188,7 @@ The function `grayscale` should take an image and turn it into a black-and-white
 
 The function `sepia` should take an image and turn it into a sepia version of the same image.
 
-1. Watch the walkthrough:
+1. Watch the walkthrough about the sepia filter:
 
     [![](walkthrough.jpg){: width="150px"}](https://youtu.be/m0_vouQLufc?list=PLhQjrBD2T3837jmUt0ep7Tpmnxdv9NVut)
 
@@ -200,7 +200,7 @@ The function `sepia` should take an image and turn it into a sepia version of th
 
 The `reflect` function should take an image and reflect it horizontally.
 
-1. Watch the walkthrough:
+1. Watch the walkthrough about the reflection filter:
 
     [![](walkthrough.jpg){: width="150px"}](https://youtu.be/dlWpx8gQdFo?list=PLhQjrBD2T3837jmUt0ep7Tpmnxdv9NVut)
 
@@ -210,7 +210,7 @@ The `reflect` function should take an image and reflect it horizontally.
 
 Finally, the `blur` function should take an image and turn it into a box-blurred version of the same image.
 
-1. Watch the walkthrough:
+1. Watch the walkthrough about blurring:
 
     [![](walkthrough.jpg){: width="150px"}](https://youtu.be/6opWB7DaFCY?list=PLhQjrBD2T3837jmUt0ep7Tpmnxdv9NVut)
 
