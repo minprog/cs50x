@@ -167,20 +167,19 @@ The function `grayscale` should take an image and turn it into a black-and-white
 
 1. Implement a separate `grayscale_pixel` function, which will take an image and returns a gray-scaled `RGBTRIPLE` value for that pixel:
 
-        RGBTRIPLE grayscale_pixel(RGBTRIPLE image[height][width], int x, int y)
-        {
-            RGBTRIPLE triple;
-            
-            // calculate the average pixel value
-            BYTE average = 0; // <--- TODO
-            
-            // set each color value to the average value
-            triple.rgbtBlue = average;
-            triple.rgbtGreen = average;
-            triple.rgbtRed = average;
-            
-            return triple;
-        }
+       RGBTRIPLE grayscale_pixel(int height, int width, RGBTRIPLE image[height][width], int x, int y)
+       {
+           // calculate the average pixel value
+           BYTE average = 0; // <--- TODO
+           
+           // set each color value to the average value
+           RGBTRIPLE triple;
+           triple.rgbtBlue = average;
+           triple.rgbtGreen = average;
+           triple.rgbtRed = average;
+           
+           return triple;
+       }
 
 2. Use this function in your `grayscale` function to make the black-and-white version of the full image.
 
