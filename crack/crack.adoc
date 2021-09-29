@@ -93,12 +93,11 @@ Be sure to read up on `crypt`, taking particular note of its mention of "salt":
 man crypt
 ----
 
-Per that man page, you'll likely want to put
+You'll likely want to put
 
 [source,c]
 ----
-#define _XOPEN_SOURCE
-#include <unistd.h>
+#include <crypt.h>
 ----
 
 at the top of your file in order to use `crypt`.
