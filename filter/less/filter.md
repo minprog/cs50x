@@ -181,7 +181,9 @@ The function `grayscale` should take an image and turn it into a black-and-white
            return triple;
        }
 
-2. Use this function in your `grayscale` function to make the black-and-white version of the full image.
+1. Place the function *above* the `grayscale` function in `helpers.c`.
+
+1. Use this function in your `grayscale` function to make the black-and-white version of the full image.
 
 ### Sepia
 
