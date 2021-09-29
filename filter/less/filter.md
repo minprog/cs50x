@@ -165,7 +165,7 @@ The function `grayscale` should take an image and turn it into a black-and-white
 
     [![](walkthrough.jpg){: width="150px"}](https://youtu.be/A8LA2osnAwM?list=PLhQjrBD2T3837jmUt0ep7Tpmnxdv9NVut)
 
-1. Implement a separate `grayscale_pixel` function, which will take an image and returns a gray-scaled `RGBTRIPLE` value for that pixel:
+1. Implement a separate `grayscale_pixel` function, which will take an image and the coordinates of a single pixel. The function returns a gray-scaled `RGBTRIPLE` value for that pixel:
 
        RGBTRIPLE grayscale_pixel(int height, int width, RGBTRIPLE image[height][width], int x, int y)
        {
