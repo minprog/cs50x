@@ -1,7 +1,6 @@
 name: filter_less
 files:
   required:
-    - analysis.pdf
     - helpers.c
 check:
   tool: check50
