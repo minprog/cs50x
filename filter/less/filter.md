@@ -155,13 +155,13 @@ Implement the functions in `helpers.c` such that a user can apply grayscale, sep
 
 Watch the introductory walkthrough for more information on how to get started:
 
-[![](walkthrough.jpg){: width="100px" height="100px"}](https://youtu.be/K0v9byp9jd0?list=PLhQjrBD2T3837jmUt0ep7Tpmnxdv9NVut)
+[![](walkthrough.jpg){: width="150px"}](https://youtu.be/K0v9byp9jd0?list=PLhQjrBD2T3837jmUt0ep7Tpmnxdv9NVut)
 
 ### Grayscale
 
 The function `grayscale` should take an image and turn it into a black-and-white version of the same image.
 
-[![](walkthrough.jpg){: width="100px" height="100px"}](https://youtu.be/A8LA2osnAwM?list=PLhQjrBD2T3837jmUt0ep7Tpmnxdv9NVut)
+[![](walkthrough.jpg){: width="150px"}](https://youtu.be/A8LA2osnAwM?list=PLhQjrBD2T3837jmUt0ep7Tpmnxdv9NVut)
 
 1. Implement a separate `grayscale_pixel` function, which will take an image and returns a gray-scaled `RGBTRIPLE` value for that pixel:
 
@@ -186,7 +186,7 @@ The function `grayscale` should take an image and turn it into a black-and-white
 
 The function `sepia` should take an image and turn it into a sepia version of the same image.
 
-[![](walkthrough.jpg){: width="100px" height="100px"}](https://youtu.be/m0_vouQLufc?list=PLhQjrBD2T3837jmUt0ep7Tpmnxdv9NVut)
+[![](walkthrough.jpg){: width="150px"}](https://youtu.be/m0_vouQLufc?list=PLhQjrBD2T3837jmUt0ep7Tpmnxdv9NVut)
 
 1. Implement a separate `sepia_pixel` function, like you did for `grayscale_pixel`.
 
@@ -196,7 +196,7 @@ The function `sepia` should take an image and turn it into a sepia version of th
 
 The `reflect` function should take an image and reflect it horizontally.
 
-[![](walkthrough.jpg){: width="100px" height="100px"}](https://youtu.be/dlWpx8gQdFo?list=PLhQjrBD2T3837jmUt0ep7Tpmnxdv9NVut)
+[![](walkthrough.jpg){: width="150px"}](https://youtu.be/dlWpx8gQdFo?list=PLhQjrBD2T3837jmUt0ep7Tpmnxdv9NVut)
 
 1. For reflect, it's cleaner to **not** use an additional helper function. You can implement the full reflect inside the `reflect` function.
 
@@ -204,7 +204,7 @@ The `reflect` function should take an image and reflect it horizontally.
 
 Finally, the `blur` function should take an image and turn it into a box-blurred version of the same image.
 
-[![](walkthrough.jpg){: width="100px" height="100px"}](https://youtu.be/6opWB7DaFCY?list=PLhQjrBD2T3837jmUt0ep7Tpmnxdv9NVut)
+[![](walkthrough.jpg){: width="150px"}](https://youtu.be/6opWB7DaFCY?list=PLhQjrBD2T3837jmUt0ep7Tpmnxdv9NVut)
 
 1. Implement a separate `blur_pixel` function, like you did for `grayscale_pixel` and `sepia_pixel`.
 
