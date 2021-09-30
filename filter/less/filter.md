@@ -85,6 +85,7 @@ The new value of each pixel would be the average of the values of all of the pix
 
 For a pixel along the edge or corner, like pixel 15, we would still look for all pixels within 1 row and column: in this case, pixels 10, 11, 12, 14, 15, and 16.
 
+
 ## Getting Started
 
 Here's how to download this problem's "distribution code" (i.e., starter code) into your own CS50 IDE. Log into [CS50 IDE](https://ide.cs50.io/) and then, in a terminal window, execute each of the below.
@@ -96,6 +97,7 @@ Here's how to download this problem's "distribution code" (i.e., starter code) i
 * Execute `ls`. You should see a directory called `filter`, which was inside of that ZIP file.
 * Execute `cd filter` to change into that directory.
 * Execute `ls`. You should see this problem's distribution, including `bmp.h`, `filter.c`, `helpers.h`, `helpers.c`, and `Makefile`. You'll also see a directory called `images`, with some sample Bitmap images.
+
 
 ## Understanding
 
@@ -149,6 +151,7 @@ Then, you can run the program by running:
 
 which takes the image at `images/yard.bmp`, and generates a new image called `out.bmp` after running the pixels through the `grayscale` function. `grayscale` doesn't do anything just yet, though, so the output image should look the same as the original yard.
 
+
 ## Specification
 
 Implement the functions in `helpers.c` such that a user can apply grayscale, sepia, reflection, or blur filters to their images. You should not modify any of the provided function signatures, nor should you modify any other files other than `helpers.c`.
@@ -185,6 +188,8 @@ The function `grayscale` should take an image and turn it into a black-and-white
 
 1. Use this function in your `grayscale` function to make the black-and-white version of the full image.
 
+1. Test your code: `./filter -g images/infile.bmp outfile.bmp`. The resulting image will clearly be in grayscale.
+
 ### Sepia
 
 The function `sepia` should take an image and turn it into a sepia version of the same image.
@@ -195,7 +200,9 @@ The function `sepia` should take an image and turn it into a sepia version of th
 
 1. Implement a separate `sepia_pixel` function, like you did for `grayscale_pixel`.
 
-2. Use this function in your `sepia` function to make the sepia-colored version of a full image.
+1. Use this function in your `sepia` function to make the sepia-colored version of a full image.
+
+1. Test your code: `./filter -s images/infile.bmp outfile.bmp`. The resulting image will be in sepia, but it may be hard to clearly distinguish (especially when you're color-blind in some way).
 
 ### Reflect
 
@@ -206,6 +213,8 @@ The `reflect` function should take an image and reflect it horizontally.
     [![](walkthrough.jpg){: width="150px"}](https://youtu.be/dlWpx8gQdFo?list=PLhQjrBD2T3837jmUt0ep7Tpmnxdv9NVut)
 
 1. For reflect, it's cleaner to **not** use an additional helper function. You can implement the full reflect inside the `reflect` function.
+
+1. Test your code: `./filter -r images/infile.bmp outfile.bmp`.
 
 ### Blur
 
@@ -219,21 +228,15 @@ Finally, the `blur` function should take an image and turn it into a box-blurred
 
 1. Use this function in your `blur` function to make the blurred version of a full image.
 
-1. Hint: To blur a pixel, you should always use the surrounding values from the original image. So for blurring, make sure that you have a copy of the original image pixels available.
+1. Hint: To blur a pixel, you should always use the surrounding values from the **original** image. So make sure that you have a copy of the original image pixels available.
 
-## Usage
-
-Your program should behave per the examples below.
-
-    $ ./filter -g infile.bmp outfile.bmp
-    $ ./filter -s infile.bmp outfile.bmp
-    $ ./filter -r infile.bmp outfile.bmp
-    $ ./filter -b infile.bmp outfile.bmp
+1. Test your code: `./filter -b images/infile.bmp outfile.bmp`. The resulting image should indeed be a little bit blurry.
 
 
 ## Hints
 
-The values of a pixel's `rgbtRed`, `rgbtGreen`, and `rgbtBlue` components are all integers, so be sure to round any floating-point numbers to the nearest integer when assigning them to a pixel value!
+The values of a pixel's `rgbtRed`, `rgbtGreen`, and `rgbtBlue` components are all integers, so be sure to **round** any floating-point numbers to the nearest integer when assigning them to a pixel value!
+
 
 ## Testing
 
