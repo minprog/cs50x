@@ -63,16 +63,14 @@ Next notice how we `#include` a file called `stdbool.h`. That's the file in whic
 
 Also notice our use of `#define`, a "preprocessor directive" that defines a "constant" called `LENGTH` that has a value of `45`. It's a constant in the sense that you can't (accidentally) change it in your own code. In fact, `clang` will replace any mentions of `LENGTH` in your own code with, literally, `45`. In other words, it's not a variable, just a find-and-replace trick.
 
-Finally, notice the prototypes for five functions: `check`, `hash`, `load`, `size`, and `unload`. Notice how three of those take a pointer as an argument, per the `*`:
+Finally, notice the prototypes for four functions: `check`, `load`, `size`, and `unload`. Notice how two of those take a pointer as an argument, per the `*`:
 
     bool check(const char *word);
-    unsigned int hash(const char *word);
     bool load(const char *dictionary);
 
 Recall that `char *` is what we used to call `string`. So those three prototypes are essentially just:
 
     bool check(const string word);
-    unsigned int hash(const string word);
     bool load(const string dictionary);
 
 And `const`, meanwhile, just says that those strings, when passed in as arguments, must remain constant; you won't be able to change them, accidentally or otherwise!
@@ -80,7 +78,7 @@ And `const`, meanwhile, just says that those strings, when passed in as argument
 
 #### `dictionary.c`
 
-Now open up `dictionary.c`. Notice that we've implemented `load`, `hash`, `check`, `size`, and `unload`, but only barely, just enough for the code to compile. Your job, ultimately, is to re-implement those functions as cleverly as possible so that this spell checker works as advertised.
+Now open up `dictionary.c`. Notice that we've implemented `load`, `check`, `size`, and `unload`, but only barely, just enough for the code to compile. Your job, ultimately, is to re-implement those functions as cleverly as possible so that this spell checker works as advertised.
 
 
 #### `speller.c`
