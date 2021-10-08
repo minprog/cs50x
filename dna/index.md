@@ -67,6 +67,8 @@ In a file called `dna.py` in `~/problems/dna/`, implement a program that identif
 
 *   For each of the STRs (from the first line of the CSV file), your program should compute the longest run of consecutive repeats of the STR in the DNA sequence to identify.
 
+    *   Note that "consecutive repeats" means that you're not looking to simply count every occurrence of the STR in the sequence. It's a bit more complicated than that.
+
 *   If the STR counts match exactly with any of the individuals in the CSV file, your program should print out the name of the matching individual.
 
     *   You may assume that the STR counts will not match more than one individual.
