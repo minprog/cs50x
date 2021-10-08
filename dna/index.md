@@ -128,6 +128,3 @@ While `check50` is available for this problem, you're encouraged to instead test
 *   Run your program as `python dna.py databases/large.csv sequences/18.txt`. Your program should output `No match`.
 *   Run your program as `python dna.py databases/large.csv sequences/19.txt`. Your program should output `Fred`.
 *   Run your program as `python dna.py databases/large.csv sequences/20.txt`. Your program should output `No match`.
-
-
-## Submit
