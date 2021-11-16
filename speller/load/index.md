@@ -9,7 +9,7 @@ After you have implemented `load`, the remaining functions will be a little bit 
 
 For `load()` to work correctly, you will need a hash function that maps a given word to a "bucket" in the hash table. Let's start with this (very bad) hash function:
 
-    unsigned int hash(const char *word); 
+    unsigned int hash(const char *word)
     {
         return 0;
     }
