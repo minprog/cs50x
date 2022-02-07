@@ -14,52 +14,31 @@ Here's your first C program:
 You have seen it in lecture, and now you're ready to try running it yourself.
 
 
-## Getting your own IDE
+## Dive into your development environment
 
-The CS50 IDE is an online environment in which you can write code, compile your programs and debug those using built-in tools. Use the following steps to request your personal IDE account.
+Go to your Terminal. You should find that its "prompt" resembles the below.
 
-- Create an account on [GitHub](https://github.com/join). This website is used by software developers around the world to collaborate. In later courses, you might use the website directly to put your own programs on! However, for this course, we just use GitHub's login mechanism to allow you access to a few other websites created by Harvard's CS50 team.
+    jharvard@somewhere ~ %
 
-- Head to [ide.cs50.io](https://ide.cs50.io/) and log into CS50 IDE using the GitHub account that you created. If all is well, you should then be informed that CS50 IDE (aka Cloud9, the software that underlies CS50 IDE) is "creating your workspace" and "creating your container," which might take a moment. You should eventually see your workspace. If not, take it up with the support staff right away!
+Click inside of that terminal window and then type (on Mac OS):
 
+    mkdir ~/Documents/problems
 
-## Dive into the IDE
-
-Head to [ide.cs50.io](https://ide.cs50.io/) and click "Sign in with GitHub" to access. Once your IDE loads, you should see that (by default) it's divided into three parts. Toward the top of CS50 IDE is your "text editor", where you'll write all of your programs. Toward the bottom of is a "terminal window" (light blue, by default), a command-line interface (CLI) that allows you to explore your workspace's files and directories, compile code, run programs, and even install new software. And on the left is your "file browser", which shows you all of the files and folders currently in your IDE.
-
-Start by clicking inside your terminal window. You should find that its "prompt" resembles the below.
-
-    ~/ $
-
-Click inside of that terminal window and then type
-
-    mkdir ~/problems
-
-followed by Enter in order to make a directory (i.e., folder) called `problems` inside of your home directory. You should see in the file list on the left that your first folder has been created. We call it `problems` so it can contain all programs that you write for the course.
+followed by Enter in order to make a directory (i.e., folder) called `problems` inside of your Documents directory.
 
 Here on out, to execute (i.e., run) a command means to type it into a terminal window and then hit Enter. Commands are "case-sensitive," so be sure not to type in uppercase when you mean lowercase or vice versa.
 
 Now execute
 
-    cd ~/problems/
+    cd ~/Documents/problems/
 
 to move yourself into (i.e., open) that directory. Your prompt should now resemble the below.
 
-    ~/problems/ $
+    problems %
 
 If not, retrace your steps and see if you can determine where you went wrong.
 
-Now execute
-
-    mkdir ~/problems/hello
-
-to create a new directory called `hello` inside of your `problems` directory. Then execute
-
-    cd ~/problems/hello
-
-to move yourself into that directory.
-
-Now, point to the File menu and choose New. This will open a new editor with a blank "Untitled1" file in it. First thing to do is to give it a name and save it into your new directory. Press **CTRL-S** or **Cmd-S** to open the file dialog. For **Filename**, type `hello.c`. Then below, choose (click) the `problems` and then `hello` folder that you just created and click on **Save**.
+Now, open Atom, point to the File menu and choose New. This will open a new editor with a blank "Untitled1" file in it. First thing to do is to give it a name and save it into your new directory. Press **CTRL-S** or **Cmd-S** to open the file dialog. For **Filename**, type `hello.c`. Then below, choose (click) the `Documents`, then the `problems` folder that you just created and click on **Save**.
 
 In your new file, type the C code for "Hello, World" as seen above. Save it once more.
 
@@ -111,7 +90,18 @@ Hello there again!
 
 ## Making things easier
 
-Recall that we can automate the process of executing `clang`, letting `make` figure out how to do so for us, thereby saving us some keystrokes. Execute the below to compile this program one last time.
+Recall from lecture that we can automate the process of executing `clang`, letting `make` figure out how to do so for us, thereby saving us some keystrokes.
+
+Create a new file called `Makefile` (no dot! no extension) and enter into it the following lines:
+
+    # Makefile for CS50-type assignments
+
+    %: %.c
+    	clang -O0 -std=c11 -Wall -Werror -Wextra -Wno-sign-compare -Wno-unused-parameter -Wno-unused-variable -Wshadow -o $@ $<  -lcs50 -lcrypt -lm
+
+Make sure that right before "clang" in that last line is a TAB character and not 4 spaces. Save the file.
+
+Now execute the below to compile your program one last time.
 
     make hello
 
