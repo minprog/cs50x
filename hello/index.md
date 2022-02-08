@@ -94,10 +94,22 @@ Recall from lecture that we can automate the process of executing `clang`, letti
 
 Create a new file called `Makefile` (no dot! no extension) and enter into it the following lines:
 
+**Windows/Ubuntu/Old Mac version**
+
     # Makefile for CS50-type assignments
 
     %: %.c
     	clang -O0 -std=c11 -Wall -Werror -Wextra -Wno-sign-compare -Wno-unused-parameter -Wno-unused-variable -Wshadow -o $@ $<  -lcs50 -lcrypt -lm
+
+**Mac M1 version**
+
+    # Makefile for CS50-type assignments
+
+    INCLUDE_PATH=${HOMEBREW_PREFIX}/opt/libcs50/include
+    LIBRARY_PATH=${HOMEBREW_PREFIX}/opt/libcs50/lib
+
+    %: %.c
+    	clang -O0 -std=c11 -Wall -Werror -Wextra -Wno-sign-compare -Wno-unused-parameter -Wno-unused-variable -Wshadow -I${INCLUDE_PATH} -o $@ $< -L${LIBRARY_PATH} -lcs50 -lcrypt -lm
 
 Make sure that right before "clang" in that last line is a TAB character and not 4 spaces. Save the file.
 
