@@ -16,6 +16,8 @@ You have seen it in lecture, and now you're ready to try running it yourself.
 
 ## Dive into your development environment
 
+**Mac OS**
+
 Go to your Terminal. You should find that its "prompt" resembles the below.
 
     jharvard@somewhere ~ %
@@ -39,6 +41,34 @@ to move yourself into (i.e., open) that directory. Your prompt should now resemb
 If not, retrace your steps and see if you can determine where you went wrong.
 
 Now, open Atom, point to the File menu and choose New. This will open a new editor with a blank "Untitled1" file in it. First thing to do is to give it a name and save it into your new directory. Press **CTRL-S** or **Cmd-S** to open the file dialog. For **Filename**, type `hello.c`. Then below, choose (click) the `Documents`, then the `problems` folder that you just created and click on **Save**.
+
+In your new file, type the C code for "Hello, World" as seen above. Save it once more.
+
+**Windows***
+
+Go to your Terminal. You should find that its "prompt" resembles the below.
+
+    jharvard@somewhere ~ %
+
+Click inside of that terminal window and then type (on Mac OS):
+
+    mkdir /mnt/c/Users/<Windows User Name>/Documents/Development
+
+followed by Enter in order to make a directory (i.e., folder) called `Development` inside of your Documents directory.
+
+Here on out, to execute (i.e., run) a command means to type it into a terminal window and then hit Enter. Commands are "case-sensitive," so be sure not to type in uppercase when you mean lowercase or vice versa.
+
+Now execute
+
+    cd /mnt/c/Users/<Windows User Name>/Documents/Development
+
+to move yourself into (i.e., open) that directory. Your prompt should now resemble the below.
+
+    Development %
+
+If not, retrace your steps and see if you can determine where you went wrong.
+
+Now, open Atom, point to the File menu and choose New. This will open a new editor with a blank "Untitled1" file in it. First thing to do is to give it a name and save it into your new directory. Press **CTRL-S** or **Cmd-S** to open the file dialog. For **Filename**, type `hello.c`. Then below, choose (click) the `Documents`, then the `Development` folder that you just created and click on **Save**.
 
 In your new file, type the C code for "Hello, World" as seen above. Save it once more.
 
