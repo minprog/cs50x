@@ -16,7 +16,7 @@ You have seen it in lecture, and now you're ready to try running it yourself.
 
 ## Dive into your development environment
 
-**Mac OS**
+### Instructions for Mac OS
 
 Go to your Terminal. You should find that its "prompt" resembles the below.
 
@@ -44,7 +44,7 @@ Now, open Atom, point to the File menu and choose New. This will open a new edit
 
 In your new file, type the C code for "Hello, World" as seen above. Save it once more.
 
-**Windows***
+### Instructions for Windows
 
 Go to your Terminal. You should find that its "prompt" resembles the below.
 
