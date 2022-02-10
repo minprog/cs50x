@@ -22,25 +22,19 @@ Go to your Terminal. You should find that its "prompt" resembles the below.
 
     jharvard@somewhere ~ %
 
-Click inside of that terminal window and then type (on Mac OS):
-
-    mkdir ~/Documents/problems
-
-followed by Enter in order to make a directory (i.e., folder) called `problems` inside of your Documents directory.
-
 Here on out, to execute (i.e., run) a command means to type it into a terminal window and then hit Enter. Commands are "case-sensitive," so be sure not to type in uppercase when you mean lowercase or vice versa.
 
 Now execute
 
-    cd ~/Documents/problems/
+    cd ~/Documents/Programming/
 
 to move yourself into (i.e., open) that directory. Your prompt should now resemble the below.
 
-    problems %
+    jharvard@somewhere Programming %
 
 If not, retrace your steps and see if you can determine where you went wrong.
 
-Now, open Atom, point to the File menu and choose New. This will open a new editor with a blank "Untitled1" file in it. First thing to do is to give it a name and save it into your new directory. Press **CTRL-S** or **Cmd-S** to open the file dialog. For **Filename**, type `hello.c`. Then below, choose (click) the `Documents`, then the `problems` folder that you just created and click on **Save**.
+Now, open Atom, point to the File menu and choose New. This will open a new editor with a blank "Untitled1" file in it. First thing to do is to give it a name and save it into your new directory. Press **CTRL-S** or **Cmd-S** to open the file dialog. For **Filename**, type `hello.c`. Then below, choose (click) the `Documents`, then the `Programming` folder that you just created and click on **Save**.
 
 In your new file, type the C code for "Hello, World" as seen above. Save it once more.
 
@@ -48,27 +42,21 @@ In your new file, type the C code for "Hello, World" as seen above. Save it once
 
 Go to your Terminal. You should find that its "prompt" resembles the below.
 
-    jharvard@somewhere ~ %
-
-Click inside of that terminal window and then type (on Mac OS):
-
-    mkdir /mnt/c/Users/<Windows User Name>/Documents/Development
-
-followed by Enter in order to make a directory (i.e., folder) called `Development` inside of your Documents directory.
+    jharvard@COMPUTER:~$
 
 Here on out, to execute (i.e., run) a command means to type it into a terminal window and then hit Enter. Commands are "case-sensitive," so be sure not to type in uppercase when you mean lowercase or vice versa.
 
 Now execute
 
-    cd /mnt/c/Users/<Windows User Name>/Documents/Development
+    cd /mnt/c/Users/<Windows User Name>/Documents/Programming/
 
 to move yourself into (i.e., open) that directory. Your prompt should now resemble the below.
 
-    Development %
+    jharvard@COMPUTER:Programming$
 
 If not, retrace your steps and see if you can determine where you went wrong.
 
-Now, open Atom, point to the File menu and choose New. This will open a new editor with a blank "Untitled1" file in it. First thing to do is to give it a name and save it into your new directory. Press **CTRL-S** or **Cmd-S** to open the file dialog. For **Filename**, type `hello.c`. Then below, choose (click) the `Documents`, then the `Development` folder that you just created and click on **Save**.
+Now, open Atom, point to the File menu and choose New. This will open a new editor with a blank "Untitled1" file in it. First thing to do is to give it a name and save it into your new directory. Press **CTRL-S** or **Cmd-S** to open the file dialog. For **Filename**, type `hello.c`. Then below, choose (click) the `Documents`, then the `Programming` folder that you just created and click on **Save**.
 
 In your new file, type the C code for "Hello, World" as seen above. Save it once more.
 
@@ -79,7 +67,7 @@ Next, type precisely the below (in lowercase), then hit Enter:
 
     ls
 
-You should see just `hello.c`. That's because you've just listed the files in that same folder, this time using a command-line interface (CLI), using just your keyboard, rather than the graphical user interface (GUI) represented by that folder icon. In particular, you *executed* (i.e., ran) a command called `ls`, which is shorthand for "list." (It's such a frequently used command that its authors called it just `ls` to save keystrokes.) Make sense?
+You should see just `Makefile` and `hello.c`. That's because you've just listed the files in that same folder, this time using a command-line interface (CLI), using just your keyboard, rather than the graphical user interface (GUI) represented by that folder icon. In particular, you *executed* (i.e., ran) a command called `ls`, which is shorthand for "list." (It's such a frequently used command that its authors called it just `ls` to save keystrokes.) Make sense?
 
 
 ## Compiling programs
@@ -121,27 +109,6 @@ Hello there again!
 ## Making things easier
 
 Recall from lecture that we can automate the process of executing `clang`, letting `make` figure out how to do so for us, thereby saving us some keystrokes.
-
-Create a new file called `Makefile` (no dot! no extension) and enter into it the following lines:
-
-**Windows/Ubuntu/Old Mac version**
-
-    # Makefile for CS50-type assignments
-
-    %: %.c
-    	clang -O0 -std=c11 -Wall -Werror -Wextra -Wno-sign-compare -Wno-unused-parameter -Wno-unused-variable -Wshadow -o $@ $<  -lcs50 -lcrypt -lm
-
-**Mac M1 version**
-
-    # Makefile for CS50-type assignments
-
-    INCLUDE_PATH=${HOMEBREW_PREFIX}/opt/libcs50/include
-    LIBRARY_PATH=${HOMEBREW_PREFIX}/opt/libcs50/lib
-
-    %: %.c
-    	clang -O0 -std=c11 -Wall -Werror -Wextra -Wno-sign-compare -Wno-unused-parameter -Wno-unused-variable -Wshadow -I${INCLUDE_PATH} -o $@ $< -L${LIBRARY_PATH} -lcs50 -lcrypt -lm
-
-Make sure that right before "clang" in that last line is a TAB character and not 4 spaces. Save the file.
 
 Now execute the below to compile your program one last time.
 
@@ -219,12 +186,10 @@ To verify whether your program is indeed running according to the specification,
 
 As soon as you're done, submit your `hello.c` implementation, below! 
 
-1. Toward CS50 IDE's top-left corner, within its "file browser" (not within a terminal window), control-click or right-click your `hello.c` file (that's within your `~/problems/hello` directory) and then select **Download**. You should find that your browser has downloaded `hello.c`.
+1. Make sure you are signed in to this website!
 
-2. Make sure you are signed in to **this** website!
+1. In the form below, browse to your `Programming` directory to find `hello.c`.
 
-4. In the form below, choose the file that you just downloaded.
+1. Press "Submit for grading". Presto!
 
-4. Press "Submit for grading". Presto!
-
-Your program will then again be checked using `check50` and the result will be recorded on this website. Should the check fail on this website, double-check if your code still works well in the IDE!
+Your program will then again be checked using `check50` and the result will be recorded on this website. Should the check fail on this website, double-check if your code still works well on your own computer by compiling and running!
