@@ -46,7 +46,7 @@ So, validating credit card numbers isn't hard, but it does get a bit tedious by 
 
 ## Implementation details
 
-In a file called `credit.c` in a `~/problems/credit/` directory, write a program that prompts the user for a credit card number and then reports (via `printf`) whether it is a valid American Express, MasterCard, or Visa card number, per the definitions of each's format herein. So that we can automate some tests of your code, we ask that your program's last line of output be `AMEX\n` or `MASTERCARD\n` or `VISA\n` or `INVALID\n`, nothing more, nothing less. For simplicity, you may assume that the user's input will be entirely numeric (i.e., devoid of hyphens, as might be printed on an actual card). But do not assume that the user's input will fit in an `int`! Best to use `get_long` from CS50's library to get users' input. (Why?)
+In a file called `credit.c` and write a program that prompts the user for a credit card number and then reports (via `printf`) whether it is a valid American Express, MasterCard, or Visa card number, per the definitions of each's format herein. So that we can automate some tests of your code, we ask that your program's last line of output be `AMEX\n` or `MASTERCARD\n` or `VISA\n` or `INVALID\n`, nothing more, nothing less. For simplicity, you may assume that the user's input will be entirely numeric (i.e., devoid of hyphens, as might be printed on an actual card). But do not assume that the user's input will fit in an `int`! Best to use `get_long` from CS50's library to get users' input. (Why?)
 
 Consider the below representative of how your own program should behave when passed a valid credit card number (sans hyphens).
 
@@ -87,22 +87,3 @@ If your program behaves incorrectly on some inputs (or doesn't compile at all), 
 You can execute the below to evaluate the correctness of your code using `check50`. But be sure to compile and test it yourself as well!
 
     check50 -l minprog/cs50x/2020/credit
-
-Execute the below to evaluate the style of your code using `style50`.
-
-    style50 credit.c
-
-
-## How to submit
-
-As soon as you're done, submit your `credit.c` implementation, below! 
-
-1. Toward CS50 IDE's top-left corner, within its "file browser" (not within a terminal window), control-click or right-click your `credit.c` file (that's within your `~/problems/credit` directory) and then select **Download**. You should find that your browser has downloaded `credit.c`.
-
-3. Make sure you are signed in to **this** website!
-
-4. In the form below, choose the file that you just downloaded.
-
-5. Press "Submit for grading". Presto!
-
-Your program will then again be checked using `check50` and the result will be recorded on this website. Should the check fail unexpectedly, be sure to try if `check50` is still satisfied when you run it in your IDE's Terminal.

@@ -85,13 +85,9 @@ Ultimately, your program should behave per the examples below.
 
 ## Getting Started
 
-First, create a new directory (i.e., folder) called `cash` inside of your `problems` directory, by executing
+To start, you'll create a file called `cash_pseudocode.txt` to help you analyze the problem. You will submit this analysis together with the final implementation in C.
 
-    ~/ $ mkdir ~/problems/cash
-
-To start, you'll create a file called `pseudocode.txt` to help you analyze the problem. You will submit this analysis together with the final implementation in C.
-
-Write in `pseudocode.txt` some pseudocode that implements this program, even if not (yet!) sure how to write it in code. There's no one right way to write pseudocode, but short English sentences suffice. Recall how we wrote pseudocode for finding Mike Smith! Odds are your pseudocode will use (or imply using!) one or more functions, conditions, Boolean expressions, loops, and/or variables.
+Write in `cash_pseudocode.txt` some pseudocode that implements this program, even if not (yet!) sure how to write it in code. There's no one right way to write pseudocode, but short English sentences suffice. Recall how we wrote pseudocode for finding Mike Smith! Odds are your pseudocode will use (or imply using!) one or more functions, conditions, Boolean expressions, loops, and/or variables.
 
 When writing your pseudocode, think of this question:
 
@@ -110,25 +106,4 @@ Does your code work as prescribed when you input
 
 You can also execute the below to evaluate the correctness of your code using `check50`. But be sure to compile and test it yourself as well!
 
-    check50 -l minprog/cs50x/2020/cash
-
-Execute the below to evaluate the style of your code using `style50`.
-
-    style50 cash.c
-
-
-## How to submit
-
-As soon as you're done, submit your `cash.c` implementation, below! 
-
-1. Toward CS50 IDE's top-left corner, within its "file browser" (not within a terminal window), control-click or right-click your `cash.c` file (that's within your `~/problems/cash` directory) and then select **Download**. You should find that your browser has downloaded `cash.c`.
-
-2. Also download `pseudocode.txt`.
-
-3. Make sure you are signed in to **this** website!
-
-4. In the form below, choose the files that you just downloaded.
-
-5. Press "Submit for grading". Presto!
-
-Your program will then again be checked using `check50` and the result will be recorded on this website. Should the check fail unexpectedly, be sure to try if `check50` is still satisfied when you run it in your IDE's Terminal.
+    check50 -l minprog/cs50x/2021/cash

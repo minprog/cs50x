@@ -81,13 +81,7 @@ How to begin? Let's approach this problem one step at a time.
 
 ## Pseudocode
 
-First, create a new directory (i.e., folder) called `mario` inside of your `problems` directory, by executing
-
-    ~/ $ mkdir ~/problems/mario
-
-Add a new file called `pseudocode.txt` inside of your `mario` directory.
-
-Write in `pseudocode.txt` some pseudocode that implements this program, even if not (yet!) sure how to write it in code. There's no one right way to write pseudocode, but short English sentences suffice. Recall how we wrote pseudocode for finding Mike Smith! Odds are your pseudocode will use (or imply using!) one or more functions, conditions, Boolean expressions, loops, and/or variables.
+Create a new file called `mario_pseudocode.txt`. Write some pseudocode that implements this program, even if not (yet!) sure how to write it in code. There's no one right way to write pseudocode, but short English sentences suffice. Recall how we wrote pseudocode for finding Mike Smith! Odds are your pseudocode will use (or imply using!) one or more functions, conditions, Boolean expressions, loops, and/or variables.
 
 <details markdown="1"><summary markdown="span">Spoiler</summary>
 
@@ -104,7 +98,7 @@ It's okay to edit your own after seeing this pseudocode here, but don't simply c
 
 ## Prompting for Input
 
-Whatever your pseudocode, let's first write only the C code that prompts (and re-prompts, as needed) the user for input. Create a new file called `mario.c` inside of your `mario` directory.
+Whatever your pseudocode, let's first write only the C code that prompts (and re-prompts, as needed) the user for input. Create a new file called `mario.c`.
 
 Now, modify `mario.c` in such a way that it prompts the user for the pyramid's height, storing their input in a variable, re-prompting the user again and again as needed if their input is not a positive integer between 1 and 8, inclusive. Then, simply print the value of that variable, thereby confirming (for yourself) that you've indeed stored the user's input successfully, a la the below.
 
@@ -203,25 +197,8 @@ All that remains now is a finishing flourish! Modify `mario.c` in such a way tha
 
 Execute the below to evaluate the correctness of your code using `check50`. But be sure to compile and test it yourself as well!
 
-    check50 -l minprog/cs50x/2020/mario/less
+    check50 -l minprog/cs50x/2021/mario/less
 
 ### Hint
 
 A space is just a press of your space bar, just as a period is just a press of its key! Just remember that `printf` requires that you surround both with double quotes!
-
-
-## How to submit
-
-As soon as you're done, submit your `mario.c` implementation, below! 
-
-1. Toward CS50 IDE's top-left corner, within its "file browser" (not within a terminal window), control-click or right-click your `mario.c` file (that's within your `problems` directory) and then select **Download**. You should find that your browser has downloaded `mario.c`.
-
-2. Also download `pseudocode.txt`.
-
-2. Make sure you are signed in to **this** website!
-
-3. In the form below, choose the file that you just downloaded.
-
-4. Press "Submit for grading". Presto!
-
-Your program will then again be checked using `check50` and the result will be recorded on this website. Should the check fail unexpectedly, be sure to try if `check50` is still satisfied when you run it in your IDE's Terminal.

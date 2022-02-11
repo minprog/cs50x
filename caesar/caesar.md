@@ -83,7 +83,7 @@ substituting a valid integer in place of `key`, within [this sandbox](http://bit
 
 Design and implement a program, `caesar`, that encrypts messages using Caesar's cipher.
 
-*   Implement your program in a file called `caesar.c` in a directory called `caesar`.
+*   Implement your program in a file called `caesar.c`.
 *   Your program must accept a single command-line argument, a non-negative integer. Let's call it _k_ for the sake of discussion.
 *   If your program is executed without any command-line arguments or with more than one command-line argument, your program should print an error message of your choice (with `printf`) and return from `main` a value of `1` (which tends to signify an error) immediately.
 *   If any of the characters of the command-line argument is not a decimal digit, your program should print the message `Usage: ./caesar key` and return from `main` a value of `1`.
@@ -243,25 +243,4 @@ Now it's time to tie everything together! Instead of shifting the characters by 
 
 Execute the below to evaluate the correctness of your code using `check50`. But be sure to compile and test it yourself as well!
 
-    check50 -l minprog/cs50x/2020/caesar
-
-Execute the below to evaluate the style of your code using `style50`.
-
-    style50 caesar.c
-
-
-## How to submit
-
-As soon as you're done, submit your `caesar.c` implementation, below! 
-
-1. Toward CS50 IDE's top-left corner, within its "file browser" (not within a terminal window), control-click or right-click your `caesar.c` file (that's within your `~/problems/caesar` directory) and then select **Download**. You should find that your browser has downloaded `caesar.c`.
-
-2. Also download `pseudocode.txt`.
-
-3. Make sure you are signed in to **this** website!
-
-4. In the form below, choose the files that you just downloaded.
-
-5. Press "Submit for grading". Presto!
-
-Your program will then again be checked using `check50` and the result will be recorded on this website. Should the check fail unexpectedly, be sure to try if `check50` is still satisfied when you run it in your IDE's Terminal.
+    check50 -l minprog/cs50x/2021/caesar

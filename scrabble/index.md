@@ -102,23 +102,9 @@ Your program should behave per the examples below.
 
 Execute the below to evaluate the correctness of your code using `check50`. But be sure to compile and test it yourself as well!
 
-    check50 -l minprog/cs50x/2020/scrabble
-
-Execute the below to evaluate the style of your code using `style50`.
-
-    style50 scrabble.c
+    check50 -l minprog/cs50x/2021/scrabble
 
 
 ## How to submit
 
-As soon as you're done, submit your `scrabble.c` implementation, below! 
-
-1. Toward CS50 IDE's top-left corner, within its "file browser" (not within a terminal window), control-click or right-click your `scrabble.c` file (that's within your `problems/scrabble` directory) and then select **Download**. You should find that your browser has downloaded `scrabble.c`.
-
-2. Make sure you are signed in to **this** website!
-
-3. Type the names of students that you've worked with on this problem: <input name="form[samengewerkt]" type="text" required>
-
-4. In the form below, choose the file that you just downloaded.
-
-Your program will then again be checked using `check50` and the result will be recorded on this website. Should the check fail unexpectedly, be sure to try if `check50` is still satisfied when you run it in your IDE's Terminal.
+Type the name of the student you've worked with: <input name="form[samengewerkt]" type="text" required>

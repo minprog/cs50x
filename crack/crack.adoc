@@ -39,7 +39,7 @@ zamyla:50cI2vYkF0YU2
 
 Design and implement a program, `crack`, that cracks passwords.
 
-* Implement your program in a file called `crack.c` in a directory called `crack`.
+* Implement your program in a file called `crack.c`.
 * Your program should accept a single command-line argument: a hashed password.
 * If your program is executed without any command-line arguments or with more than one command-line argument, your program should print an error (of your choice) and exit immediately, with `main` returning `1` (thereby signifying an error).
 * Otherwise, your program must proceed to crack the given password, ideally as quickly as possible, ultimately printing the password in the clear followed by `\n`, nothing more, nothing less, with `main` returning `0`.
@@ -71,17 +71,8 @@ ROFL
 
 == Testing
 
-=== Correctness
-
 ----
 check50 -l minprog/cs50x/2020/crack
-----
-
-=== Style
-
-[source]
-----
-style50 crack.c
 ----
 
 == Hints
@@ -97,7 +88,7 @@ You'll likely want to put
 
 [source,c]
 ----
-#include <crypt.h>
+#include <unistd.h>
 ----
 
 at the top of your file in order to use `crypt`.
