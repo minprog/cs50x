@@ -16,11 +16,9 @@ Recall from lecture that we saw a few algorithms for sorting a sequence of numbe
 
 ## Getting Started
 
-1.  Log into [ide.cs50.io](https://ide.cs50.io/) using your GitHub account.
-2.  In your terminal window, run `cd ~/problems` to switch to your `problems` directory.
-2.  In your terminal window, run `wget https://github.com/minprog/cs50x/raw/2021/sort/dist/sort.zip` to download a Zip file of the lab distribution code.
-3.  In your terminal window, run `unzip sort.zip` to unzip (i.e., decompress) that Zip file.
-4.  In your terminal window, run `cd sort` to change directories into your `sort` directory.
+- `cd` to your Programming directory
+- In your terminal window, run `curl -O https://github.com/minprog/cs50x/raw/2021/sort/dist/sort.zip` to download a Zip file of the lab distribution code.
+- In your terminal window, run `unzip sort.zip` to unzip (i.e., decompress) that Zip file.
 
 
 ## Instructions
@@ -69,14 +67,4 @@ Execute the below to evaluate the correctness of your answers using `check50`. B
 
 ## How to submit
 
-As soon as you're done, submit `answers.txt`, below! 
-
-1. Toward CS50 IDE's top-left corner, within its "file browser" (not within a terminal window), control-click or right-click your `answers.txt` file (that's within your `problems/sort` directory) and then select **Download**. You should find that your browser has downloaded `answers.txt`.
-
-2. Make sure you are signed in to **this** website!
-
-3. Type the names of students that you've worked with on this problem: <input name="form[samengewerkt]" type="text" required>
-
-4. In the form below, choose the file that you just downloaded.
-
-Your program will then again be checked using `check50` and the result will be recorded on this website. Should the check fail unexpectedly, be sure to try if `check50` is still satisfied when you run it in your IDE's Terminal.
+Type the names of students that you've worked with on this problem: <input name="form[samengewerkt]" type="text" required>

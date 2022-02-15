@@ -37,7 +37,7 @@ Using this trick is a good way to get started. However, this configuration is de
 
 ### Downloading
 
-    $ wget https://github.com/minprog/cs50x/raw/2021/fifteen/dist/fifteen.zip
+    $ curl -O https://github.com/minprog/cs50x/raw/2021/fifteen/dist/fifteen.zip
     $ unzip fifteen.zip
     $ rm fifteen.zip
     $ cd fifteen

@@ -10,7 +10,7 @@ Implement a program that finds a number among numbers, per the below.
 
 ## Distribution
 
-    $ wget https://github.com/minprog/cs50x/raw/2021/find/dist/find.zip
+    $ curl -O https://github.com/minprog/cs50x/raw/2021/find/dist/find.zip
     $ unzip find.zip
     $ rm find.zip
     $ cd find
@@ -243,7 +243,7 @@ you should see `1`, since `128` is, again, not among the 1,000 numbers outputted
 
 When you're completely satisfied that your program works as expected using manual testing, you can run `check50` to check for corner cases that may have escaped your attention.
 
-    check50 -l minprog/cs50x/2020/find
+    check50 -l minprog/cs50x/2021/find
 
 
 ## Hints
@@ -255,12 +255,3 @@ Ultimately, you are welcome to implement `search` iteratively (with a loop) or r
 For `sort`, odds are you'll want to implement bubble sort, selection sort, or insertion sort! Just realize that there's no one "right" way to implement any of those algorithms; variations abound. In fact, you're welcome to improve upon them as you see fit, so long as your implementation remains in _O_(_n_<sup>2</sup>). Although you may not alter our declaration of `sort`, you're welcome to define your own function(s) in `helpers.c` that `sort` itself may then call.
 
 We leave it to you to determine how best to test your implementation of `search` and `sort`. But don't forget that `printf` is your friend while debugging! And don't forget that you can generate the same sequence of pseudorandom numbers again and again by explicitly specifying ``generate``'s seed.
-
-
-## How to submit
-
-When you're done, submit your implementation, below!
-
-1. Download `helpers.c` from the `~/problems/find` directory in your IDE.
-
-3. In the form below, choose the files that you just downloaded.
