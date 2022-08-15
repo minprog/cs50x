@@ -119,3 +119,5 @@ Now execute the program itself one last time by executing the below.
     ./hello
 
 Phew!
+
+> Are you fully satisfied that everything works correctly? Then you're ready to proceed to the next module. Is anything still awry? Then do ask for help! The course's staff is ready to help you sort out your thoughts and knows how to find the right information at the right time.
