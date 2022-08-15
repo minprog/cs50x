@@ -1,6 +1,6 @@
 # Hello, you!
 
-This was first C program:
+This was your first C program:
 
     #include <stdio.h>
 
